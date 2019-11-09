@@ -1,5 +1,13 @@
 @charset "utf-8";
 
+/* MWeb：增大字体，便于阅读 */
+:root {
+  font-size: 14px;
+}
+.markdown-body {
+  font-size: 1.3rem;
+}
+
 /* MWeb：增加 padding */
 body {
   min-width: 200px;
