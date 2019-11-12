@@ -523,20 +523,6 @@ pre[class*="language-"] {
   background: #fafbf9;
   color: #4299d7;
 }
-pre[class*="language-"]::-moz-selection,
-pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection,
-code[class*="language-"] ::-moz-selection {
-  text-shadow: none;
-  background: #fafbf9;
-}
-pre[class*="language-"]::selection,
-pre[class*="language-"] ::selection,
-code[class*="language-"]::selection,
-code[class*="language-"] ::selection {
-  text-shadow: none;
-  background: #fafbf9;
-}
 pre[class*="language-"] {
   padding: 1em;
   margin: 0.5em 0;
