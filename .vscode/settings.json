@@ -4,5 +4,7 @@
     "*.variables": "less",
     "*.ttml": "xml",
     "*.ttss": "css"
-  }
+  },
+  "pasteImage.path": "${currentFileDir}/media",
+  "markdown.extension.toc.updateOnSave": false
 }
