@@ -46,9 +46,8 @@
 
 ### V-Green
 基于 [v-green](https://github.com/DawnLck/juejin-markdown-theme-v-green) 修改：
-![](media/05-13-12-43-23.png)
-![](media/05-13-12-45-03.png)
-
+![](media/05-13-18-47-44.png)
+![](media/05-13-18-48-12.png)
 ## 如何使用？
 1. 下载名为 `mweb-xxx.css` 的主题文件
 2. 打开 MWeb 偏好设置 - 预览样式 - 编辑 - 打开自定义样式所在的文件夹...
