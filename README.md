@@ -79,6 +79,7 @@ MWeb 的主题文件其实就是一系列的 CSS 文件。除了搜索 MWeb 专�
 一般下载的主题里不包含代码语法高亮样式。MWeb 使用 PrismJS 来高亮代码块中的语法，可以自己查找 PrismJS 主题并将代码拷贝到某个主题文件里。也可以去 MWeb 自带的主题文件里复制相应的 css 代码（`PrismJS 1.14.0...` 注释块后面的全部内容）。
 * [PrismJS 官方主题预览](https://prismjs.com/)
 * [PrismJS 主题下载](https://prismjs.com/download.html)：选择主题，页面最下方选择“Download CSS”
+* [PrismJS 社区主题](https://ourcodeworld.com/articles/read/477/collection-of-the-best-open-source-prism-js-code-highlight-themes)
 
 ## 如何自定义 MWeb 编辑器主题？
 编辑器主题是 `.style` 文件。同样可以在网上搜索主题文件，然后在偏好设置中更改。[TODO]
