@@ -9,6 +9,7 @@
   - [SmartBlue](#smartblue)
   - [Jzman](#jzman)
   - [V-Green](#v-green)
+  - [[Bear] Red Graphite (beta)](#bear-red-graphite-beta)
 - [如何使用？](#如何使用)
 - [如何自定义 MWeb 预览样式？](#如何自定义-mweb-预览样式)
   - [搜索主题](#搜索主题)
@@ -48,6 +49,11 @@
 基于 [v-green](https://github.com/DawnLck/juejin-markdown-theme-v-green) 修改：
 ![](media/05-13-18-47-44.png)
 ![](media/05-13-18-48-12.png)
+
+### [Bear] Red Graphite (beta)
+基于 [Bear](https://bear.app/cn/faq/Themes/About%20free%20and%20Pro%20themes%20in%20Bear/) 的主题修改：
+![](media/05-14-21-33-40.png)
+![](media/05-14-21-33-51.png)
 ## 如何使用？
 1. 下载名为 `mweb-xxx.css` 的主题文件
 2. 打开 MWeb 偏好设置 - 预览样式 - 编辑 - 打开自定义样式所在的文件夹...

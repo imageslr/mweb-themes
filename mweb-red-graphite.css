@@ -1,0 +1,414 @@
+
+/* 以下是专门针对 mweb 设置 */
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-top: 0 !important;
+}
+
+input {
+  line-height: normal;
+}
+
+/* 以上是专门针对 mweb 设置 */
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline
+}
+
+ol,ul {
+  list-style: none
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 0.75rem;
+}
+
+table th,
+table td {
+  padding: 0.7em 1em;
+  font-size: 0.9em;
+  border: 1px solid #dedede;
+  background-color: #fff;
+}
+
+caption,th,td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle
+}
+
+q,blockquote {
+  quotes: none
+}
+
+q:before,q:after,blockquote:before,blockquote:after {
+  content: "";
+  content: none
+}
+
+a img {
+  border: none
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary {
+  display: block
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+html {
+  font-size: 14px;
+  line-height: 1.6em;
+  -webkit-text-size-adjust: 100%
+}
+
+body {
+  background: #fcfcfc;
+  color: #545454;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: #de4c4f;
+  text-decoration: none
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.7rem;
+}
+
+h1 {
+  font-weight: 500;
+  color: #333;
+  font-size: 1.6rem;
+  line-height: 1.5em;
+  margin-bottom: .78571em
+}
+
+h2 {
+  font-weight: 500;
+  color: #333;
+  font-size: 1.3rem;
+  line-height: 1.5em;
+  margin-bottom: .62857em
+}
+
+h3 {
+  font-weight: 500;
+  color: #333;
+  font-size: 1.15rem;
+  line-height: 1.5em;
+  margin-bottom: .47143em
+}
+
+p {
+  margin-bottom: 1.57143em;
+  hyphens: auto
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  background-color: #dedede;
+  margin: -1px auto 1.57143em auto
+}
+
+ul,ol {
+  margin-bottom: .31429em
+}
+
+ul ul,ul ol,ol ul,ol ol {
+  margin-bottom: 0px
+}
+
+ul li {
+  position: relative;
+}
+
+ul li:before {
+  content: "•";
+  color: #e06e73;
+  position: absolute;
+  left: -1em;
+}
+
+ul ul {
+  margin-left: 1.25714em
+}
+
+ol {
+  counter-reset: ol_counter
+}
+
+ol li {
+  position: relative;
+}
+
+ol li:before {
+  content: counter(ol_counter) ".";
+  counter-increment: ol_counter;
+  color: #e06e73;
+  text-align: right;
+  min-width: 1em;
+  position: absolute;
+  left: -1.5em;
+}
+
+ol ol {
+  margin-left: 1.25714em
+}
+
+.task-list-item {
+  text-indent: -1.75em
+}
+
+.task-list-item:before {
+  content: "";
+  display: static;
+  margin-right: 0px
+}
+
+.task-list-item > input[type=checkbox] {
+  text-indent: -1.7em
+}
+
+b,strong {
+  font-weight: bold;
+}
+
+i,em {
+  font-style: italic;
+}
+
+code, kbd {
+  font-family: "Menlo-Regular"
+}
+
+u {
+  text-decoration: none;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%,#e06e73 50%);
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 1.05em
+}
+
+s {
+  color: #878787
+}
+
+p {
+  margin-bottom: 0.1em
+}
+
+hr {
+  margin-bottom: 0.7em;
+  margin-top: 0.7em
+}
+
+blockquote {
+  display: block;
+  margin-left: -1em;
+  padding-left: 0.8em;
+  border-left: 0.2em solid #e06e73;
+  margin-bottom: 0.75rem;
+}
+
+code {
+  display: inline;
+  background: white;
+  border: solid 1px #dedede;
+  padding: 0.2em 0.5em;
+  font-size: 0.9em
+}
+
+pre {
+  margin: 0.75rem 0;
+}
+
+pre > code {
+  display: block;
+  background: white;
+  border: solid 1px #dedede;
+  padding: 0.7em 1em;
+  font-size: 0.9em;
+  overflow-x: auto
+}
+
+mark {
+  color: inherit;
+  display: inline;
+  padding: 0.2em 0.5em;
+  background-color: #fcffc0
+}
+
+img {
+  max-width: 100%;
+  height: auto
+}
+
+figcaption {
+  text-align: center;
+}
+
+.footnotes > ol li {
+  text-indent: 0;
+}
+
+.footnotes > ol li::before {
+  float: left;
+}
+
+/* PrismJS 1.23.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+ 
+ pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+ code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+   text-shadow: none;
+   background: #b3d4fc;
+ }
+ 
+ pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+ code[class*="language-"]::selection, code[class*="language-"] ::selection {
+   text-shadow: none;
+   background: #b3d4fc;
+ }
+ 
+ @media print {
+   code[class*="language-"],
+   pre[class*="language-"] {
+     text-shadow: none;
+   }
+ }
+ 
+ /* Code blocks */
+ pre[class*="language-"] {
+   /* padding: 1em; */
+   margin: .5em 0;
+   overflow: auto;
+ }
+ 
+ :not(pre) > code[class*="language-"],
+ pre[class*="language-"] {
+   background: #f5f2f0;
+ }
+ 
+ /* Inline code */
+ :not(pre) > code[class*="language-"] {
+   padding: .1em;
+   border-radius: .3em;
+   white-space: normal;
+ }
+ 
+ .token.comment,
+ .token.prolog,
+ .token.doctype,
+ .token.cdata {
+   color: #838383;
+ }
+ 
+ .token.punctuation {
+   color: #999;
+ }
+ 
+ .token.namespace {
+   opacity: .7;
+ }
+
+ .token.number,
+ .token.boolean {
+   color: #0E73A2;
+ }
+ 
+ .token.property,
+ .token.tag,
+ .token.constant,
+ .token.symbol,
+ .token.deleted {
+   color: #1B00CE;
+ }
+ 
+ .token.selector,
+ .token.attr-name,
+ .token.string,
+ .token.char,
+ .token.builtin,
+ .token.inserted {
+   color: #D33905;
+ }
+ 
+ .token.operator,
+ .token.entity,
+ .token.url,
+ .language-css .token.string,
+ .style .token.string {
+   color: #920448;
+   /* This background color was intended by the author of this theme. */
+   background: hsla(0, 0%, 100%, .5);
+ }
+ 
+ .token.atrule,
+ .token.attr-value,
+ .token.keyword {
+   color: #0E73A2;
+ }
+ 
+ .token.function,
+ .token.class-name {
+   color: #0E73A2;
+ }
+ 
+ .token.regex,
+ .token.important,
+ .token.variable {
+   color: #0E73A2;
+ }
+ 
+ .token.important,
+ .token.bold {
+   font-weight: bold;
+ }
+ .token.italic {
+   font-style: italic;
+ }
+ 
+ .token.entity {
+   cursor: help;
+ }
+
+body {
+  max-width: 46em;
+  margin: 0px auto;
+  padding: 1.57143em 3.14286em;
+  font-family: AvenirNext-Regular, -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+}
