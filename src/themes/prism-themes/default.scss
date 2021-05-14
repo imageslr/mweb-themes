@@ -1,0 +1,32 @@
+/*
+ * PrismJS default theme
+ * 这个文件只应该包含变量
+ */
+
+$prism-font-size: 1em;
+$prism-line-height: 1.5;
+
+$prism-color: black;
+$prism-color-selection: #b3d4fc;
+$prism-color-bg: #f5f2f0;
+$prism-color-comment: slategray;
+$prism-color-punctuation: #999;
+$prism-color-number: #905;
+$prism-color-property: #905;
+$prism-color-selector: #690;
+$prism-color-operator: #9a6e3a;
+$prism-color-keyword: #07a;
+$prism-color-function: #DD4A68;
+$prism-color-variable: #e90;
+
+$prism-namespace-opacity: .7;
+$prism-operator-bg: hsla(0, 0%, 100%, .5); // This background color was intended by the author of this theme.
+
+$prism-tab-size: 4;
+
+$prism-pd: 1em;
+$prism-mg-v: .5em;
+$prism-mg-h: 0;
+
+$prism-inline-pd: .1em;
+$prism-inline-bd-radius: .3em;

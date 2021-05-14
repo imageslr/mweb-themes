@@ -1,0 +1,144 @@
+/* PrismJS 1.23.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: $prism-color;
+  background: none;
+  text-shadow: 0 1px white;
+  font-family: $code-font-family;
+  font-size: $prism-font-size;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: $prism-line-height;
+
+  -moz-tab-size: $prism-tab-size;
+  -o-tab-size: $prism-tab-size;
+  tab-size: $prism-tab-size;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: $prism-color-selection;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: $prism-color-selection;
+}
+
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: $prism-pd;
+  margin: $prism-mg-v $prism-mg-h;
+  overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: $prism-color-bg;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: $prism-inline-pd;
+  border-radius: $prism-inline-bd-radius;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: $prism-color-comment;
+}
+
+.token.punctuation {
+  color: $prism-color-punctuation;
+}
+
+.token.namespace {
+  opacity: $prism-namespace-opacity;
+}
+
+.token.number,
+.token.boolean {
+  color: $prism-color-number;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: $prism-color-property;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: $prism-color-selector;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: $prism-color-operator;
+  background: $prism-operator-bg;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: $prism-color-keyword;
+}
+
+.token.function,
+.token.class-name {
+  color: $prism-color-function;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: $prism-color-variable;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}

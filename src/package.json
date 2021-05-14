@@ -1,0 +1,32 @@
+{
+  "name": "mweb-themes",
+  "version": "1.0.0",
+  "description": "MWeb 主题",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js clean && node index.js",
+    "clean": "node index.js clean",
+    "build": "node index.js build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imageslr/mweb-themes.git"
+  },
+  "author": "elonz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imageslr/mweb-themes/issues"
+  },
+  "homepage": "https://github.com/imageslr/mweb-themes#readme",
+  "dependencies": {
+    "chokidar": "^3.4.3",
+    "ejs": "^3.1.5",
+    "koa": "^2.13.0",
+    "koa-router": "^10.0.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.3.1",
+    "node-fetch": "^2.6.1",
+    "sass": "^1.28.0",
+    "socket.io": "^2.3.0"
+  }
+}

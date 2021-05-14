@@ -1,0 +1,19 @@
+@import "prism-themes/default.scss";
+@import "variables/default.scss";
+@import "core";
+
+
+.markdown-body {
+
+  .task-list-item {
+    +.task-list-item {
+      margin-top: 3px;
+    }
+    
+    input {
+      margin: 0.3em 0 0.25em -1.6em;
+    }
+  }
+
+}
+

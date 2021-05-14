@@ -1,0 +1,96 @@
+/*
+ * Default theme
+ * 这个文件只应该包含变量
+ */
+ 
+/* color */
+$body-bg-color: white;
+$link-color: -webkit-link;
+$font-color: black;
+$mark-bg-color: yellow;
+$table-bg-color: white;
+$table-border-color: gray;
+$th-bg-color: $table-bg-color;
+$td-bg-color: $table-bg-color;
+
+/* font & line */
+$font-size: 16px;
+$h1-font-size: 2em;
+$h2-font-size: 1.5em;
+$h3-font-size: 1.17em;
+$h4-font-size: 1em;
+$h5-font-size: .83em;
+$h6-font-size: .67em;
+$table-font-size: 1em;
+$th-font-size: $table-font-size;
+$td-font-size: $table-font-size;
+
+$bold-font-weight: bold;
+$italic-font-style: italic;
+$h1-font-weight: bold;
+$h2-font-weight: bold;
+$h3-font-weight: bold;
+$h4-font-weight: bold;
+$h5-font-weight: bold;
+$h6-font-weight: bold;
+$th-font-weight: bold;
+$td-font-weight: normal;
+
+$font-family: PingFang SC, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+$code-font-family: Menlo-Regular, Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+$line-height: 1.6em;
+
+/* boxing */
+$md-body-max-width: 46rem;
+
+$md-body-mg-h: auto;
+$md-body-mg-v: 0px;
+$md-body-pd-h: 3.2rem;
+$md-body-pd-v: 1.6rem;
+
+$p-mg-v: 1em;
+$p-mg-t: $p-mg-v;
+$p-mg-b: $p-mg-v;
+$h1-mg-v: 0.67em;
+$h1-mg-t: $h1-mg-v;
+$h1-mg-b: $h1-mg-v;
+$h2-mg-v: 0.83em;
+$h2-mg-t: $h2-mg-v;
+$h2-mg-b: $h2-mg-v;
+$h3-mg-v: 1em;
+$h3-mg-t: $h3-mg-v;
+$h3-mg-b: $h3-mg-v;
+$h4-mg-v: 1.33em;
+$h4-mg-t: $h4-mg-v;
+$h4-mg-b: $h4-mg-v;
+$h5-mg-v: 1.67em;
+$h5-mg-t: $h5-mg-v;
+$h5-mg-b: $h5-mg-v;
+$h6-mg-v: 2.33em;
+$h6-mg-t: $h6-mg-v;
+$h6-mg-b: $h6-mg-v;
+$blockquote-mg-v: 1em;
+$blockquote-mg-h: 40px;
+$figure-mg-v: 1em;
+$figure-mg-h: 40px;
+$hr-mg-v: 0.5em;
+$hr-mg-h: auto;
+$pre-mg-v: 1em;
+$pre-mg-h: 0;
+$table-mg-v: 0;
+$table-mg-h: 0;
+$th-pd-v: 0;
+$th-pd-h: 0;
+$td-pd-v: 0;
+$td-pd-h: 0;
+
+/* elememts */
+$hr-bd-style: inset;
+$hr-bd-width: 1px;
+
+$table-border-spacing: 2px;
+$table-border-width: 1px;
+$table-border-style: solid;
+
+$link-decoration: underline;

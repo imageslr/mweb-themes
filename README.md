@@ -1,4 +1,3 @@
-# MWeb 自定义预览主题
 
 👏 欢迎大家推荐其他的 Markdown 预览主题，我很乐意适配到 MWeb！
 
@@ -9,13 +8,11 @@
   - [SmartBlue](#smartblue)
   - [Jzman](#jzman)
   - [V-Green](#v-green)
-  - [[Bear] Red Graphite (beta)](#bear-red-graphite-beta)
-- [如何使用？](#如何使用)
-- [如何自定义 MWeb 预览样式？](#如何自定义-mweb-预览样式)
-  - [搜索主题](#搜索主题)
-  - [创建自定义预览样式](#创建自定义预览样式)
-  - [修改代码语法高亮样式](#修改代码语法高亮样式)
-- [如何自定义 MWeb 编辑器主题？](#如何自定义-mweb-编辑器主题)
+  - [Red Graphite](#red-graphite)
+  - [其他](#其他)
+- [使用主题](#使用主题)
+- [开发主题](#开发主题)
+- [Q & A](#q--a)
 
 ## 主题列表
 ### Typo
@@ -50,41 +47,37 @@
 ![](media/05-13-18-47-44.png)
 ![](media/05-13-18-48-12.png)
 
-### [Bear] Red Graphite (beta)
+### Red Graphite
 基于 [Bear](https://bear.app/cn/faq/Themes/About%20free%20and%20Pro%20themes%20in%20Bear/) 的主题修改：
 ![](media/05-14-21-33-40.png)
 ![](media/05-14-21-33-51.png)
-## 如何使用？
+
+### 其他
+* [JonoloLuo/MWeb-Theme-jonolo](https://github.com/JonoloLuo/MWeb-Theme-jonolo)：马克飞象风格
+## 使用主题
 1. 下载名为 `mweb-xxx.css` 的主题文件
 2. 打开 MWeb 偏好设置 - 预览样式 - 编辑 - 打开自定义样式所在的文件夹...
-3. 将下载的主题文件拖到文件夹里
+3. 将下载的主题文件（.css 文件）拖到文件夹里（一般是 `PreviewCSS`）
 4. 点击 MWeb 偏好设置 - 预览样式 - 刷新，可以看到所有主题列表
 5. 选择喜欢的主题
 
-## 如何自定义 MWeb 预览样式？
+## 开发主题
 
-### 搜索主题
-MWeb 的主题文件其实就是一系列的 CSS 文件。除了搜索 MWeb 专用的主题外，还可以搜索博客使用的主题，比如：
+本项目提供了一个标准样式模板，可以通过设置变量（颜色、字号等）的方式快速开发一个新的**预览主题**。
+
+可以从其他工具 / 平台的主题中获取灵感：
 * 掘金的主题：https://github.com/xitu/juejin-markdown-themes
 * typora 的主题：http://theme.typora.io/
-* wordpress 的主题
+* Hexo 的主题：https://hexo.io/themes/
+* ...
 
-### 创建自定义预览样式
-1. 打开 MWeb 偏好设置 - 预览样式 - 编辑 - 打开自定义样式所在的文件夹...
-2. 目录下创建 `mweb-xxx.css` 文件
-3. 复制上一步的主题代码，然后粘贴到该文件中
-4. 点击 MWeb 偏好设置 - 预览样式 - 刷新，选择 `mweb-xxx` 样式
-5. 查看效果是否符合预期
-  
-这些主题是为其他软件设计的，可能使用了特殊的选择器 (比如所有样式外面都包了一层 `.markdown-body`，这在 MWeb 中是不需要的)。这需要你了解 css 语法，自行修改。
+阅读[开发文档](src/)，了解如何将主题适配到 MWeb。
 
-如果主题文件是 scss 格式，可以使用 [这个在线网站](https://jsonformatter.org/scss-to-css) 转为 css。
+## Q & A
 
-### 修改代码语法高亮样式
-一般下载的主题里不包含代码语法高亮样式。MWeb 使用 PrismJS 来高亮代码块中的语法，可以自己查找 PrismJS 主题并将代码拷贝到某个主题文件里。也可以去 MWeb 自带的主题文件里复制相应的 css 代码（`PrismJS 1.14.0...` 注释块后面的全部内容）。
-* [PrismJS 官方主题预览](https://prismjs.com/)
-* [PrismJS 主题下载](https://prismjs.com/download.html)：选择主题，页面最下方选择“Download CSS”
-* [PrismJS 社区主题](https://ourcodeworld.com/articles/read/477/collection-of-the-best-open-source-prism-js-code-highlight-themes)
+Q：如何自定义代码块的主题？  
+A：MWeb 使用 PrismJS 来高亮代码块中的语法，可以自己查找 PrismJS 主题并将配置颜色代码。详细方法见[开发文档](src/README#prism)。
 
-## 如何自定义 MWeb 编辑器主题？
-编辑器主题是 `.style` 文件。同样可以在网上搜索主题文件，然后在偏好设置中更改。[TODO]
+
+Q：如何自定义 MWeb 编辑器主题？  
+A：编辑器主题是 `.style` 文件，内容和 CSS 大同小异，请自行更改。

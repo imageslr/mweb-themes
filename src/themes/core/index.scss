@@ -1,0 +1,183 @@
+html {
+  font-family: $font-family;
+  font-size: $font-size;
+  color: $font-color;
+}
+
+body {
+  background-color: $body-bg-color;
+}
+
+.markdown-body { // 外面加一层 .markdown-body，方便适配到其他平台如 juejin、typora
+  line-height: $line-height;
+  -webkit-text-size-adjust: 100%;
+  max-width: $md-body-max-width;
+  margin: $md-body-mg-v $md-body-mg-h;
+  padding: $md-body-pd-v $md-body-pd-h;
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+> *:first-child {
+  margin-top: 0 !important;
+}
+
+> *:last-child {
+  margin-top: 0 !important;
+}
+
+/* block */
+
+h1 {
+  font-size: $h1-font-size;
+  font-weight: $h1-font-weight;
+  margin-top: $h1-mg-t;
+  margin-bottom: $h1-mg-b;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+h2 {
+  font-size: $h2-font-size;
+  font-weight: $h2-font-weight;
+  margin-top: $h2-mg-t;
+  margin-bottom: $h2-mg-b;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+h3 {
+  font-size: $h3-font-size;
+  font-weight: $h3-font-weight;
+  margin-top: $h3-mg-t;
+  margin-bottom: $h3-mg-b;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+h4 {
+  font-size: $h4-font-size;
+  font-weight: $h4-font-weight;
+  margin-top: $h4-mg-t;
+  margin-bottom: $h4-mg-b;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+h5 {
+  font-size: $h5-font-size;
+  font-weight: $h5-font-weight;
+  margin-top: $h5-mg-t;
+  margin-bottom: $h5-mg-b;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+h6 {
+  font-size: $h6-font-size;
+  font-weight: $h6-font-weight;
+  margin-top: $h6-mg-t;
+  margin-bottom: $h6-mg-b;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+p {
+  margin-top: $p-mg-t;
+  margin-bottom: $p-mg-b;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+pre, xmp, plaintext, listing {
+  font-family: $code-font-family;
+  margin: $pre-mg-v $pre-mg-h;
+}
+
+blockquote {
+  margin: $blockquote-mg-v $blockquote-mg-h;
+}
+
+figure {
+  margin: $figure-mg-v $figure-mg-h;
+}
+
+hr {
+  margin: $hr-mg-v $hr-mg-h;
+  border-style: $hr-bd-style;
+  border-width: $hr-bd-width;
+}
+
+/* inline */
+
+img {
+  max-width: 100%;
+  height: auto
+}
+
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+}
+
+a img {
+  border: none
+}
+
+b, strong {
+  font-weight: $bold-font-weight;
+}
+
+i, cite, em, var, address, dfn {
+  font-style: $italic-font-style;
+}
+
+code, kbd, tt, samp {
+  font-family: $code-font-family
+}
+
+mark {
+  background-color: $mark-bg-color;
+}
+
+/* table */
+table {
+  margin: $table-mg-v $table-mg-h;
+  border-collapse: collapse;
+  background-color: $table-bg-color;
+  border-spacing: $table-border-spacing;
+  font-size: $table-font-size;
+}
+
+th, td {
+  border-color: $table-border-color;
+  border-width: $table-border-width;
+  border-style: $table-border-style;
+}
+
+th {
+  padding: $th-pd-v $th-pd-h;
+  background-color: $th-bg-color;
+  font-size: $th-font-size;
+  font-weight: $th-font-weight;
+}
+
+td {
+  padding: $td-pd-v $td-pd-h;
+  background-color: $td-bg-color;
+  font-size: $td-font-size;
+  font-weight: $td-font-weight;
+}
+
+/* task list */
+
+.task-list-item {
+  list-style-type: none;
+}
+
+}
+
+@import "prism.scss";
