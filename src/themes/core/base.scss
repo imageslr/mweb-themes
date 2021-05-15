@@ -155,6 +155,7 @@ del, s {
 
 /* table */
 table {
+  color: $table-font-color;
   margin: $table-mg-v $table-mg-h;
   border-collapse: collapse;
   background-color: $table-bg-color;
@@ -170,14 +171,12 @@ th, td {
 
 th {
   padding: $th-pd-v $th-pd-h;
-  background-color: $th-bg-color;
   font-size: $th-font-size;
   font-weight: $th-font-weight;
 }
 
 td {
   padding: $td-pd-v $td-pd-h;
-  background-color: $td-bg-color;
   font-size: $td-font-size;
   font-weight: $td-font-weight;
 }

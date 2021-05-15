@@ -14,11 +14,11 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,a,abbr,ac
 h1, h2, h3, h4, h5, h6 {
   margin-top: 1.7rem;
   font-weight: $title-font-weight;
+  color: $head-color;
 }
 
 h1 {
   font-family: $title-font-family;
-  color: $head-color;
   font-size: 1.6rem;
   line-height: 1.5em;
   margin-bottom: .8em;
@@ -26,7 +26,6 @@ h1 {
 
 h2 {
   font-family: $title-font-family;
-  color: $head-color;
   font-size: 1.3rem;
   line-height: 1.5em;
   margin-bottom: .6em;
@@ -34,7 +33,6 @@ h2 {
 
 h3 {
   font-family: $title-font-family;
-  color: $head-color;
   font-size: 1.15rem;
   line-height: 1.5em;
   margin-bottom: .5em;

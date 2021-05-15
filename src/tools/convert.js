@@ -1,7 +1,7 @@
-const plist = require('plist');
-const fs = require('fs')
+const plist = require("plist");
+const fs = require("fs");
 
-function convert(file) {
+function getSassVariables(file) {
   const dict = {
     "Background Text Color": "$body-bg-color",
     "Base Text Color": "$font-color",
@@ -41,28 +41,73 @@ function convert(file) {
     // "Title Font": "$title-font-family",
     // "Monospace Font": "$code-font-family",
     "Monospace Font Adjust": "",
-    "Line Height Multiplier": "$line-height",
     "Line Width Multiplier": "",
     "Paragraph Spacing Multiplier": "",
-    "H1 Font Size Multiplier": "$h1-font-size",
-    "H2 Font Size Multiplier": "$h2-font-size",
-    "H3 Font Size Multiplier": "$h3-font-size",
-    "Base Text Size": "$font-size",
+    // "Line Height Multiplier": "$line-height", // 这些需要加单位（px、em）
+    // "H1 Font Size Multiplier": "$h1-font-size",
+    // "H2 Font Size Multiplier": "$h2-font-size",
+    // "H3 Font Size Multiplier": "$h3-font-size",
+    // "Base Text Size": "$font-size",
     "Base Text Size iOS": "",
-  }
-  
-  var xml = fs.readFileSync(file, 'utf8');
+  };
+
+  var xml = fs.readFileSync(file, "utf8");
   var val = plist.parse(xml);
-  
-  variables = ""
-  
-  val.forEach(i => { 
-    const { key, value } = i
+
+  variables = "";
+
+  val.forEach((i) => {
+    const { key, value } = i;
     if (!dict[key]) return;
-    variables += `${dict[key]}: ${value};\n`
-  })
-  
-  console.log(variables)
+    variables += `${dict[key]}: ${value};\n`;
+  });
+
+  return variables;
 }
 
-convert('theme.theme')
+fs.readdirSync("./").forEach((filename) => {
+  if (!filename.match(/\.theme/)) return;
+
+  console.log("filename: ", filename)
+  const variables = getSassVariables(filename);
+  // console.log("variables: ", variables)
+
+  let themeName = filename.substr(0, filename.length - 6)
+    .toLowerCase()
+    .replace("text theme", "")
+    .replace("theme", "")
+    .replace(".", "-")
+    .trim()
+    .replace(" ", "-");
+  console.log("theme name: ", themeName)
+
+  const variableFilePath = `variables/${themeName}.scss`
+  const mwebFilePath = `mweb-${themeName}.scss`
+  const variableTemplate = `@import "default.scss";
+@import "bear-default.scss";
+
+${variables}
+
+$table-font-color: $code-font-color;
+$table-bg-color: $code-bg-color;
+$prism-color-function: $prism-color-keyword;
+`
+  const mwebTemplate = `@import "prism-themes/default.scss";
+@import "${variableFilePath}";
+@import "core/bear";`
+
+  if (!fs.existsSync("variables")) fs.mkdirSync('variables')
+
+  try {
+    fs.writeFileSync(variableFilePath, variableTemplate);
+    console.log(`输出：${variableFilePath}`);
+  } catch (e) {
+    console.log(`写入文件失败：${variableFilePath}`, e);
+  }
+  try {
+    fs.writeFileSync(mwebFilePath, mwebTemplate);
+    console.log(`输出：${mwebFilePath}`);
+  } catch (e) {
+    console.log(`写入文件失败：${mwebFilePath}`, e);
+  }
+});

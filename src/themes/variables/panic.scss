@@ -1,0 +1,24 @@
+@import "default.scss";
+@import "bear-default.scss";
+
+$body-bg-color: rgba(17, 28, 42, 1.00);
+$font-color: rgba(246, 247, 238, 1.00);
+$del-font-color: rgba(176, 176, 176, 1.00);
+$head-color: rgba(249, 181, 55, 1.00);
+$link-color: rgba(84, 193, 220, 1.00);
+$primary-color: rgba(249, 181, 55, 1.00);
+$mark-bg-color: rgba(45, 78, 120, 1.00);
+$code-bg-color: rgba(23, 33, 52, 1.00);
+$border-color: rgba(45, 69, 98, 1.00);
+$code-font-color: rgba(246, 247, 238, 1.00);
+$prism-color-keyword: rgba(188, 169, 229, 1.00);
+$prism-color-comment: rgba(112, 121, 130, 1.00);
+$prism-color-selector: rgba(252, 193, 70, 1.00);
+$prism-color-number: rgba(188, 169, 229, 1.00);
+$prism-color-char: rgba(252, 193, 70, 1.00);
+$prism-color-attr-name: rgba(59, 235, 42, 1.00);
+
+
+$table-font-color: $code-font-color;
+$table-bg-color: $code-bg-color;
+$prism-color-function: $prism-color-keyword;
