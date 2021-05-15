@@ -175,7 +175,7 @@ html {
 }
 
 body {
-  background-color: #fcfcfc;
+  background-color: #F9F9F9;
 }
 
 .markdown-body {
@@ -274,7 +274,7 @@ body {
   height: auto;
 }
 .markdown-body a {
-  color: #de4c4f;
+  color: #2478c5;
   text-decoration: none;
 }
 .markdown-body a img {
@@ -293,7 +293,7 @@ body {
   background-color: white;
 }
 .markdown-body mark {
-  background-color: #fcffc0;
+  background-color: #d3ffa4;
 }
 .markdown-body del, .markdown-body s {
   color: #525252;
@@ -383,7 +383,7 @@ body {
 }
 .markdown-body ul li:before {
   content: "•";
-  color: #e06e73;
+  color: #2478c5;
   position: absolute;
   left: -1em;
 }
@@ -399,7 +399,7 @@ body {
 .markdown-body ol li:before {
   content: counter(ol_counter) ".";
   counter-increment: ol_counter;
-  color: #e06e73;
+  color: #2478c5;
   text-align: right;
   min-width: 1em;
   position: absolute;
@@ -421,7 +421,7 @@ body {
 }
 .markdown-body u {
   text-decoration: none;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #e06e73 50%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #2478c5 50%);
   background-repeat: repeat-x;
   background-size: 2px 2px;
   background-position: 0 1em;
@@ -438,7 +438,7 @@ body {
   display: block;
   margin-left: -1em;
   padding-left: 0.8em;
-  border-left: 0.2em solid #e06e73;
+  border-left: 0.2em solid #2478c5;
   margin-bottom: 0.75rem;
 }
 .markdown-body code {
@@ -464,7 +464,7 @@ body {
   color: inherit;
   display: inline;
   padding: 0.2em 0.5em;
-  background-color: #fcffc0;
+  background-color: #d3ffa4;
 }
 .markdown-body figcaption {
   text-align: center;
