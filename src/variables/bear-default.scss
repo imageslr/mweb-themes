@@ -1,0 +1,51 @@
+@import "default.scss";
+
+// Paragraph Font
+$font-family: AvenirNext-Regular, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+$title-font-family: AvenirNext-Medium; // Title Font 
+
+$md-body-max-width: 40em;
+$md-body-pd-h: 3.2em;
+$md-body-pd-v: 1.6em;
+
+// $p-mg-t: 0; // Paragraph Spacing Multiplier
+// $p-mg-b: 0; // Paragraph Spacing Multiplier
+// $code-font-family: Menlo-Regular; // Monospace Font
+
+$link-decoration: none;
+
+$font-size: 14px; // Base Text Size
+$line-height: 1.5em; // Line Height Multiplier
+$h1-font-size: 1.5em; // H1 Font Size Multiplier
+$h2-font-size: 1.3em; // H2 Font Size Multiplier
+$h3-font-size: 1.1em; // H3 Font Size Multiplier
+$title-font-weight: 500;
+
+$primary-color: #353535; // Accent Text Color
+$body-bg-color: white; // Background Text Color
+$font-color: #222222; // Base Text Color
+$del-font-color: #525252; // Light Text Color
+$head-color: #262626; // Title Text Color
+$link-color: #2478c5; // Link Text Color
+$code-font-color: #424242; // Code Font Color
+
+$mark-bg-color: #fcffc0; // Highlighter Background Color
+$code-bg-color: white; // Code Background Color
+$table-bg-color: white;
+$code-bg-color: white;
+
+$border-color: #bfbfbf; // Code Stroke Color, Separator Text Color
+
+$prism-line-height: 1.5rem;
+$prism-color: $font-color;
+$prism-color-bg: #f5f2f0;
+$prism-color-keyword: #2478c5; // Syntax Keyword
+$prism-color-comment: #575757; // Syntax Comment
+$prism-color-number: #0b5d83; // Syntax Number
+$prism-color-char: #1b00ce; // Syntax Character
+$prism-color-attr-name: #950980; // Syntax Attribute
+$prism-color-selector: #b43d15; // Syntax String
+$prism-color-property: #1B00CE;
+$prism-color-operator: #920448;
+$prism-color-function: #0E73A2;
+$prism-color-variable: #0E73A2;
