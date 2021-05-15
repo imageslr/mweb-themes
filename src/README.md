@@ -1,7 +1,7 @@
 
 **欢迎贡献新的主题 🎉 ！**
 
-#### 安装与运行
+## 安装与运行
 
 环境：node v12 及以上。
 
@@ -24,7 +24,7 @@ npm run dev <theme_file_path>
 运行后，终端会输出一个地址，默认 `http://localhost:3000`，在浏览器中打开，即可预览主题。之后更改主题文件，浏览器会实时刷新。
 
 
-#### 目录结构
+## 目录结构
 
 ```
 .
@@ -37,7 +37,7 @@ npm run dev <theme_file_path>
     └── variables             // 各个主题的变量配置
 ```
 
-#### 新增一个 MWeb 主题
+## 新增一个 MWeb 主题
 
 1. 在 `themes/variables` 目录下创建文件 `xxx.scss`，`xxx` 是主题名称
 2. 在 `themes` 目录下创建文件 `mweb-xxx.scss`，内容如下：
@@ -51,7 +51,7 @@ npm run dev <theme_file_path>
 3. 在 `xxx.scss` 中按需更改[默认主题变量](themes/variables/default.scss)的值
 4. 如果有特殊的样式需求，可以写在 `mweb-xxx.scss` 中
 
-<h4 id="prism">新增一个 Prism 主题</h4>
+<h3 id="prism">新增一个 Prism 主题</h3>
 
 1. 在 [PrismJS 官网](https://prismjs.com/) 选择一个主题，进入[下载页](https://prismjs.com/download.html)查看其 CSS 代码（拉到下载页底部就可以看到）
 2. 在 `themes/prism-themes` 目录下创建文件 `xxx.scss`
@@ -62,7 +62,7 @@ npm run dev <theme_file_path>
 * [Github - PrismJS/prism-themes](https://github.com/PrismJS/prism-themes)
 * [最佳 Prism.js 代码高亮主题集合](https://ourcodeworld.com/articles/read/477/collection-of-the-best-open-source-prism-js-code-highlight-themes)
 
-#### 打包为 CSS 文件
+## 打包为 CSS 文件
 
 根目录下执行：
 

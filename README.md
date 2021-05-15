@@ -76,7 +76,7 @@
 ## Q & A
 
 Q：如何自定义代码块的主题？  
-A：MWeb 使用 PrismJS 来高亮代码块中的语法，可以自己查找 PrismJS 主题并将配置颜色代码。详细方法见[开发文档](src/README#prism)。
+A：MWeb 使用 PrismJS 来高亮代码块中的语法，可以自己查找 PrismJS 主题并配置颜色代码，见[开发文档](src#prism)。
 
 
 Q：如何自定义 MWeb 编辑器主题？  
