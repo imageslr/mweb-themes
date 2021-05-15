@@ -97,12 +97,19 @@ pre[class*="language-"] {
 }
 
 .token.selector,
-.token.attr-name,
 .token.string,
 .token.char,
 .token.builtin,
 .token.inserted {
   color: $prism-color-selector;
+}
+
+.token.attr-name {
+  color: $prism-color-attr-name;
+}
+
+.token.char {
+  color: $prism-color-char;
 }
 
 .token.operator,

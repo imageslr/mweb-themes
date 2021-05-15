@@ -1,0 +1,204 @@
+@import "base.scss";
+
+.markdown-body {
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,a,abbr,acronym,address,big,cite,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.7rem;
+  font-weight: $title-font-weight;
+}
+
+h1 {
+  font-family: $title-font-family;
+  color: $head-color;
+  font-size: 1.6rem;
+  line-height: 1.5em;
+  margin-bottom: .8em;
+}
+
+h2 {
+  font-family: $title-font-family;
+  color: $head-color;
+  font-size: 1.3rem;
+  line-height: 1.5em;
+  margin-bottom: .6em;
+}
+
+h3 {
+  font-family: $title-font-family;
+  color: $head-color;
+  font-size: 1.15rem;
+  line-height: 1.5em;
+  margin-bottom: .5em;
+}
+
+p {
+  margin-bottom: 1.6em;
+  hyphens: auto;
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  background-color: $border-color;
+  margin: 0.7em auto;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+ul, ol {
+  margin-bottom: .3em;
+}
+
+ul ul,ul ol,ol ul,ol ol {
+  margin-bottom: 0px;
+}
+
+ul li {
+  position: relative;
+}
+
+ul li:before {
+  content: "•";
+  color: $primary-color;
+  position: absolute;
+  left: -1em;
+}
+
+ul ul {
+  margin-left: 1.25em;
+}
+
+ol {
+  counter-reset: ol_counter;
+}
+
+ol li {
+  position: relative;
+}
+
+ol li:before {
+  content: counter(ol_counter) ".";
+  counter-increment: ol_counter;
+  color: $primary-color;
+  text-align: right;
+  min-width: 1em;
+  position: absolute;
+  left: -1.5em;
+}
+
+ol ol {
+  margin-left: 1.3em;
+}
+
+.task-list-item {
+  text-indent: -1.75em;
+  
+  &:before {
+    content: "";
+    display: static;
+    margin-right: 0px;
+  }
+
+  > input[type=checkbox] {
+    text-indent: -1.7em;
+  }
+}
+
+u {
+  text-decoration: none;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%,$primary-color 50%);
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 1em;
+}
+
+p {
+  margin-bottom: 0.1em
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: underline;
+}
+
+blockquote {
+  display: block;
+  margin-left: -1em;
+  padding-left: 0.8em;
+  border-left: 0.2em solid $primary-color;
+  margin-bottom: 0.75rem;
+}
+
+code {
+  display: inline;
+  border: solid 1px $border-color;
+  padding: 0.2em 0.5em;
+  font-size: 0.9em;
+  color: $code-font-color;
+}
+
+pre {
+  margin: 0.75rem 0;
+  padding: 0;
+  border: 0;
+}
+
+pre > code {
+  display: block;
+  border: solid 1px $border-color;
+  padding: 0.7em 1em;
+  font-size: 0.9em;
+  overflow-x: auto
+}
+
+mark {
+  color: inherit;
+  display: inline;
+  padding: 0.2em 0.5em;
+  background-color: $mark-bg-color;
+}
+
+figcaption {
+  text-align: center;
+}
+
+table {
+  border: 1px;
+  border-spacing: 0;
+  margin-bottom: 0.75rem;
+}
+
+table th,
+table td {
+  padding: 0.7em 1em;
+  font-size: 0.9em;
+  border: 1px solid $border-color;
+}
+
+caption,th,td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle
+}
+
+.footnotes > ol li {
+  text-indent: 0;
+}
+
+.footnotes > ol li::before {
+  float: left;
+}
+
+}
