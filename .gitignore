@@ -1,3 +1,4 @@
 */node_modules
 **/*.map
 src/static/mweb.css
+**/.DS_Store
