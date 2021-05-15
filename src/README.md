@@ -1,5 +1,5 @@
 
-**欢迎贡献新的主题 🎉 ！**
+## 欢迎贡献新的主题 🎉 ！
 
 ## 安装与运行
 
@@ -51,7 +51,7 @@ npm run dev <theme_file_path>
 3. 在 `xxx.scss` 中按需更改[默认主题变量](themes/variables/default.scss)的值
 4. 如果有特殊的样式需求，可以写在 `mweb-xxx.scss` 中
 
-<h3 id="prism">新增一个 Prism 主题</h3>
+<h2 id="prism">新增一个 Prism 主题</h2>
 
 1. 在 [PrismJS 官网](https://prismjs.com/) 选择一个主题，进入[下载页](https://prismjs.com/download.html)查看其 CSS 代码（拉到下载页底部就可以看到）
 2. 在 `themes/prism-themes` 目录下创建文件 `xxx.scss`

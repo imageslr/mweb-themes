@@ -55,7 +55,7 @@
 ### 其他
 * [JonoloLuo/MWeb-Theme-jonolo](https://github.com/JonoloLuo/MWeb-Theme-jonolo)：马克飞象风格
 ## 使用主题
-1. 下载名为 `mweb-xxx.css` 的主题文件
+1. 下载 [themes](themes) 文件夹下名为 `mweb-xxx.css` 的主题文件
 2. 打开 MWeb 偏好设置 - 预览样式 - 编辑 - 打开自定义样式所在的文件夹...
 3. 将下载的主题文件（.css 文件）拖到文件夹里（一般是 `PreviewCSS`）
 4. 点击 MWeb 偏好设置 - 预览样式 - 刷新，可以看到所有主题列表
