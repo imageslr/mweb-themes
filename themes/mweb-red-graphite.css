@@ -30,7 +30,6 @@ code[class*=language-],
 pre[class*=language-] {
   color: #222222;
   background: none;
-  text-shadow: 0 1px white;
   font-family: Menlo-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
   font-size: 1em;
   text-align: left;

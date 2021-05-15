@@ -88,7 +88,7 @@ pre[class*=language-] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #575757;
+  color: #7f8c97;
 }
 
 .token.punctuation {
@@ -101,7 +101,7 @@ pre[class*=language-] {
 
 .token.number,
 .token.boolean {
-  color: #0b5d83;
+  color: #aac97f;
 }
 
 .token.property,
@@ -117,15 +117,15 @@ pre[class*=language-] {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: #b43d15;
+  color: #e6772f;
 }
 
 .token.attr-name {
-  color: #950980;
+  color: #fd8273;
 }
 
 .token.char {
-  color: #1b00ce;
+  color: #ff9dd1;
 }
 
 .token.operator,
@@ -140,7 +140,7 @@ pre[class*=language-] {
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: #2478c5;
+  color: #aeedda;
 }
 
 .token.function,
@@ -170,11 +170,11 @@ pre[class*=language-] {
 html {
   font-family: AvenirNext-Regular, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
   font-size: 14px;
-  color: #222222;
+  color: #dddddd;
 }
 
 body {
-  background-color: #F9F9F9;
+  background-color: #1e2022;
 }
 
 .markdown-body {
@@ -273,7 +273,7 @@ body {
   height: auto;
 }
 .markdown-body a {
-  color: #2478c5;
+  color: #6bcafb;
   text-decoration: none;
 }
 .markdown-body a img {
@@ -289,13 +289,13 @@ body {
   font-family: Menlo-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 .markdown-body code {
-  background-color: white;
+  background-color: #242424;
 }
 .markdown-body mark {
-  background-color: #d3ffa4;
+  background-color: #263c92;
 }
 .markdown-body del, .markdown-body s {
-  color: #525252;
+  color: #6f7373;
 }
 .markdown-body table {
   margin: 0 0;
@@ -339,21 +339,21 @@ body {
 }
 .markdown-body h1 {
   font-family: AvenirNext-Medium;
-  color: #262626;
+  color: #cbdbe5;
   font-size: 1.6rem;
   line-height: 1.5em;
   margin-bottom: 0.8em;
 }
 .markdown-body h2 {
   font-family: AvenirNext-Medium;
-  color: #262626;
+  color: #cbdbe5;
   font-size: 1.3rem;
   line-height: 1.5em;
   margin-bottom: 0.6em;
 }
 .markdown-body h3 {
   font-family: AvenirNext-Medium;
-  color: #262626;
+  color: #cbdbe5;
   font-size: 1.15rem;
   line-height: 1.5em;
   margin-bottom: 0.5em;
@@ -365,7 +365,7 @@ body {
 .markdown-body hr {
   height: 1px;
   border: 0;
-  background-color: #bfbfbf;
+  background-color: #575757;
   margin: 0.7em auto;
 }
 .markdown-body ol, .markdown-body ul {
@@ -382,7 +382,7 @@ body {
 }
 .markdown-body ul li:before {
   content: "•";
-  color: #2478c5;
+  color: #4aa8fb;
   position: absolute;
   left: -1em;
 }
@@ -398,7 +398,7 @@ body {
 .markdown-body ol li:before {
   content: counter(ol_counter) ".";
   counter-increment: ol_counter;
-  color: #2478c5;
+  color: #4aa8fb;
   text-align: right;
   min-width: 1em;
   position: absolute;
@@ -420,7 +420,7 @@ body {
 }
 .markdown-body u {
   text-decoration: none;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #2478c5 50%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #4aa8fb 50%);
   background-repeat: repeat-x;
   background-size: 2px 2px;
   background-position: 0 1em;
@@ -437,15 +437,15 @@ body {
   display: block;
   margin-left: -1em;
   padding-left: 0.8em;
-  border-left: 0.2em solid #2478c5;
+  border-left: 0.2em solid #4aa8fb;
   margin-bottom: 0.75rem;
 }
 .markdown-body code {
   display: inline;
-  border: solid 1px #bfbfbf;
+  border: solid 1px #575757;
   padding: 0.2em 0.5em;
   font-size: 0.9em;
-  color: #424242;
+  color: #fffeff;
 }
 .markdown-body pre {
   margin: 0.75rem 0;
@@ -454,7 +454,7 @@ body {
 }
 .markdown-body pre > code {
   display: block;
-  border: solid 1px #bfbfbf;
+  border: solid 1px #575757;
   padding: 0.7em 1em;
   font-size: 0.9em;
   overflow-x: auto;
@@ -463,7 +463,7 @@ body {
   color: inherit;
   display: inline;
   padding: 0.2em 0.5em;
-  background-color: #d3ffa4;
+  background-color: #263c92;
 }
 .markdown-body figcaption {
   text-align: center;
@@ -477,7 +477,7 @@ body {
 .markdown-body table td {
   padding: 0.7em 1em;
   font-size: 0.9em;
-  border: 1px solid #bfbfbf;
+  border: 1px solid #575757;
 }
 .markdown-body caption, .markdown-body th, .markdown-body td {
   text-align: left;
