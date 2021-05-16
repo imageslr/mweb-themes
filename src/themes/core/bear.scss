@@ -1,34 +1,126 @@
-@import "base.scss";
+@import "prism.scss";
+
+html {
+  font-family: $font-family;
+  font-size: $font-size;
+  color: $font-color;
+}
+
+body {
+  background-color: $body-bg-color;
+  line-height: $line-height;
+  -webkit-text-size-adjust: 100%;
+  max-width: $md-body-max-width;
+  margin: $md-body-mg-v $md-body-mg-h;
+  padding: $md-body-pd-v $md-body-pd-h;
+}
 
 .markdown-body {
 
-// 统一处理段落块之间的空白
-p, pre, ul, ol, dl, form {
-  margin: $bear-block-mg-v 0 $bear-block-mg-v * 0.6;
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+> *:first-child {
+  margin-top: 0 !important;
+}
+
+> *:last-child {
+  margin-top: 0 !important;
+}
+
+// spacing
+
+p, pre, ul, ol, dl, form, details, dl, blockquote, table {
+  margin: $block-mg-v 0 $block-mg-v * 0.6;
 }
 
 hr {
-  margin: $bear-block-mg-v auto;
+  margin: $block-mg-v auto;
 }
 
 ul ul,ul ol,ol ul,ol ol {
   margin-bottom: 0px;
 }
-// margin end
+
+// block
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 2 * $bear-block-mg-v;
-  margin-bottom: $bear-block-mg-v;
+  margin-top: 2 * $block-mg-v;
+  margin-bottom: $block-mg-v;
+  margin-left: 0;
+  margin-right: 0;
   font-family: $title-font-family;
   font-weight: $title-font-weight;
   line-height: 1.5em;
   color: $head-color;
 }
 
+h1 {
+  font-size: $h1-font-size;
+}
+
+h2 {
+  font-size: $h2-font-size;
+}
+
+h3 {
+  font-size: $h3-font-size;
+}
+
+h4 {
+  font-size: $h4-font-size;
+}
+
+h5 {
+  font-size: $h5-font-size;
+}
+
+h6 {
+  font-size: $h6-font-size;
+}
+
 hr {
   height: 1px;
   border: 0;
   background-color: $border-color;
+  border-style: $hr-bd-style;
+  border-width: $hr-bd-width;
+}
+
+p {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+pre {
+  padding: 0;
+  border: 0;
+}
+
+blockquote {
+  display: block;
+  margin-left: -1em;
+  padding-left: 0.8em;
+  border-left: 0.2em solid $primary-color;
+  
+  >:first-child {
+    margin-top: 0;
+  }
+  
+  >:last-child {
+    margin-bottom: 0;
+  }
+}
+
+li {
+  word-wrap: break-all;
+}
+
+li+li {
+  margin-top: $li-mg-t;
 }
 
 ul, ol {
@@ -73,7 +165,13 @@ ol ol {
   margin-left: 1.3em;
 }
 
+ul ul, ol ul, ul ol, ol ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .task-list-item {
+  list-style-type: none;
   text-indent: -1.75em;
   
   &:before {
@@ -87,6 +185,13 @@ ol ol {
   }
 }
 
+// inline
+
+img {
+  max-width: 100%;
+  height: auto
+}
+
 u {
   text-decoration: none;
   background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%,$primary-color 50%);
@@ -95,17 +200,35 @@ u {
   background-position: 0 1em;
 }
 
-a:hover,
-a:focus,
-a:active {
-  text-decoration: underline;
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+  }
+
+  img {
+    border: none
+  }
 }
 
-blockquote {
-  display: block;
-  margin-left: -1em;
-  padding-left: 0.8em;
-  border-left: 0.2em solid $primary-color;
+b, strong {
+  font-weight: $bold-font-weight;
+}
+
+i, cite, em, var, address, dfn {
+  font-style: $italic-font-style;
+}
+
+del, s {
+  color: $del-font-color;
+}
+
+code, kbd, tt, samp {
+  font-family: $code-font-family;
 }
 
 code {
@@ -115,11 +238,6 @@ code {
   font-size: 0.9em;
   color: $code-font-color;
   background-color: $code-bg-color;
-}
-
-pre {
-  padding: 0;
-  border: 0;
 }
 
 pre > code {
@@ -137,27 +255,44 @@ mark {
   background-color: $mark-bg-color;
 }
 
+pre, xmp, plaintext, listing {
+  font-family: $code-font-family;
+  margin: $pre-mg-v $pre-mg-h;
+}
+
+figure {
+  margin: $figure-mg-v $figure-mg-h;
+}
+
 figcaption {
   text-align: center;
 }
 
+// table
+
 table {
+  color: $table-font-color;
+  border-collapse: collapse;
+  background-color: $table-bg-color;
+  border-spacing: $table-border-spacing;
+  font-size: $table-font-size;
   border: 1px;
   border-spacing: 0;
 }
 
-table th,
-table td {
+th, td {
   padding: 0.7em 1em;
   font-size: 0.9em;
   border: 1px solid $border-color;
 }
 
-caption,th,td {
+caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle
 }
+
+// other
 
 .footnotes > ol li {
   text-indent: 0;
