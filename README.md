@@ -1,15 +1,9 @@
+## MWeb-Themes
 
-👏 欢迎大家推荐其他的 Markdown 预览主题，我很乐意适配到 MWeb！
+30+ 款 Markdown 预览主题，适用于 MWeb、Typora 等笔记软件，以及 Juejin、Jekyll、Hexo 等博客平台。
 
+## 目录
 - [主题列表](#主题列表)
-  - [Typo](#typo)
-  - [Vue](#vue)
-  - [Indigo](#indigo)
-  - [SmartBlue](#smartblue)
-  - [Jzman](#jzman)
-  - [V-Green](#v-green)
-  - [Red Graphite](#red-graphite)
-  - [其他](#其他)
 - [使用主题](#使用主题)
 - [开发主题](#开发主题)
 - [Q & A](#q--a)
@@ -47,8 +41,8 @@
 ![](media/05-13-18-47-44.png)
 ![](media/05-13-18-48-12.png)
 
-### Red Graphite
-基于 [Bear](https://bear.app/cn/faq/Themes/About%20free%20and%20Pro%20themes%20in%20Bear/) 的主题修改：
+### Bear 同款主题
+基于 [Bear](https://bear.app/cn/faq/Themes/About%20free%20and%20Pro%20themes%20in%20Bear/) 的主题修改，共 22 款。以下是默认主题 Red Graphite：
 ![](media/05-14-21-33-40.png)
 ![](media/05-14-21-33-51.png)
 
@@ -77,6 +71,12 @@
 
 Q：如何自定义代码块的主题？  
 A：MWeb 使用 PrismJS 来高亮代码块中的语法，可以自己查找 PrismJS 主题并配置颜色代码，见[开发文档](src#prism)。
+
+Q：代码块语法没有正确高亮？  
+A：这是因为 MWeb 3.x 使用了基础版的 PrismJS，只支持部分语言，需要自行更新。
+1. 前往 [PrismJS 官网](https://prismjs.com/download.html)，在 `Languages` 下方勾选 `Select/unselect all`，然后拉到底部点击 `Download JS`
+2. 把下载的 `prism.js` 文件移动到 `/Applications/MWeb.app/Contents/Resources/PreviewAsset/prism` 文件夹
+3. 重启 MWeb
 
 
 Q：如何自定义 MWeb 编辑器主题？  
