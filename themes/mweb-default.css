@@ -191,6 +191,14 @@ body {
 .markdown-body > *:last-child {
   margin-top: 0 !important;
 }
+.markdown-body p,
+.markdown-body details,
+.markdown-body dl,
+.markdown-body ol,
+.markdown-body ul {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 .markdown-body h1 {
   font-size: 2em;
   font-weight: bold;
@@ -245,12 +253,28 @@ body {
   margin-left: 0;
   margin-right: 0;
 }
+.markdown-body li {
+  word-wrap: break-all;
+}
+.markdown-body li + li {
+  margin-top: 0.25em;
+}
+.markdown-body ul ul, .markdown-body ol ul, .markdown-body ul ol, .markdown-body ol ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 .markdown-body pre, .markdown-body xmp, .markdown-body plaintext, .markdown-body listing {
   font-family: Menlo-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
   margin: 1em 0;
 }
 .markdown-body blockquote {
   margin: 1em 40px;
+}
+.markdown-body blockquote > :first-child {
+  margin-top: 0;
+}
+.markdown-body blockquote > :last-child {
+  margin-bottom: 0;
 }
 .markdown-body figure {
   margin: 1em 40px;
@@ -280,9 +304,6 @@ body {
 .markdown-body code, .markdown-body kbd, .markdown-body tt, .markdown-body samp {
   font-family: Menlo-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
-.markdown-body code {
-  background-color: white;
-}
 .markdown-body mark {
   background-color: yellow;
 }
@@ -291,7 +312,7 @@ body {
 }
 .markdown-body table {
   color: black;
-  margin: 0 0;
+  margin: 1em 0;
   border-collapse: collapse;
   background-color: white;
   border-spacing: 2px;
@@ -303,12 +324,12 @@ body {
   border-style: solid;
 }
 .markdown-body th {
-  padding: 0 0;
+  padding: 1px 1px;
   font-size: 1em;
   font-weight: bold;
 }
 .markdown-body td {
-  padding: 0 0;
+  padding: 1px 1px;
   font-size: 1em;
   font-weight: normal;
 }
