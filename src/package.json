@@ -27,6 +27,14 @@
     "koa-views": "^6.3.1",
     "node-fetch": "^2.6.1",
     "plist": "^3.0.2",
+    "remark": "^13.0.0",
+    "remark-footnotes": "^3.0.0",
+    "remark-frontmatter": "^3.0.0",
+    "remark-gfm": "^1.0.0",
+    "remark-html": "^13.0.1",
+    "remark-html-katex": "^3.0.0",
+    "remark-math": "^4.0.0",
+    "remark-toc": "^7.2.0",
     "sass": "^1.28.0",
     "socket.io": "^2.3.0"
   }
