@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs')
 
-const outputPath = 'static/mweb.css'
+const outputPath = '../static/mweb.css'
 
 let cleanCache = async () => {
   const cacheFiles = [

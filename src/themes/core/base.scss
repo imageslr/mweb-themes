@@ -33,6 +33,17 @@ body {
 
 /* block */
 
+// TODO: 这几个还没有拆分 top、bottom
+// blockquote, pre, table,
+p,
+details,
+dl,
+ol,
+ul {
+  margin-top: $block-mg-t;
+  margin-bottom: $block-mg-b;
+}
+
 h1 {
   font-size: $h1-font-size;
   font-weight: $h1-font-weight;
@@ -94,6 +105,19 @@ p {
   margin-right: 0;
 }
 
+li {
+  word-wrap: break-all;
+}
+
+li+li {
+  margin-top: $li-mg-t;
+}
+
+ul ul, ol ul, ul ol, ol ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 pre, xmp, plaintext, listing {
   font-family: $code-font-family;
   margin: $pre-mg-v $pre-mg-h;
@@ -101,6 +125,14 @@ pre, xmp, plaintext, listing {
 
 blockquote {
   margin: $blockquote-mg-v $blockquote-mg-h;
+  
+  >:first-child {
+    margin-top: 0;
+  }
+  
+  >:last-child {
+    margin-bottom: 0;
+  }
 }
 
 figure {
@@ -139,10 +171,6 @@ i, cite, em, var, address, dfn {
 
 code, kbd, tt, samp {
   font-family: $code-font-family
-}
-
-code {
-  background-color: $code-bg-color;
 }
 
 mark {

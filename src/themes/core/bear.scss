@@ -2,15 +2,6 @@
 
 .markdown-body {
 
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,a,abbr,acronym,address,big,cite,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline
-}
-
 h1, h2, h3, h4, h5, h6 {
   margin-top: 1.7rem;
   font-weight: $title-font-weight;
@@ -50,12 +41,9 @@ hr {
   margin: 0.7em auto;
 }
 
-ol, ul {
-  list-style: none;
-}
-
 ul, ol {
-  margin-bottom: .3em;
+  list-style: none;
+  padding: 0;
 }
 
 ul ul,ul ol,ol ul,ol ol {
@@ -136,7 +124,6 @@ blockquote {
   margin-left: -1em;
   padding-left: 0.8em;
   border-left: 0.2em solid $primary-color;
-  margin-bottom: 0.75rem;
 }
 
 code {
@@ -145,10 +132,10 @@ code {
   padding: 0.2em 0.5em;
   font-size: 0.9em;
   color: $code-font-color;
+  background-color: $code-bg-color;
 }
 
 pre {
-  margin: 0.75rem 0;
   padding: 0;
   border: 0;
 }

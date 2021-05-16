@@ -324,14 +324,6 @@ body {
   list-style-type: none;
 }
 
-.markdown-body html, .markdown-body body, .markdown-body div, .markdown-body span, .markdown-body applet, .markdown-body object, .markdown-body iframe, .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6, .markdown-body p, .markdown-body blockquote, .markdown-body a, .markdown-body abbr, .markdown-body acronym, .markdown-body address, .markdown-body big, .markdown-body cite, .markdown-body del, .markdown-body dfn, .markdown-body em, .markdown-body img, .markdown-body ins, .markdown-body kbd, .markdown-body q, .markdown-body s, .markdown-body samp, .markdown-body small, .markdown-body strike, .markdown-body strong, .markdown-body sub, .markdown-body sup, .markdown-body tt, .markdown-body var, .markdown-body b, .markdown-body u, .markdown-body i, .markdown-body center, .markdown-body dl, .markdown-body dt, .markdown-body dd, .markdown-body ol, .markdown-body ul, .markdown-body li, .markdown-body fieldset, .markdown-body form, .markdown-body label, .markdown-body legend, .markdown-body table, .markdown-body caption, .markdown-body tbody, .markdown-body tfoot, .markdown-body thead, .markdown-body tr, .markdown-body th, .markdown-body td, .markdown-body article, .markdown-body aside, .markdown-body canvas, .markdown-body details, .markdown-body embed, .markdown-body figure, .markdown-body figcaption, .markdown-body footer, .markdown-body header, .markdown-body hgroup, .markdown-body menu, .markdown-body nav, .markdown-body output, .markdown-body ruby, .markdown-body section, .markdown-body summary, .markdown-body time, .markdown-body mark, .markdown-body audio, .markdown-body video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
-}
 .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 {
   margin-top: 1.7rem;
   font-weight: 500;
@@ -365,11 +357,9 @@ body {
   background-color: #3e4348;
   margin: 0.7em auto;
 }
-.markdown-body ol, .markdown-body ul {
-  list-style: none;
-}
 .markdown-body ul, .markdown-body ol {
-  margin-bottom: 0.3em;
+  list-style: none;
+  padding: 0;
 }
 .markdown-body ul ul, .markdown-body ul ol, .markdown-body ol ul, .markdown-body ol ol {
   margin-bottom: 0px;

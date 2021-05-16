@@ -7,9 +7,13 @@ $title-font-family: AvenirNext-Medium; // Title Font
 $md-body-max-width: 46rem;
 $md-body-pd-h: 3.2em;
 $md-body-pd-v: 1.6em;
+$p-mg-t: 0.75rem; // Paragraph Spacing Multiplier
+$p-mg-b: 0.75rem; // Paragraph Spacing Multiplier
+$table-mg-v: 0.75rem;
+$pre-mg-v: 0.75rem;
+$blockquote-mg-v: .75rem;
+$blockquote-mg-h: 0;
 
-// $p-mg-t: 0; // Paragraph Spacing Multiplier
-// $p-mg-b: 0; // Paragraph Spacing Multiplier
 // $code-font-family: Menlo-Regular; // Monospace Font
 
 $link-decoration: none;
