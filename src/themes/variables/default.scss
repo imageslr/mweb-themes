@@ -5,9 +5,10 @@
  
 /* color */
 // font
-$link-color: -webkit-link;
 $font-color: black;
+$link-color: -webkit-link;
 $del-font-color: inherit;
+$table-font-color: $font-color; // TODO: move
 // border
 $table-border-color: gray;
 // bg

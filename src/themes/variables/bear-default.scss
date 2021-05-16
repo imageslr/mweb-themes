@@ -28,6 +28,7 @@ $del-font-color: #525252; // Light Text Color
 $head-color: #262626; // Title Text Color
 $link-color: #2478c5; // Link Text Color
 $code-font-color: #424242; // Code Font Color
+$table-font-color: $code-font-color; // TODO: 此类间接声明移动到单独一个文件
 
 $mark-bg-color: #fcffc0; // Highlighter Background Color
 $code-bg-color: white; // Code Background Color

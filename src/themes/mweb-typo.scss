@@ -1,9 +1,9 @@
-@charset "UTF-8";
+@charset "utf-8";
+
 /* MWeb：增大字体，便于阅读 */
 :root {
   font-size: 14px;
 }
-
 .markdown-body {
   font-size: 1.3rem;
 }
@@ -101,7 +101,8 @@ button,
 input,
 select,
 textarea {
-  font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+  font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei,
+    Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
 }
 
 button::-moz-focus-inner,
@@ -137,6 +138,7 @@ blockquote {
     margin: 1em 0;
   }
 }
+
 /* Firefox 以外，元素没有下划线，需添加 */
 acronym,
 abbr {
@@ -194,8 +196,7 @@ sup {
 
 :root sub,
 :root sup {
-  vertical-align: baseline;
-  /* for ie9 and other modern browsers */
+  vertical-align: baseline; /* for ie9 and other modern browsers */
 }
 
 sup {
@@ -275,6 +276,7 @@ hr {
 
 /* 底部印刷体、版本等标记 */
 small, .typo-small,
+  /* 图片说明 */
 figcaption {
   font-size: 0.9em;
   color: #888;
@@ -349,7 +351,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+  font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei,
+    Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
   font-weight: 100;
   color: #000;
   line-height: 1.35;
@@ -497,9 +500,13 @@ https://prismjs.com/download.html#themes=prism-coy&languages=markup+css+clike+ja
  * Based on https://github.com/tshedor/workshop-wp-theme (Example: http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics);
  * @author Tim  Shedor
  */
-code[class*=language-],
-pre[class*=language-] {
-  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono",
+    "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
+    "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
+    "Courier New", Courier, monospace;
   font-size: 14px;
   line-height: 1.375;
   direction: ltr;
@@ -516,55 +523,45 @@ pre[class*=language-] {
   background: #fafbf9;
   color: #4299d7;
 }
-
-pre[class*=language-] {
+pre[class*="language-"] {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
 }
-
-:not(pre) > code[class*=language-] {
+:not(pre) > code[class*="language-"] {
   padding: 0.1em;
   border-radius: 0.3em;
 }
-
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
   color: #bdc3b7;
 }
-
 .token.punctuation {
   color: #bdc3b7;
 }
-
 .token.namespace {
   opacity: 0.7;
 }
-
 .token.tag,
 .token.operator,
 .token.number {
   color: #1b6498;
 }
-
 .token.property,
 .token.function {
   color: #66a329;
 }
-
 .token.tag-id,
 .token.selector,
 .token.atrule-id {
   color: #4d8217;
 }
-
 code.language-javascript,
 .token.attr-name {
   color: #66a329;
 }
-
 code.language-css,
 code.language-scss,
 .token.boolean,
@@ -584,55 +581,54 @@ code.language-scss,
 .token.atrule {
   color: #277fbe;
 }
-
 .token.placeholder,
 .token.variable {
   color: #8dcefc;
 }
-
 .token.deleted {
   text-decoration: line-through;
 }
-
 .token.inserted {
   border-bottom: 1px dotted #4d8217;
   text-decoration: none;
 }
-
 .token.italic {
   font-style: italic;
 }
-
 .token.important,
 .token.bold {
   font-weight: bold;
 }
-
 .token.important {
   color: #66a329;
 }
-
 .token.entity {
   cursor: help;
 }
-
 pre > code.highlight {
   outline: 0.4em solid #66a329;
   outline-offset: 0.4em;
 }
-
 .line-numbers .line-numbers-rows {
   border-right-color: #f3f4f1;
 }
-
 .line-numbers-rows > span:before {
   color: #d1d6cd;
 }
-
 .line-highlight {
   background: rgba(77, 130, 23, 0.2);
-  background: -webkit-gradient(linear, left top, right top, color-stop(70%, rgba(77, 130, 23, 0.2)), to(rgba(77, 130, 23, 0)));
-  background: linear-gradient(to right, rgba(77, 130, 23, 0.2) 70%, rgba(77, 130, 23, 0));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(70%, rgba(77, 130, 23, 0.2)),
+    to(rgba(77, 130, 23, 0))
+  );
+  background: linear-gradient(
+    to right,
+    rgba(77, 130, 23, 0.2) 70%,
+    rgba(77, 130, 23, 0)
+  );
 }
 
 /*# sourceMappingURL=prism-base2tone-meadow-light.css.map */

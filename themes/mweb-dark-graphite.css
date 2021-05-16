@@ -298,6 +298,7 @@ body {
   color: #6f7373;
 }
 .markdown-body table {
+  color: #424242;
   margin: 0 0;
   border-collapse: collapse;
   background-color: white;
@@ -311,13 +312,11 @@ body {
 }
 .markdown-body th {
   padding: 0 0;
-  background-color: white;
   font-size: 1em;
   font-weight: bold;
 }
 .markdown-body td {
   padding: 0 0;
-  background-color: white;
   font-size: 1em;
   font-weight: normal;
 }
@@ -336,24 +335,22 @@ body {
 .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 {
   margin-top: 1.7rem;
   font-weight: 500;
+  color: #cbdbe5;
 }
 .markdown-body h1 {
   font-family: AvenirNext-Medium;
-  color: #cbdbe5;
   font-size: 1.6rem;
   line-height: 1.5em;
   margin-bottom: 0.8em;
 }
 .markdown-body h2 {
   font-family: AvenirNext-Medium;
-  color: #cbdbe5;
   font-size: 1.3rem;
   line-height: 1.5em;
   margin-bottom: 0.6em;
 }
 .markdown-body h3 {
   font-family: AvenirNext-Medium;
-  color: #cbdbe5;
   font-size: 1.15rem;
   line-height: 1.5em;
   margin-bottom: 0.5em;

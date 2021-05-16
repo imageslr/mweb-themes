@@ -290,6 +290,7 @@ body {
   color: inherit;
 }
 .markdown-body table {
+  color: black;
   margin: 0 0;
   border-collapse: collapse;
   background-color: white;
@@ -303,13 +304,11 @@ body {
 }
 .markdown-body th {
   padding: 0 0;
-  background-color: white;
   font-size: 1em;
   font-weight: bold;
 }
 .markdown-body td {
   padding: 0 0;
-  background-color: white;
   font-size: 1em;
   font-weight: normal;
 }
