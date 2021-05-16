@@ -1,3 +1,10 @@
+---
+# 作者: [imageslr](https://imageslr.com)
+# 源码: [imageslr/mweb-themes](https://github.com/imageslr/mweb-themes)
+# 全部主题: 
+当前主题: vue # 更换此处的主题名称，可以预览主题
+---
+
 # 中文排版示例
 
 ## 本篇引语

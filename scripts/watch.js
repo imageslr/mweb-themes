@@ -97,7 +97,7 @@ async function koaServer() {
   app.on('change', async () => {
     if (!changing) {
       data = await parseMarkdown()
-      socketItem.emit('reload');
+      socketItem && socketItem.emit('reload');
       changing = true;
       let st = setTimeout(() => {
         changing = false;

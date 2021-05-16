@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markdown themes gallery</title>
+    <link rel="stylesheet" href="https://unpkg.com/bytemd/dist/index.min.css" />
+    <script src="https://unpkg.com/bytemd"></script>
+    <script src="https://unpkg.com/@bytemd/plugin-gfm"></script>
+    <script src="https://unpkg.com/@bytemd/plugin-frontmatter"></script>
+    <script src="https://unpkg.com/@bytemd/plugin-footnotes"></script>
+    <script src="js/themes.js"></script>
+    <style>
+      #app {
+        margin: 0 auto;
+        max-width: 1200px;
+      }
+      .bytemd {
+        height: calc(100vh - 40px);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      const md = decodeURI("<%= data %>")
+        .replace(
+          '全部主题: ',
+          '全部主题: ' + Object.keys(themes).join(', ')
+        );
+
+      const plugins = [
+        bytemdPluginGfm(),
+        bytemdPluginFrontmatter(),
+        bytemdPluginFootnotes(),
+        {
+          viewerEffect({ file }) {
+            console.log(file.frontmatter)
+            try {
+              const $style = document.createElement('style');
+              $style.innerHTML =
+                themes[file.frontmatter["当前主题"]]?.style ?? themes.default.style;
+              document.head.appendChild($style);
+              return () => {
+                $style.remove();
+              };
+            } catch (_) {}
+          },
+        },
+      ];
+
+      const editor = new bytemd.Editor({
+        target: document.querySelector('#app'),
+        props: {
+          value: md,
+          plugins,
+        },
+      });
+
+      editor.$on('change', (e) => {
+        editor.$set({ value: e.detail.value });
+      });
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer>
+      io('ws://localhost:3001').on('reload', () => {
+        window.location.reload();
+      });
+    </script>
+  </body>
+</html>

@@ -6,7 +6,9 @@
   "scripts": {
     "watch": "npm run clean && node scripts/watch.js",
     "clean": "node scripts/clean.js",
-    "compile": "node scripts/compile.js"
+    "compile": "node scripts/compile.js",
+    "gallery-watch": "rm -rf dist/gallery && node scripts/gallery/index.js watch",
+    "gallery-build": "rm -rf dist/gallery && node scripts/gallery/index.js build"
   },
   "repository": {
     "type": "git",
@@ -19,14 +21,20 @@
   },
   "homepage": "https://github.com/imageslr/mweb-themes#readme",
   "dependencies": {
+    "@rollup/plugin-virtual": "^2.0.3",
     "chokidar": "^3.4.3",
+    "cssnano": "^4.1.10",
     "ejs": "^3.1.5",
+    "fs-extra": "^10.0.0",
     "koa": "^2.13.0",
     "koa-router": "^10.0.0",
     "koa-static": "^5.0.0",
     "koa-views": "^6.3.1",
+    "lodash": "^4.17.21",
     "node-fetch": "^2.6.1",
     "plist": "^3.0.2",
+    "postcss": "^8.2.15",
+    "postcss-prefix-selector": "^1.9.0",
     "remark": "^13.0.0",
     "remark-footnotes": "^3.0.0",
     "remark-frontmatter": "^3.0.0",
@@ -35,6 +43,7 @@
     "remark-html-katex": "^3.0.0",
     "remark-math": "^4.0.0",
     "remark-toc": "^7.2.0",
+    "rollup": "^2.48.0",
     "sass": "^1.28.0",
     "socket.io": "^2.3.0"
   }
