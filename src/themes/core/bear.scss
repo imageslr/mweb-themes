@@ -2,52 +2,38 @@
 
 .markdown-body {
 
+// 统一处理段落块之间的空白
+p, pre, ul, ol, dl, form {
+  margin: $bear-block-mg-v 0 $bear-block-mg-v * 0.6;
+}
+
+hr {
+  margin: $bear-block-mg-v auto;
+}
+
+ul ul,ul ol,ol ul,ol ol {
+  margin-bottom: 0px;
+}
+// margin end
+
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 1.7rem;
+  margin-top: 2 * $bear-block-mg-v;
+  margin-bottom: $bear-block-mg-v;
+  font-family: $title-font-family;
   font-weight: $title-font-weight;
+  line-height: 1.5em;
   color: $head-color;
-}
-
-h1 {
-  font-family: $title-font-family;
-  font-size: 1.6rem;
-  line-height: 1.5em;
-  margin-bottom: .8em;
-}
-
-h2 {
-  font-family: $title-font-family;
-  font-size: 1.3rem;
-  line-height: 1.5em;
-  margin-bottom: .6em;
-}
-
-h3 {
-  font-family: $title-font-family;
-  font-size: 1.15rem;
-  line-height: 1.5em;
-  margin-bottom: .5em;
-}
-
-p {
-  margin-bottom: 1.6em;
-  hyphens: auto;
 }
 
 hr {
   height: 1px;
   border: 0;
   background-color: $border-color;
-  margin: 0.7em auto;
 }
 
 ul, ol {
   list-style: none;
   padding: 0;
-}
-
-ul ul,ul ol,ol ul,ol ol {
-  margin-bottom: 0px;
 }
 
 ul li {
@@ -109,10 +95,6 @@ u {
   background-position: 0 1em;
 }
 
-p {
-  margin-bottom: 0.1em
-}
-
 a:hover,
 a:focus,
 a:active {
@@ -162,7 +144,6 @@ figcaption {
 table {
   border: 1px;
   border-spacing: 0;
-  margin-bottom: 0.75rem;
 }
 
 table th,
