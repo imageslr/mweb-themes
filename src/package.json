@@ -4,9 +4,9 @@
   "description": "MWeb 主题",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run clean && node index.js",
+    "watch": "npm run clean && node scripts/watch.js",
     "clean": "node scripts/clean.js",
-    "build": "node scripts/build.js"
+    "compile": "node scripts/compile.js"
   },
   "repository": {
     "type": "git",

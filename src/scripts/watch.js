@@ -11,10 +11,11 @@ const child_process = require('child_process');
 const chokidar = require('chokidar');
 const fs = require('fs');
 
-const defaultThemePath = 'themes/mweb-default.scss'
-const outputPath = 'static/mweb.css'
-const watchPath = 'static/*.css'
-const staticDir = 'static'
+const defaultThemePath = '../themes/mweb-default.scss'
+const outputPath = '../static/mweb.css'
+const watchPath = '../static/*.css'
+const staticDir = '../static'
+const indexPath = "../preview"
 
 // 实例化 koa 和路由
 const app = new koa();
@@ -79,7 +80,7 @@ function koaServer() {
   app.use(views(filePath('./'), { map: { html: 'ejs' } }));
 
   // 路由
-  router.get('/', async ctx => { await ctx.render('index'); });
+  router.get('/', async ctx => { await ctx.render(indexPath); });
 
   app.on('change', async () => {
     if (!changing) {
