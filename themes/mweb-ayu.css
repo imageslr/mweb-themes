@@ -169,7 +169,7 @@ pre[class*=language-] {
 
 html {
   font-family: AvenirNext-Regular, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-  font-size: 14px;
+  font-size: 16px;
   color: #6b6884;
 }
 
@@ -178,9 +178,9 @@ body {
 }
 
 .markdown-body {
-  line-height: 1.5em;
+  line-height: 1.6em;
   -webkit-text-size-adjust: 100%;
-  max-width: 40em;
+  max-width: 46rem;
   margin: 0px auto;
   padding: 1.6em 3.2em;
   /* block */

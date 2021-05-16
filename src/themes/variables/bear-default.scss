@@ -4,7 +4,7 @@
 $font-family: AvenirNext-Regular, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
 $title-font-family: AvenirNext-Medium; // Title Font 
 
-$md-body-max-width: 40em;
+$md-body-max-width: 46rem;
 $md-body-pd-h: 3.2em;
 $md-body-pd-v: 1.6em;
 
@@ -14,8 +14,8 @@ $md-body-pd-v: 1.6em;
 
 $link-decoration: none;
 
-$font-size: 14px; // Base Text Size
-$line-height: 1.5em; // Line Height Multiplier
+$font-size: 16px; // Base Text Size
+$line-height: 1.6em; // Line Height Multiplier
 $h1-font-size: 1.5em; // H1 Font Size Multiplier
 $h2-font-size: 1.3em; // H2 Font Size Multiplier
 $h3-font-size: 1.1em; // H3 Font Size Multiplier
@@ -28,7 +28,7 @@ $del-font-color: #525252; // Light Text Color
 $head-color: #262626; // Title Text Color
 $link-color: #2478c5; // Link Text Color
 $code-font-color: #424242; // Code Font Color
-$table-font-color: $code-font-color; // TODO: 此类间接声明移动到单独一个文件
+$table-font-color: $code-font-color; // TODO: check here
 
 $mark-bg-color: #fcffc0; // Highlighter Background Color
 $code-bg-color: white; // Code Background Color

@@ -46,6 +46,8 @@
 ![](media/05-14-21-33-40.png)
 ![](media/05-14-21-33-51.png)
 
+> 默认配置：字号 16px、页宽 46rem。如果希望和 Bear 完全一致（字号 14px、页宽 40em），请前往 [bear-14px](https://github.com/imageslr/mweb-themes/tree/bear-14px) 分支下载。
+
 ### 其他
 * [JonoloLuo/MWeb-Theme-jonolo](https://github.com/JonoloLuo/MWeb-Theme-jonolo)：马克飞象风格
 ## 使用主题
