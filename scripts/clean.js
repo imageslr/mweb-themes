@@ -10,6 +10,7 @@ let cleanCache = async () => {
   ];
   const taskList = cacheFiles.map(item => {
     return new Promise((resolve, reject) => {
+      if (!fs.existsSync(item)) resolve(true)
       fs.unlink(item, (err) => { err ? reject(err) : resolve(true); });
     });
   });
@@ -17,7 +18,7 @@ let cleanCache = async () => {
     .then(res => {
       if (res[0] && res[1]) { console.log('缓存记录已清除\n'); return true; }
     })
-    .catch(() => { console.log('缓存记录已清除\n'); return false });
+    .catch(error => { console.log(`缓存记录清除失败：${error}\n`); return false });
 }
 
 cleanCache()

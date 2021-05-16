@@ -4,8 +4,8 @@ const fs = require('fs')
 const sass = require("sass")
 const path = require("path")
 
-const themeDir = 'themes'
-const distDir = '../themes'
+const themeDir = 'src/themes'
+const distDir = 'dist/themes'
 
 let compileAll = () => {
   fs.readdirSync(themeDir).forEach(file => compileOne(`${themeDir}/${file}`));

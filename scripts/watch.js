@@ -19,11 +19,11 @@ const remarkMath = require('remark-math');
 const remarKatex = require('remark-html-katex');
 const remarkToc = require('remark-toc')
 
-const defaultThemePath = 'themes/mweb-default.scss'
+const defaultThemePath = 'src/themes/mweb-default.scss' // base to root
 const outputPath = '../static/mweb.css'
 const watchPath = '../static/*.css'
 const staticDir = '../static'
-const indexPath = "../preview"
+const indexPath = "../src/views/preview"
 const exampleMdPath = "../example.md"
 
 // 实例化 koa 和路由

@@ -46,12 +46,12 @@
 ![](media/05-14-21-33-40.png)
 ![](media/05-14-21-33-51.png)
 
-> 默认配置：字号 16px、页宽 46rem。如果希望和 Bear 完全一致（字号 14px、页宽 40em），请前往 [bear-14px](https://github.com/imageslr/mweb-themes/tree/bear-14px) 分支下载。
+> 默认配置：字号 16px、页宽 46rem。如果希望和 Bear 完全一致（字号 14px、页宽 40em），请自行更改 [bear-default.scss](themes/variables/bear-default.scss) 中的相关变量并重新编译。
 
 ### 其他
 * [JonoloLuo/MWeb-Theme-jonolo](https://github.com/JonoloLuo/MWeb-Theme-jonolo)：马克飞象风格
 ## 使用主题
-1. 下载 [themes](themes) 文件夹下名为 `mweb-xxx.css` 的主题文件
+1. 下载 [dist/themes](dist/themes) 文件夹下名为 `mweb-xxx.css` 的主题文件
 2. 打开 MWeb 偏好设置 - 预览样式 - 编辑 - 打开自定义样式所在的文件夹...
 3. 将下载的主题文件（.css 文件）拖到文件夹里（一般是 `PreviewCSS`）
 4. 点击 MWeb 偏好设置 - 预览样式 - 刷新，可以看到所有主题列表
@@ -67,19 +67,88 @@
 * Hexo 的主题：https://hexo.io/themes/
 * ...
 
-阅读[开发文档](src/)，了解如何将主题适配到 MWeb。
+欢迎贡献新的主题 🎉 ！
+
+### 安装与运行
+
+环境：node v12 及以上。
+
+```
+# 克隆本仓库
+git clone imageslr/mweb-themes 
+
+# 进入此目录
+cd mweb-themes
+
+# 安装依赖
+npm install
+
+# 编译并预览主题
+npm run watch <theme_file_path>
+```
+
+最后一个命令会编译指定的主题文件，`<theme_file_path>` 是主题文件的路径，默认为 `src/themes/mweb-default.scss`。
+
+运行后，终端会输出一个地址，默认 `http://localhost:3000`，在浏览器中打开，即可预览主题。之后更改主题文件，浏览器会实时刷新。
+
+### 目录结构
+
+```
+src
+├── views                     // 预览模板
+└── themes                    // 主题目录
+    ├── mweb-default.scss     // 默认主题
+    ├── mweb-xxx.scss         // 另一个主题
+    ├── prism-themes          // prism 代码高亮主题
+    ├── core                  // 基础样式文件
+    └── variables             // 各个主题的变量配置
+```
+
+### 新增一个 MWeb 主题
+
+1. 在 `src/themes/variables` 目录下创建文件 `xxx.scss`，`xxx` 是主题名称
+2. 在 `src/themes` 目录下创建文件 `mweb-xxx.scss`，内容如下：
+
+    ```scss
+    @import "prism-themes/default.scss";
+    @import "variables/xxx.scss"; // 这里更换为第一步的文件名
+    @import "core"
+    ```
+
+3. 在 `xxx.scss` 中按需更改[默认主题变量](src/themes/variables/default.scss)的值
+4. 如果有特殊的样式需求，可以写在 `mweb-xxx.scss` 中
+
+### 新增一个 Prism 主题
+
+1. 在 [PrismJS 官网](https://prismjs.com/) 选择一个主题，进入[下载页](https://prismjs.com/download.html)查看其 CSS 代码（拉到下载页底部就可以看到）
+2. 在 `themes/prism-themes` 目录下创建文件 `xxx.scss`
+3. 按需更改[颜色代码](src/themes/prism-themes/default.scss)
+4. 更改 `mweb-xxx.scss` 中引用的 prism 主题文件
+
+社区提供的 PrismJS 主题：
+* [Github - PrismJS/prism-themes](https://github.com/PrismJS/prism-themes)
+* [最佳 Prism.js 代码高亮主题集合](https://ourcodeworld.com/articles/read/477/collection-of-the-best-open-source-prism-js-code-highlight-themes)
+
+## 打包为 CSS 文件
+
+根目录下执行：
+
+```
+npm run build
+```
+
+生成的 CSS 文件位于 [`dist/themes`](dist/themes) 文件夹。
 
 ## Q & A
 
 Q：如何自定义代码块的主题？  
-A：MWeb 使用 PrismJS 来高亮代码块中的语法，可以自己查找 PrismJS 主题并配置颜色代码，见[开发文档](src#prism)。
+A：MWeb 使用 PrismJS 来高亮代码块中的语法，可以自己查找 PrismJS 主题并配置颜色代码，见上文“开发主题”。
 
 Q：代码块语法没有正确高亮？  
 A：这是因为 MWeb 3.x 使用了基础版的 PrismJS，只支持部分语言，需要自行更新。
 1. 前往 [PrismJS 官网](https://prismjs.com/download.html)，在 `Languages` 下方勾选 `Select/unselect all`，然后拉到底部点击 `Download JS`
 2. 把下载的 `prism.js` 文件移动到 `/Applications/MWeb.app/Contents/Resources/PreviewAsset/prism` 文件夹
 3. 重启 MWeb
-
 
 Q：如何自定义 MWeb 编辑器主题？  
 A：编辑器主题是 `.style` 文件，内容和 CSS 大同小异，请自行更改。
