@@ -1,6 +1,6 @@
 ## MWeb-Themes
 
-30+ 款 Markdown 预览主题，适用于 MWeb、Typora 等笔记软件，以及 Juejin、Jekyll、Hexo 等博客平台。
+30+ 款 Markdown 预览主题，包括 [Typo.css](#typo)、[Vue](#vue)、[Bear](#bear-同款主题) 等风格，适用于 MWeb、Typora 等笔记软件，以及 Juejin、Jekyll、Hexo 等博客平台。
 
 [在线预览所有主题](https://imageslr.github.io/mweb-themes)
 
@@ -98,12 +98,13 @@ toothpaste
 ![](media/05-13-18-48-12.png) -->
 
 #### Bear 同款主题
-基于 [Bear](https://bear.app/cn/faq/Themes/About%20free%20and%20Pro%20themes%20in%20Bear/) 的主题修改，**共 22 款**。
-<!-- 以下是默认主题 Red Graphite：
-![](media/05-14-21-33-40.png)
-![](media/05-14-21-33-51.png) -->
+灵感来自 [Bear](https://bear.app/cn/faq/Themes/About%20free%20and%20Pro%20themes%20in%20Bear/) 的主题，**共 22 款**。
 
 > 默认配置：字号 16px、页宽 46rem。如果希望和 Bear 完全一致（字号 14px、页宽 40em），请自行更改 [bear-default.scss](src/themes/variables/bear-default.scss) 中的相关变量并重新编译。
+
+##### Red Graphite
+![](media/05-14-21-33-40.png)
+![](media/05-14-21-33-51.png)
 
 ##### Ayu Mirage
 ![](media/05-17-17-16-48.png)
@@ -116,9 +117,9 @@ toothpaste
 * [JonoloLuo/MWeb-Theme-jonolo](https://github.com/JonoloLuo/MWeb-Theme-jonolo)：马克飞象风格
 
 ## 使用主题
-1. 下载 [dist/themes](dist/themes) 文件夹下名为 `mweb-xxx.css` 的主题文件
-2. 打开 MWeb 偏好设置 - 预览样式 - 编辑 - 打开自定义样式所在的文件夹...
-3. 将下载的主题文件（.css 文件）拖到文件夹里（一般是 `PreviewCSS`）
+1. 下载 [release](https://github.com/imageslr/mweb-themes/releases) 页面最新的主题压缩包 `mweb-themes.zip`
+2. 打开 MWeb 偏好设置 - 预览样式 - 编辑 - 打开自定义样式所在的文件夹...（文件夹名为 `PreviewCSS`）
+3. 将解压后的主题文件（.css 文件）拖到文件夹里
 4. 点击 MWeb 偏好设置 - 预览样式 - 刷新，可以看到所有主题列表
 5. 选择喜欢的主题
 
