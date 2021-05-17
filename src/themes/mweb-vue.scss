@@ -11,6 +11,23 @@ body {
   padding: 1em;
 }
 
+// task list
+
+.task-list-item {
+  list-style-type: none;
+  text-indent: -1.5em; // 这个数值刚好令 checkbox 与上一行第一个字对齐
+  
+  &:before {
+    content: "";
+    display: static;
+    margin-right: 0px;
+  }
+
+  > input[type=checkbox] {
+    text-indent: -1.7em;
+  }
+}
+
 /* MWeb：代码块高亮 */
 code,
 tt,
@@ -28,8 +45,11 @@ code {
 pre code {
   background: none;
   border: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+}
+pre {
+  padding: 0.7em 1em;
 }
 
 /* cyrillic-ext */
@@ -549,6 +569,7 @@ blockquote {
 table {
   padding: 0;
   word-break: initial;
+  border-collapse: collapse;
 }
 
 table tr {
