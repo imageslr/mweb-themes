@@ -8,8 +8,3 @@ if (args[0] === "watch") {
 } else {
   build.run(args)
 }
-
-process.on('unhandledRejection', (error) => {
-  console.error('unhandledRejection', error);
-  process.exit(1);
-});

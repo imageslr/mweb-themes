@@ -24,6 +24,11 @@ const distPath = fromRoot("dist/gallery");
 const run = async (args) => {
   await buildScss();
   await buildHtml();
+
+  process.on('unhandledRejection', (error) => {
+    console.error('unhandledRejection', error);
+    process.exit(1);
+  });
 };
 
 const buildScss = async () => {

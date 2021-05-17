@@ -10,6 +10,18 @@
     <script src="https://unpkg.com/@bytemd/plugin-frontmatter"></script>
     <script src="https://unpkg.com/@bytemd/plugin-footnotes"></script>
     <script src="js/themes.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+    ></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.0/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.11.0/flowchart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/prism.min.js" integrity="sha512-YScZbKSzJK2t4zIDDNEizhCkNZqz02EaJDlt2uwNRJoCuihptPgOkucyEji0bPCJwaICFTOKtrZ0efS+oWj/Ug==" crossorigin="anonymous"></script>
     <style>
       #app {
         margin: 0 auto;
@@ -35,12 +47,12 @@
         bytemdPluginFootnotes(),
         {
           viewerEffect({ file }) {
-            console.log(file.frontmatter)
             try {
               const $style = document.createElement('style');
               $style.innerHTML =
                 themes[file.frontmatter["当前主题"]]?.style ?? themes.default.style;
               document.head.appendChild($style);
+              Prism.highlightAll()
               return () => {
                 $style.remove();
               };
