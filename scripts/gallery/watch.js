@@ -152,7 +152,7 @@ const serve = () => {
 
   // 路由
   router.get("/", async (ctx) => {
-    await ctx.render(templatePath, { data });
+    await ctx.render(templatePath, { data, watching: true });
   });
 
   app.on("change", async () => {

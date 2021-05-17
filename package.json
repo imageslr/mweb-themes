@@ -24,7 +24,7 @@
     "@rollup/plugin-virtual": "^2.0.3",
     "chokidar": "^3.4.3",
     "cssnano": "^4.1.10",
-    "ejs": "^3.1.5",
+    "ejs": "^3.1.6",
     "fs-extra": "^10.0.0",
     "koa": "^2.13.0",
     "koa-router": "^10.0.0",

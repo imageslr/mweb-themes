@@ -61,11 +61,14 @@
         editor.$set({ value: e.detail.value });
       });
     </script>
+
+    <% if (watching) { %>
     <script src="/socket.io/socket.io.js"></script>
     <script defer>
       io('ws://localhost:3001').on('reload', () => {
         window.location.reload();
       });
     </script>
+    <% } %>
   </body>
 </html>
