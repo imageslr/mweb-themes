@@ -1,29 +1,26 @@
----
-name: "tagged-release"
+name: Release
 
-on:
-  push:
-    tags:
-      - "v*"
+on: push
 
 jobs:
-  tagged-release:
-    name: "Tagged Release"
-    runs-on: "ubuntu-latest"
-
+  build:
+    runs-on: ubuntu-latest
     steps:
-      # ...
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Set up Node.js  # Nodejs版本
         uses: actions/setup-node@master
         with:
           node-version: 12.13.0
       - name: Install and Build 
         run: |
-            npm install
-            npm run compile
-      - uses: "marvinpinto/action-automatic-releases@latest"
+          npm install
+          npm run compile
+      - name: Pack
+        run: zip -r mweb-themes.zip dist/themes
+      - name: Release
+        uses: softprops/action-gh-release@v1
         with:
-          repo_token: "${{ secrets.ACCESS_TOKEN }}"
-          prerelease: false
-          files: |
-            dist/themes
+          files: mweb-themes.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
