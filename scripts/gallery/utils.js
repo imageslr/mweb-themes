@@ -68,7 +68,7 @@ const buildScss= async ({ distPath, minify }) => {
        minCss  = (await cssnano.process(css)).css
     }
 
-    result[key] = { style: minCss };
+    result[key] = { style: minCss, mode: value.mode };
 
     fs.writeFileSync(
       `${filePath(distPath)}/js/${key}.js`,

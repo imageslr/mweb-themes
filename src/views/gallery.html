@@ -35,10 +35,17 @@
   <body>
     <div id="app"></div>
     <script>
+      const lightThemes = Object.entries(themes)
+        .filter(([k, v]) => v.mode !== 'dark')
+        .map(([k, v]) => k)
+      const darkThemes = Object.entries(themes)
+        .filter(([k, v]) => v.mode === 'dark')
+        .map(([k, v]) => k)
+
       const md = decodeURI("<%= data %>")
         .replace(
-          '全部主题: ',
-          '全部主题: ' + Object.keys(themes).join(', ')
+          '# <insert all themes here> ',
+          `# 浅色主题: ${lightThemes.join(', ')}\n# 深色主题: ${darkThemes.join(', ')}`
         );
 
       const plugins = [
