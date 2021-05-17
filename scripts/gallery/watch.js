@@ -2,25 +2,11 @@ const koa = require("koa");
 const koaRouter = require("koa-router");
 const views = require("koa-views");
 const statics = require("koa-static");
-const path = require("path");
 const http = require("http");
 const socketio = require("socket.io");
 const chokidar = require("chokidar");
 const fs = require("fs-extra");
-const sass = require("sass");
-const postcss = require("postcss");
-const cssnano = require("cssnano");
-const { rollup } = require("rollup");
-const virtual = require("@rollup/plugin-virtual");
-const themes = require("../../static/js/themes");
-const pkg = require('../../package.json');
-const _ = require("lodash")
-const prefixer = require('postcss-prefix-selector')
-
-// utils
-const toRootPrefix = "../../";
-const fromRoot = (pathFromRoot) => toRootPrefix + pathFromRoot;
-const filePath = (file) => path.join(__dirname, `${file}`);
+const { fromRoot, filePath, buildScss } = require('./utils')
 
 // const path
 const templatePath = fromRoot("src/views/gallery.html");
@@ -33,103 +19,10 @@ const router = new koaRouter();
 let socketItem;
 
 const run = async (args) => {
-  await build();
+  await buildScss({ distPath, minify: false });
   serve();
   sync();
   watch();
-};
-
-const build = async () => {
-  fs.ensureDirSync(filePath(distPath + "/js"))
-
-  const result = {};
-  let lazyCode = "module.exports={";
-
-  console.log("compiling...")
-
-  for (let [key, value] of Object.entries(themes)) {
-    // console.log(key, "start");
-
-    let file = filePath(fromRoot(`src/themes/${value.file}`));
-    console.log(`compiling: ${file}`);
-
-    let res = sass.renderSync({ file, sourceMap: false });
-    // console.log(result.css)
-    let css = res.css.toString();
-
-    // 所有选择器全部包一层 .markdown-body
-    const out = await postcss()
-      .use(prefixer({
-        prefix: '.markdown-body',
-        transform: function (prefix, selector, prefixedSelector) {
-          if (selector.startsWith(prefix)) {
-            return selector
-          }
-          if (selector === 'body' || selector === 'html') {
-            return prefix;
-          }
-          if (selector.includes(`[class*=language-]`)) {
-            return selector // TODO: prism 的样式先暂时不包裹，防止优先级变高
-          }
-          return prefixedSelector;
-        }
-      }))
-      .process(css, { from: undefined, hideNothingWarning: true })
-    out.root.walk((node) => {
-      if (
-        node.type === "rule" &&
-        node.selectors.some((s) => !s.startsWith(".markdown-body")) &&
-        node.selectors.every((s) => !s.includes(`[class*=language-]`)) && // TODO: prism
-        node.parent.name !== "keyframes" // allow keyframes
-      ) {
-        console.warning(`This selector should add .markdown-body prefix: ${node.selectors}`);
-        // throw new Error('Style must be wrapped with .markdown-body');
-      }
-    });
-
-    css = out.css
-
-    let minCss = css
-    // const { css: minCss } = await cssnano.process(css);
-
-    result[key] = { style: minCss };
-
-    fs.writeFileSync(
-      `${filePath(distPath)}/js/${key}.js`,
-      `module.exports=${JSON.stringify(minCss)}`
-    );
-    lazyCode += `'${key}':{ style: () => import('./${key}') },`;
-
-    // console.log(key, "end");
-  }
-
-  console.log("complie success")
-
-  lazyCode += "}";
-
-  // write index.js
-  const up = await rollup({
-    input: pkg.name,
-    plugins: [
-      virtual({
-        [pkg.name]: "export default " + JSON.stringify(result, null, 2),
-      }),
-    ],
-  });
-  await up.write({
-    format: "umd",
-    name: _.camelCase(pkg.name),
-    file: filePath(distPath + "/js/index.js"),
-  });
-
-  // write lazy.js
-  fs.writeFileSync(filePath(distPath + "/js/lazy.js"), lazyCode);
-
-  // gallery
-  fs.writeFileSync(
-    filePath(distPath + "/js/themes.js"),
-    "window.themes=" + JSON.stringify(result)
-  );
 };
 
 const watch = () => {
