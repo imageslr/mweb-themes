@@ -5,3 +5,8 @@ $primary-color: #e06e73;
 $body-bg-color: #fcfcfc;
 $link-color: #de4c4f;
 $mark-bg-color: #fcffc0;
+
+$prism-color: $code-font-color;
+$prism-color-function: $prism-color-keyword;
+$table-font-color: $code-font-color;
+$table-bg-color: $code-bg-color;

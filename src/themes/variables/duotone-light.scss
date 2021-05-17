@@ -18,7 +18,7 @@ $prism-color-number: rgba(6, 49, 137, 1.0);
 $prism-color-char: rgba(115, 144, 201, 1.0);
 $prism-color-attr-name: rgba(120, 43, 135, 1.00);
 
-
+$prism-color: $code-font-color;
+$prism-color-function: $prism-color-keyword;
 $table-font-color: $code-font-color;
 $table-bg-color: $code-bg-color;
-$prism-color-function: $prism-color-keyword;

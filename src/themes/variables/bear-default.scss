@@ -52,17 +52,17 @@ $del-font-color: #525252; // Light Text Color
 $head-color: #262626; // Title Text Color
 $link-color: #2478c5; // Link Text Color
 $code-font-color: #424242; // Code Font Color
-$table-font-color: $code-font-color;
+$table-font-color: $code-font-color; // TODO: 其他主题必须再次设置此变量
 
 $body-bg-color: white; // Background Text Color
 $mark-bg-color: #fcffc0; // Highlighter Background Color
 $code-bg-color: white; // Code Background Color
-$table-bg-color: $code-bg-color;
+$table-bg-color: $code-bg-color; // TODO: 其他主题必须再次设置此变量
 
 $border-color: #bfbfbf; // Code Stroke Color, Separator Text Color
 
 $prism-line-height: 1.5rem;
-$prism-color: $font-color; // TODO: move, append to file end.
+$prism-color: $font-color; // TODO: 其他主题必须再次设置此变量
 $prism-color-bg: #f5f2f0;
 $prism-color-keyword: #2478c5; // Syntax Keyword
 $prism-color-comment: #575757; // Syntax Comment
