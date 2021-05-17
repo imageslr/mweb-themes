@@ -1,6 +1,6 @@
 // compile all themes, from scss to css
 
-const fs = require('fs')
+const fs = require("fs-extra");
 const sass = require("sass")
 const path = require("path")
 
@@ -17,6 +17,7 @@ let compileOne = filePath => {
   const outFile = `${distDir}/${fileName.substr(0, fileName.length - 5)}.css`
   try {
     console.log(`编译中：${filePath}`)
+    fs.ensureDirSync(distDir)
     let result = sass.renderSync({ file: filePath, outFile, sourceMap: false });
     fs.writeFile(outFile, result.css, error => {
       if (error) console.log(`写入文件失败：${outFile}`);
