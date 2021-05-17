@@ -22,7 +22,7 @@ jobs:
           zip -r mweb-themes.zip ./
       - name: Release
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/') # 执行 git push origin {tag} 以触发更新
+        if: startsWith(github.ref, 'refs/tags/') # 先执行 git tag -a {tag} 再执行 git push origin {tag} 以触发更新
         with:
           files: dist/themes/mweb-themes.zip
         env:
