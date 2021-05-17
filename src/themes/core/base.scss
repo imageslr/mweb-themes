@@ -31,18 +31,14 @@ body {
   margin-top: 0 !important;
 }
 
-/* block */
+/* spacing */
 
-// TODO: 这几个还没有拆分 top、bottom
-// blockquote, pre, table,
-p,
-details,
-dl,
-ol,
-ul {
+p, details, dl, ol, ul, pre, xmp, plaintext, listing, blockquote, table, figure, hr {
   margin-top: $block-mg-t;
   margin-bottom: $block-mg-b;
 }
+
+/* block */
 
 h1 {
   font-size: $h1-font-size;
@@ -99,11 +95,35 @@ h6 {
 }
 
 p {
-  margin-top: $p-mg-t;
-  margin-bottom: $p-mg-b;
   margin-left: 0;
   margin-right: 0;
 }
+
+pre, xmp, plaintext, listing {
+  font-family: $code-font-family;
+}
+
+blockquote {
+  >:first-child {
+    margin-top: 0;
+  }
+  
+  >:last-child {
+    margin-bottom: 0;
+  }
+}
+
+hr {
+  border-style: $hr-bd-style;
+  border-width: $hr-bd-width;
+}
+
+img {
+  max-width: 100%;
+  height: auto
+}
+
+/* list */
 
 li {
   word-wrap: break-all;
@@ -118,39 +138,11 @@ ul ul, ol ul, ul ol, ol ol {
   margin-bottom: 0;
 }
 
-pre, xmp, plaintext, listing {
-  font-family: $code-font-family;
-  margin: $pre-mg-v $pre-mg-h;
-}
-
-blockquote {
-  margin: $blockquote-mg-v $blockquote-mg-h;
-  
-  >:first-child {
-    margin-top: 0;
-  }
-  
-  >:last-child {
-    margin-bottom: 0;
-  }
-}
-
-figure {
-  margin: $figure-mg-v $figure-mg-h;
-}
-
-hr {
-  margin: $hr-mg-v $hr-mg-h;
-  border-style: $hr-bd-style;
-  border-width: $hr-bd-width;
+.task-list-item {
+  list-style-type: none;
 }
 
 /* inline */
-
-img {
-  max-width: 100%;
-  height: auto
-}
 
 a {
   color: $link-color;
@@ -182,9 +174,9 @@ del, s {
 }
 
 /* table */
+
 table {
   color: $table-font-color;
-  margin: $table-mg-v $table-mg-h;
   border-collapse: collapse;
   background-color: $table-bg-color;
   border-spacing: $table-border-spacing;
@@ -207,12 +199,6 @@ td {
   padding: $td-pd-v $td-pd-h;
   font-size: $td-font-size;
   font-weight: $td-font-weight;
-}
-
-/* task list */
-
-.task-list-item {
-  list-style-type: none;
 }
 
 }
