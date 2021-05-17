@@ -42,11 +42,11 @@
 ![](media/05-13-18-48-12.png)
 
 ### Bear 同款主题
-基于 [Bear](https://bear.app/cn/faq/Themes/About%20free%20and%20Pro%20themes%20in%20Bear/) 的主题修改，共 22 款。以下是默认主题 Red Graphite：
+基于 [Bear](https://bear.app/cn/faq/Themes/About%20free%20and%20Pro%20themes%20in%20Bear/) 的主题修改，**共 22 款**。以下是默认主题 Red Graphite：
 ![](media/05-14-21-33-40.png)
 ![](media/05-14-21-33-51.png)
 
-> 默认配置：字号 16px、页宽 46rem。如果希望和 Bear 完全一致（字号 14px、页宽 40em），请自行更改 [bear-default.scss](themes/variables/bear-default.scss) 中的相关变量并重新编译。
+> 默认配置：字号 16px、页宽 46rem。如果希望和 Bear 完全一致（字号 14px、页宽 40em），请自行更改 [bear-default.scss](src/themes/variables/bear-default.scss) 中的相关变量并重新编译。
 
 ### 其他
 * [JonoloLuo/MWeb-Theme-jonolo](https://github.com/JonoloLuo/MWeb-Theme-jonolo)：马克飞象风格
@@ -134,7 +134,7 @@ src
 根目录下执行：
 
 ```
-npm run build
+npm run compile
 ```
 
 生成的 CSS 文件位于 [`dist/themes`](dist/themes) 文件夹。
