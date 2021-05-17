@@ -3,7 +3,7 @@
 # 源码: [imageslr/mweb-themes](https://github.com/imageslr/mweb-themes)
 # 注意：此页面和 MWeb 中预览的效果可能有偏差，以后者为准。
 # <insert all themes here> 
-当前主题: dark-graphite # 更换此处的主题名称，可以预览主题
+当前主题: vue # 更换此处的主题名称，可以预览主题
 ---
 
 # 中文排版示例
