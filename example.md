@@ -97,7 +97,7 @@ email <example@example.com>
 ```
 
 `Control + Shift + L` 可插入Markdown语法。
-如果是 MWeb 的文档库中的文档，拖放或`CMD + Option + I` 导入非图片时，会生成链接。
+如果是 MWeb 的文档库中的文档，拖放或 `CMD + Option + I` 导入非图片时，会生成链接。
 
 效果如下：
 

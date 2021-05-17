@@ -18,7 +18,4 @@ $prism-color-number: rgba(170, 201, 127, 1.0);
 $prism-color-char: rgba(255, 157, 209, 1.00);
 $prism-color-attr-name: rgba(253, 130, 115, 1.0);
 
-$prism-color: $code-font-color;
-$prism-color-function: $prism-color-keyword;
-$table-font-color: $code-font-color;
-$table-bg-color: $code-bg-color;
+@import "bear_override.scss";

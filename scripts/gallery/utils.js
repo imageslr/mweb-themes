@@ -43,9 +43,6 @@ const buildScss= async ({ distPath, minify }) => {
           if (selector === 'body' || selector === 'html') {
             return prefix;
           }
-          if (selector.includes(`[class*=language-]`)) {
-            return selector // TODO: prism 的样式先暂时不包裹，防止优先级变高
-          }
           return prefixedSelector;
         }
       }))
@@ -54,7 +51,6 @@ const buildScss= async ({ distPath, minify }) => {
       if (
         node.type === "rule" &&
         node.selectors.some((s) => !s.startsWith(".markdown-body")) &&
-        node.selectors.every((s) => !s.includes(`[class*=language-]`)) && // TODO: prism
         node.parent.name !== "keyframes" // allow keyframes
       ) {
         console.warning(`This selector should add .markdown-body prefix: ${node.selectors}`);

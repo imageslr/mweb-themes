@@ -8,7 +8,7 @@
 $font-color: black;
 $link-color: -webkit-link;
 $del-font-color: inherit;
-$table-font-color: $font-color; // TODO: check here
+$table-font-color: $font-color; // TODO: 把 default 主题的这类变量都移动到单独的文件
 // border
 $table-border-color: gray;
 // bg

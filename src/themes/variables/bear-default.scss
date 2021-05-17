@@ -29,6 +29,7 @@ $h5-font-weight: bold;
 $h6-font-weight: bold;
 
 $line-height: 1.6em;
+$prism-line-height: 1.5rem;
 
 /* container */
 $md-body-max-width: 46rem;
@@ -39,8 +40,6 @@ $md-body-pd-v: 1.6em;
 
 /*  spacing */
 $block-mg-v: 0.75em; // for vertical margin of block elements
-$pre-mg-v: $block-mg-v;
-$blockquote-mg-v: $block-mg-v;
 $blockquote-mg-h: 0;
 $li-mg-t: .25em;
 
@@ -52,18 +51,13 @@ $del-font-color: #525252; // Light Text Color
 $head-color: #262626; // Title Text Color
 $link-color: #2478c5; // Link Text Color
 $code-font-color: #424242; // Code Font Color
-$table-font-color: $code-font-color; // TODO: 其他主题必须再次设置此变量
 
 $body-bg-color: white; // Background Text Color
 $mark-bg-color: #fcffc0; // Highlighter Background Color
 $code-bg-color: white; // Code Background Color
-$table-bg-color: $code-bg-color; // TODO: 其他主题必须再次设置此变量
 
 $border-color: #bfbfbf; // Code Stroke Color, Separator Text Color
 
-$prism-line-height: 1.5rem;
-$prism-color: $font-color; // TODO: 其他主题必须再次设置此变量
-$prism-color-bg: #f5f2f0;
 $prism-color-keyword: #2478c5; // Syntax Keyword
 $prism-color-comment: #575757; // Syntax Comment
 $prism-color-number: #0b5d83; // Syntax Number
@@ -82,3 +76,5 @@ $table-border-spacing: 2px;
 
 $hr-bd-style: inset;
 $hr-bd-width: 1px;
+
+@import "bear_override.scss";
