@@ -12,13 +12,14 @@
 /* boxing */
 /* elememts */
 /*
- * Default theme
+ * Default bear theme
  * 这个文件只应该包含变量
  */
+/* font */
+/* container */
+/*  spacing */
 /* color */
-/* font & line */
-/* boxing */
-/* elememts */
+/* other */
 /* PrismJS 1.23.0
 https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
 /**
@@ -175,19 +176,13 @@ html {
 
 body {
   background-color: #222e33;
-}
-
-.markdown-body {
   line-height: 1.6em;
   -webkit-text-size-adjust: 100%;
   max-width: 46rem;
   margin: 0px auto;
   padding: 1.6em 3.2em;
-  /* block */
-  /* inline */
-  /* table */
-  /* task list */
 }
+
 .markdown-body * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -199,153 +194,7 @@ body {
 .markdown-body > *:last-child {
   margin-top: 0 !important;
 }
-.markdown-body p,
-.markdown-body details,
-.markdown-body dl,
-.markdown-body ol,
-.markdown-body ul {
-  margin-top: 0.75em;
-  margin-bottom: 0.75em;
-}
-.markdown-body h1 {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-top: 0.67em;
-  margin-bottom: 0.67em;
-  margin-left: 0;
-  margin-right: 0;
-}
-.markdown-body h2 {
-  font-size: 1.3em;
-  font-weight: bold;
-  margin-top: 0.83em;
-  margin-bottom: 0.83em;
-  margin-left: 0;
-  margin-right: 0;
-}
-.markdown-body h3 {
-  font-size: 1.1em;
-  font-weight: bold;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin-left: 0;
-  margin-right: 0;
-}
-.markdown-body h4 {
-  font-size: 1em;
-  font-weight: bold;
-  margin-top: 1.33em;
-  margin-bottom: 1.33em;
-  margin-left: 0;
-  margin-right: 0;
-}
-.markdown-body h5 {
-  font-size: 1em;
-  font-weight: bold;
-  margin-top: 1.67em;
-  margin-bottom: 1.67em;
-  margin-left: 0;
-  margin-right: 0;
-}
-.markdown-body h6 {
-  font-size: 1em;
-  font-weight: bold;
-  margin-top: 2.33em;
-  margin-bottom: 2.33em;
-  margin-left: 0;
-  margin-right: 0;
-}
-.markdown-body p {
-  margin-top: 0.75em;
-  margin-bottom: 0.75em;
-  margin-left: 0;
-  margin-right: 0;
-}
-.markdown-body li {
-  word-wrap: break-all;
-}
-.markdown-body li + li {
-  margin-top: 0.25em;
-}
-.markdown-body ul ul, .markdown-body ol ul, .markdown-body ul ol, .markdown-body ol ol {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.markdown-body pre, .markdown-body xmp, .markdown-body plaintext, .markdown-body listing {
-  font-family: Menlo-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
-  margin: 0.75em 0;
-}
-.markdown-body blockquote {
-  margin: 0.75em 0;
-}
-.markdown-body blockquote > :first-child {
-  margin-top: 0;
-}
-.markdown-body blockquote > :last-child {
-  margin-bottom: 0;
-}
-.markdown-body figure {
-  margin: 1em 40px;
-}
-.markdown-body hr {
-  margin: 0.5em auto;
-  border-style: inset;
-  border-width: 1px;
-}
-.markdown-body img {
-  max-width: 100%;
-  height: auto;
-}
-.markdown-body a {
-  color: #d65c5c;
-  text-decoration: none;
-}
-.markdown-body a img {
-  border: none;
-}
-.markdown-body b, .markdown-body strong {
-  font-weight: bold;
-}
-.markdown-body i, .markdown-body cite, .markdown-body em, .markdown-body var, .markdown-body address, .markdown-body dfn {
-  font-style: italic;
-}
-.markdown-body code, .markdown-body kbd, .markdown-body tt, .markdown-body samp {
-  font-family: Menlo-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-.markdown-body mark {
-  background-color: #404171;
-}
-.markdown-body del, .markdown-body s {
-  color: #bfbfbf;
-}
-.markdown-body table {
-  color: #a8b0b5;
-  margin: 0.75em 0;
-  border-collapse: collapse;
-  background-color: #12181b;
-  border-spacing: 2px;
-  font-size: 1em;
-}
-.markdown-body th, .markdown-body td {
-  border-color: gray;
-  border-width: 1px;
-  border-style: solid;
-}
-.markdown-body th {
-  padding: 1px 1px;
-  font-size: 1em;
-  font-weight: bold;
-}
-.markdown-body td {
-  padding: 1px 1px;
-  font-size: 1em;
-  font-weight: normal;
-}
-.markdown-body .task-list-item {
-  list-style-type: none;
-}
-
-.markdown-body p, .markdown-body pre, .markdown-body ul, .markdown-body ol, .markdown-body dl, .markdown-body form {
+.markdown-body p, .markdown-body pre, .markdown-body ul, .markdown-body ol, .markdown-body dl, .markdown-body form, .markdown-body details, .markdown-body dl, .markdown-body blockquote, .markdown-body table, .markdown-body xmp, .markdown-body plaintext, .markdown-body listing, .markdown-body figure {
   margin: 0.75em 0 0.45em;
 }
 .markdown-body hr {
@@ -357,19 +206,71 @@ body {
 .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 {
   margin-top: 1.5em;
   margin-bottom: 0.75em;
+  margin-left: 0;
+  margin-right: 0;
   font-family: AvenirNext-Medium;
   font-weight: 500;
   line-height: 1.5em;
   color: #83d1dd;
 }
+.markdown-body h1 {
+  font-size: 1.5em;
+}
+.markdown-body h2 {
+  font-size: 1.3em;
+}
+.markdown-body h3 {
+  font-size: 1.1em;
+}
+.markdown-body h4 {
+  font-size: 1em;
+}
+.markdown-body h5 {
+  font-size: 1em;
+}
+.markdown-body h6 {
+  font-size: 1em;
+}
 .markdown-body hr {
   height: 1px;
   border: 0;
   background-color: #0f1517;
+  border-style: inset;
+  border-width: 1px;
+}
+.markdown-body p {
+  margin-left: 0;
+  margin-right: 0;
+}
+.markdown-body pre {
+  padding: 0;
+  border: 0;
+}
+.markdown-body blockquote {
+  display: block;
+  padding-left: 0.8em;
+  border-left: 0.2em solid #c7bf7f;
+}
+.markdown-body blockquote > :first-child {
+  margin-top: 0;
+}
+.markdown-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+.markdown-body li {
+  word-wrap: break-all;
 }
 .markdown-body ul, .markdown-body ol {
   list-style: none;
+}
+.markdown-body ul {
+  margin-left: 1.3em;
   padding: 0;
+}
+.markdown-body ol {
+  margin-left: 1.3em;
+  padding: 0;
+  counter-reset: ol_counter;
 }
 .markdown-body ul li {
   position: relative;
@@ -378,13 +279,7 @@ body {
   content: "•";
   color: #c7bf7f;
   position: absolute;
-  left: -1em;
-}
-.markdown-body ul ul {
-  margin-left: 1.25em;
-}
-.markdown-body ol {
-  counter-reset: ol_counter;
+  left: -1.1em;
 }
 .markdown-body ol li {
   position: relative;
@@ -398,11 +293,16 @@ body {
   position: absolute;
   left: -1.5em;
 }
-.markdown-body ol ol {
-  margin-left: 1.3em;
+.markdown-body li + li {
+  margin-top: 0.25em;
+}
+.markdown-body ul ul, .markdown-body ol ul, .markdown-body ul ol, .markdown-body ol ol, .markdown-body li ul, .markdown-body li ol {
+  margin-top: 0.25em;
+  margin-left: 2em;
 }
 .markdown-body .task-list-item {
-  text-indent: -1.75em;
+  list-style-type: none;
+  text-indent: -1.5em;
 }
 .markdown-body .task-list-item:before {
   content: "";
@@ -412,6 +312,10 @@ body {
 .markdown-body .task-list-item > input[type=checkbox] {
   text-indent: -1.7em;
 }
+.markdown-body img {
+  max-width: 100%;
+  height: auto;
+}
 .markdown-body u {
   text-decoration: none;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #c7bf7f 50%);
@@ -419,16 +323,27 @@ body {
   background-size: 2px 2px;
   background-position: 0 1em;
 }
-.markdown-body a:hover,
-.markdown-body a:focus,
-.markdown-body a:active {
+.markdown-body a {
+  color: #d65c5c;
+  text-decoration: none;
+}
+.markdown-body a:hover, .markdown-body a:focus, .markdown-body a:active {
   text-decoration: underline;
 }
-.markdown-body blockquote {
-  display: block;
-  margin-left: -1em;
-  padding-left: 0.8em;
-  border-left: 0.2em solid #c7bf7f;
+.markdown-body a img {
+  border: none;
+}
+.markdown-body b, .markdown-body strong {
+  font-weight: bold;
+}
+.markdown-body i, .markdown-body cite, .markdown-body em, .markdown-body var, .markdown-body address, .markdown-body dfn {
+  font-style: italic;
+}
+.markdown-body del, .markdown-body s {
+  color: #bfbfbf;
+}
+.markdown-body pre, .markdown-body xmp, .markdown-body plaintext, .markdown-body listing, .markdown-body code, .markdown-body kbd, .markdown-body tt, .markdown-body samp {
+  font-family: Menlo-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 .markdown-body code {
   display: inline;
@@ -437,10 +352,6 @@ body {
   font-size: 0.9em;
   color: #a8b0b5;
   background-color: #12181b;
-}
-.markdown-body pre {
-  padding: 0;
-  border: 0;
 }
 .markdown-body pre > code {
   display: block;
@@ -459,11 +370,15 @@ body {
   text-align: center;
 }
 .markdown-body table {
+  color: #a8b0b5;
+  border-collapse: collapse;
+  background-color: #12181b;
+  border-spacing: 2px;
+  font-size: 1em;
   border: 1px;
   border-spacing: 0;
 }
-.markdown-body table th,
-.markdown-body table td {
+.markdown-body th, .markdown-body td {
   padding: 0.7em 1em;
   font-size: 0.9em;
   border: 1px solid #0f1517;

@@ -47,15 +47,17 @@ $li-mg-t: .25em;
 /* color */
 
 $primary-color: #353535; // Accent Text Color
-$body-bg-color: white; // Background Text Color
 $font-color: #222222; // Base Text Color
 $del-font-color: #525252; // Light Text Color
 $head-color: #262626; // Title Text Color
 $link-color: #2478c5; // Link Text Color
 $code-font-color: #424242; // Code Font Color
+$table-font-color: $code-font-color;
 
+$body-bg-color: white; // Background Text Color
 $mark-bg-color: #fcffc0; // Highlighter Background Color
 $code-bg-color: white; // Code Background Color
+$table-bg-color: $code-bg-color;
 
 $border-color: #bfbfbf; // Code Stroke Color, Separator Text Color
 

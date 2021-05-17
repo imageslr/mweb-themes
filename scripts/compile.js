@@ -24,6 +24,7 @@ let compileOne = filePath => {
     });
   } catch (err) {
       console.log("sass 编译失败：", err);
+      process.exit(1);
   }
 }
 

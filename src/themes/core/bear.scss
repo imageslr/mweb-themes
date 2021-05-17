@@ -33,7 +33,7 @@ body {
 
 // spacing
 
-p, pre, ul, ol, dl, form, details, dl, blockquote, table {
+p, pre, ul, ol, dl, form, details, dl, blockquote, table, xmp, plaintext, listing, figure {
   margin: $block-mg-v 0 $block-mg-v * 0.6;
 }
 
@@ -102,7 +102,7 @@ pre {
 
 blockquote {
   display: block;
-  margin-left: -1em;
+  // margin-left: -1em;
   padding-left: 0.8em;
   border-left: 0.2em solid $primary-color;
   
@@ -115,64 +115,71 @@ blockquote {
   }
 }
 
+
+// list
+
 li {
   word-wrap: break-all;
 }
+
+ul, ol {
+  list-style: none;
+}
+
+ul {
+  margin-left: 1.3em;
+  padding: 0;
+}
+
+ol {
+  margin-left: 1.3em;
+  padding: 0;
+  counter-reset: ol_counter;
+}
+
+// list marker
+
+ul li {
+  position: relative;
+
+  &:before {
+    content: "•";
+    color: $primary-color;
+    position: absolute;
+    left: -1.1em; // 这个数值刚好令 marker 与上一行第一个字对齐
+  }
+}
+
+ol li {
+  position: relative;
+
+  &:before {
+    content: counter(ol_counter) ".";
+    counter-increment: ol_counter;
+    color: $primary-color;
+    text-align: right;
+    min-width: 1em;
+    position: absolute;
+    left: -1.5em; // 这个数值刚好令 marker 与上一行第一个字对齐
+  }
+}
+
+// list spacing
 
 li+li {
   margin-top: $li-mg-t;
 }
 
-ul, ol {
-  list-style: none;
-  padding: 0;
+ul ul, ol ul, ul ol, ol ol, li ul, li ol {
+  margin-top: $li-mg-t;
+  margin-left: 2em;
 }
 
-ul li {
-  position: relative;
-}
-
-ul li:before {
-  content: "•";
-  color: $primary-color;
-  position: absolute;
-  left: -1em;
-}
-
-ul ul {
-  margin-left: 1.25em;
-}
-
-ol {
-  counter-reset: ol_counter;
-}
-
-ol li {
-  position: relative;
-}
-
-ol li:before {
-  content: counter(ol_counter) ".";
-  counter-increment: ol_counter;
-  color: $primary-color;
-  text-align: right;
-  min-width: 1em;
-  position: absolute;
-  left: -1.5em;
-}
-
-ol ol {
-  margin-left: 1.3em;
-}
-
-ul ul, ol ul, ul ol, ol ol {
-  margin-top: 0;
-  margin-bottom: 0;
-}
+// task list
 
 .task-list-item {
   list-style-type: none;
-  text-indent: -1.75em;
+  text-indent: -1.5em; // 这个数值刚好令 checkbox 与上一行第一个字对齐
   
   &:before {
     content: "";
@@ -227,7 +234,7 @@ del, s {
   color: $del-font-color;
 }
 
-code, kbd, tt, samp {
+pre, xmp, plaintext, listing, code, kbd, tt, samp {
   font-family: $code-font-family;
 }
 
@@ -253,15 +260,6 @@ mark {
   display: inline;
   padding: 0.2em 0.5em;
   background-color: $mark-bg-color;
-}
-
-pre, xmp, plaintext, listing {
-  font-family: $code-font-family;
-  margin: $pre-mg-v $pre-mg-h;
-}
-
-figure {
-  margin: $figure-mg-v $figure-mg-h;
 }
 
 figcaption {
