@@ -6,6 +6,10 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
  * @author Lea Verou
  */
 
+// TODO: 先不给 prism 样式添加 .markdown-body 前缀，否则后面对 pre、code 的更改优先级会降低
+// TODO: 如何解决？加 important 或者全部补充 [class*="language-"]？
+// .markdown-body {
+
 code[class*="language-"],
 pre[class*="language-"] {
   color: $prism-color;
@@ -149,3 +153,5 @@ pre[class*="language-"] {
 .token.entity {
   cursor: help;
 }
+
+// }

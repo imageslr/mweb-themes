@@ -57,7 +57,7 @@ const build = async () => {
     // console.log(result.css)
     let css = res.css.toString();
 
-    // check external url
+    // 所有选择器全部包一层 .markdown-body
     const out = await postcss()
       .use(prefixer({
         prefix: '.markdown-body',
@@ -67,9 +67,11 @@ const build = async () => {
           }
           if (selector === 'body' || selector === 'html') {
             return prefix;
-          } else {
-            return prefixedSelector;
           }
+          if (selector.includes(`[class*=language-]`)) {
+            return selector // TODO: prism 的样式先暂时不包裹，防止优先级变高
+          }
+          return prefixedSelector;
         }
       }))
       .process(css, { from: undefined, hideNothingWarning: true })
@@ -77,16 +79,18 @@ const build = async () => {
       if (
         node.type === "rule" &&
         node.selectors.some((s) => !s.startsWith(".markdown-body")) &&
+        node.selectors.every((s) => !s.includes(`[class*=language-]`)) && // TODO: prism
         node.parent.name !== "keyframes" // allow keyframes
       ) {
-        console.log(node.selectors);
+        console.warning(`This selector should add .markdown-body prefix: ${node.selectors}`);
         // throw new Error('Style must be wrapped with .markdown-body');
       }
     });
 
     css = out.css
 
-    const { css: minCss } = await cssnano.process(css);
+    let minCss = css
+    // const { css: minCss } = await cssnano.process(css);
 
     result[key] = { style: minCss };
 
