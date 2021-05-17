@@ -2,54 +2,119 @@
 
 30+ 款 Markdown 预览主题，适用于 MWeb、Typora 等笔记软件，以及 Juejin、Jekyll、Hexo 等博客平台。
 
+[在线预览所有主题](https://imageslr.github.io/mweb-themes)
+
 ## 目录
 - [主题列表](#主题列表)
+  - [浅色主题](#浅色主题)
+  - [深色主题](#深色主题)
+  - [部分主题预览](#部分主题预览)
+    - [Typo](#typo)
+    - [Vue](#vue)
+    - [Indigo](#indigo)
+    - [Bear 同款主题](#bear-同款主题)
+  - [其他开源主题](#其他开源主题)
 - [使用主题](#使用主题)
 - [开发主题](#开发主题)
+  - [安装与运行](#安装与运行)
+  - [目录结构](#目录结构)
+  - [新增一个 MWeb 主题](#新增一个-mweb-主题)
+  - [新增一个 Prism 主题](#新增一个-prism-主题)
+- [打包为 CSS 文件](#打包为-css-文件)
 - [Q & A](#q--a)
 
 ## 主题列表
-### Typo
+
+### 浅色主题
+
+```
+ayu
+bear-default
+contrast
+d-boring
+default
+duotone-heat
+duotone-light
+gandalf
+indigo
+jzman
+olive-dunk
+red-graphite
+smartblue
+solarized-light
+typo
+v-green
+vue
+```
+
+### 深色主题
+
+```
+ayu-mirage
+charcoal
+cobalt
+dark-graphite
+dieci
+dracula
+gotham
+lighthouse
+nord
+panic
+solarized-dark
+toothpaste
+```
+
+### 部分主题预览
+#### Typo
 基于 [Typo.css](https://github.com/sofish/Typo.css) 修改：
 ![](media/15732860467431.jpg)
 ![](media/15732860638359.jpg)
 
-### Vue
+#### Vue
 基于 [typora-vue-theme](https://github.com/blinkfox/typora-vue-theme) 修改：
 ![](media/15732858925836.jpg)
 ![](media/15732859445415.jpg)
 
-### Indigo
+#### Indigo
 基于 [MDTU](https://markdown.devtool.tech/app) 修改：
 ![](media/05-13-12-47-13.png)
 ![](media/05-13-12-47-40.png)
 ![](media/05-13-12-47-50.png)
 
-### SmartBlue
+<!-- ### SmartBlue
 
 基于 [smartblue](https://github.com/cumt-robin/juejin-markdown-theme-smart-blue) 修改：
 ![](media/05-13-12-46-21.png)
-![](media/05-13-12-46-46.png)
+![](media/05-13-12-46-46.png) -->
 
-### Jzman
+<!-- ### Jzman
 基于 [jzman](https://github.com/jzmanu/juejin-markdown-theme-jzman) 修改：
 ![](media/05-13-12-45-24.png)
-![](media/05-13-12-45-54.png)
+![](media/05-13-12-45-54.png) -->
 
-### V-Green
+<!-- ### V-Green
 基于 [v-green](https://github.com/DawnLck/juejin-markdown-theme-v-green) 修改：
 ![](media/05-13-18-47-44.png)
-![](media/05-13-18-48-12.png)
+![](media/05-13-18-48-12.png) -->
 
-### Bear 同款主题
-基于 [Bear](https://bear.app/cn/faq/Themes/About%20free%20and%20Pro%20themes%20in%20Bear/) 的主题修改，**共 22 款**。以下是默认主题 Red Graphite：
+#### Bear 同款主题
+基于 [Bear](https://bear.app/cn/faq/Themes/About%20free%20and%20Pro%20themes%20in%20Bear/) 的主题修改，**共 22 款**。
+<!-- 以下是默认主题 Red Graphite：
 ![](media/05-14-21-33-40.png)
-![](media/05-14-21-33-51.png)
+![](media/05-14-21-33-51.png) -->
 
 > 默认配置：字号 16px、页宽 46rem。如果希望和 Bear 完全一致（字号 14px、页宽 40em），请自行更改 [bear-default.scss](src/themes/variables/bear-default.scss) 中的相关变量并重新编译。
 
-### 其他
+##### Ayu Mirage
+![](media/05-17-17-16-48.png)
+##### Dark Graphite
+
+![](media/05-17-17-15-25.png)
+![](media/05-17-17-15-43.png)
+
+### 其他开源主题
 * [JonoloLuo/MWeb-Theme-jonolo](https://github.com/JonoloLuo/MWeb-Theme-jonolo)：马克飞象风格
+
 ## 使用主题
 1. 下载 [dist/themes](dist/themes) 文件夹下名为 `mweb-xxx.css` 的主题文件
 2. 打开 MWeb 偏好设置 - 预览样式 - 编辑 - 打开自定义样式所在的文件夹...

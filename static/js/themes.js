@@ -1,14 +1,13 @@
 const themes = {
-  default: { file: "mweb-default.scss" }, // raw html
-  "bear-default": { file: "mweb-bear-default.scss" }, // black primary color
   "ayu-mirage": { file: "mweb-ayu-mirage.scss" },
   ayu: { file: "mweb-ayu.scss" },
+  "bear-default": { file: "mweb-bear-default.scss" }, // black primary color
   charcoal: { file: "mweb-charcoal.scss" }, // Night Text Theme
   cobalt: { file: "mweb-cobalt.scss" },
   contrast: { file: "mweb-contrast.scss" },
   "d-boring": { file: "mweb-d-boring.scss" },
   "dark-graphite": { file: "mweb-dark-graphite.scss" },
-  default: { file: "mweb-default.scss" },
+  default: { file: "mweb-default.scss" }, // raw html
   dieci: { file: "mweb-dieci.scss" },
   dracula: { file: "mweb-dracula.scss" },
   "duotone-heat": { file: "mweb-duotone-heat.scss" },
