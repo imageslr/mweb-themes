@@ -33,34 +33,9 @@ const buildScss= async ({ distPath, minify }) => {
     // console.log(result.css)
     let css = res.css.toString();
 
-    // 所有选择器全部包一层 .markdown-body
-    const out = await postcss()
-      .use(prefixer({
-        prefix: '.markdown-body',
-        transform: function (prefix, selector, prefixedSelector) {
-          if (selector.startsWith(prefix)) {
-            return selector
-          }
-          if (selector === 'body' || selector === 'html') {
-            return prefix;
-          }
-          return prefixedSelector;
-        }
-      }))
-      .process(css, { from: undefined, hideNothingWarning: true })
-    out.root.walk((node) => {
-      if (
-        node.type === "rule" &&
-        node.selectors.some((s) => !s.startsWith(".markdown-body")) &&
-        node.parent.name !== "keyframes" // allow keyframes
-      ) {
-        console.warning(`This selector should add .markdown-body prefix: ${node.selectors}`);
-        // throw new Error('Style must be wrapped with .markdown-body');
-      }
-    });
+    css = await wrapSelector(css)
 
-    css = out.css
-    let minCss =css
+    let minCss = css
     if (minify === true) {
        minCss  = (await cssnano.process(css)).css
     }
@@ -105,6 +80,35 @@ const buildScss= async ({ distPath, minify }) => {
   );
 };
 
+// 所有选择器全部包一层 .markdown-body
+const wrapSelector = async css => {
+    const out = await postcss()
+    .use(prefixer({
+      prefix: '.markdown-body',
+      transform: function (prefix, selector, prefixedSelector) {
+        if (selector.startsWith(prefix)) {
+          return selector
+        }
+        if (selector === 'body' || selector === 'html') {
+          return prefix;
+        }
+        return prefixedSelector;
+      }
+    }))
+    .process(css, { from: undefined, hideNothingWarning: true })
+    out.root.walk((node) => {
+      if (
+        node.type === "rule" &&
+        node.selectors.some((s) => !s.startsWith(".markdown-body")) &&
+        node.parent.name !== "keyframes" // allow keyframes
+      ) {
+        console.warning(`This selector should add .markdown-body prefix: ${node.selectors}`);
+        // throw new Error('Style must be wrapped with .markdown-body');
+      }
+    });
+    return out.css
+}
+
 module.exports = {
-  fromRoot, filePath, buildScss
+  fromRoot, filePath, buildScss, wrapSelector
 }

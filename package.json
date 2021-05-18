@@ -31,6 +31,7 @@
     "koa-static": "^5.0.0",
     "koa-views": "^6.3.1",
     "lodash": "^4.17.21",
+    "minimist": "^1.2.5",
     "node-fetch": "^2.6.1",
     "plist": "^3.0.2",
     "postcss": "^8.2.15",
