@@ -123,6 +123,8 @@ toothpaste
 4. 点击 MWeb 偏好设置 - 预览样式 - 刷新，可以看到所有主题列表
 5. 选择喜欢的主题
 
+> 在掘金中使用主题，请参考 [juejin-markdown-themes](https://github.com/xitu/juejin-markdown-themes)。
+
 ## 开发主题
 
 本项目提供了一个标准样式模板，可以通过设置变量（颜色、字号等）的方式快速开发一个新的**预览主题**。
@@ -139,8 +141,9 @@ toothpaste
 ### 目录结构
 
 ```
+example.md                    // 预览模板
 src
-├── views                     // 预览模板
+├── views                     // HTML
 └── themes                    // 主题目录
     ├── mweb-default.scss     // 默认主题
     ├── mweb-xxx.scss         // 另一个主题
@@ -198,14 +201,21 @@ npm run watch <theme_file_path>
 * [最佳 Prism.js 代码高亮主题集合](https://ourcodeworld.com/articles/read/477/collection-of-the-best-open-source-prism-js-code-highlight-themes)
 
 ### 打包为 CSS 文件
-
-根目录下执行：
-
 ```
-npm run compile
+npm run compile # 打包所有文件
 ```
 
-生成的 CSS 文件位于 [`dist/themes`](dist/themes) 文件夹。
+参数：
+- `--file`：编译特定的主题文件，默认为空，即打包所有文件
+- `--themeDir`：主题文件所在目录，默认为 `src/themes`
+- `--distDir`：生成的 CSS 文件所在目录，默认为 `dist/themes`
+- `--platform`：在哪里使用主题，默认为 `mweb`，支持 `juejin`、`typora`
+
+注意：传递参数时，必须添加 `--` 分隔符。例如：
+
+```
+npm run compile -- --platform juejin # -- 是必须的
+```
 
 ## Q & A
 
