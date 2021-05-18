@@ -16,11 +16,11 @@
   - [其他开源主题](#其他开源主题)
 - [使用主题](#使用主题)
 - [开发主题](#开发主题)
-  - [安装与运行](#安装与运行)
   - [目录结构](#目录结构)
+  - [安装与运行](#安装与运行)
   - [新增一个 MWeb 主题](#新增一个-mweb-主题)
   - [新增一个 Prism 主题](#新增一个-prism-主题)
-- [打包为 CSS 文件](#打包为-css-文件)
+  - [打包为 CSS 文件](#打包为-css-文件)
 - [Q & A](#q--a)
 
 ## 主题列表
@@ -111,7 +111,7 @@ toothpaste
 ##### Dark Graphite
 
 ![](media/05-17-17-15-25.png)
-![](media/05-17-17-15-43.png)
+<!-- ![](media/05-17-17-15-43.png) -->
 
 ### 其他开源主题
 * [JonoloLuo/MWeb-Theme-jonolo](https://github.com/JonoloLuo/MWeb-Theme-jonolo)：马克飞象风格
@@ -135,6 +135,20 @@ toothpaste
 
 欢迎贡献新的主题 🎉 ！
 
+
+### 目录结构
+
+```
+src
+├── views                     // 预览模板
+└── themes                    // 主题目录
+    ├── mweb-default.scss     // 默认主题
+    ├── mweb-xxx.scss         // 另一个主题
+    ├── prism-themes          // prism 代码高亮主题
+    ├── core                  // 基础样式文件
+    └── variables             // 各个主题的变量配置
+```
+
 ### 安装与运行
 
 环境：node v12 及以上。
@@ -157,19 +171,6 @@ npm run watch <theme_file_path>
 
 运行后，终端会输出一个地址，默认 `http://localhost:3000`，在浏览器中打开，即可预览主题。之后更改主题文件，浏览器会实时刷新。
 
-### 目录结构
-
-```
-src
-├── views                     // 预览模板
-└── themes                    // 主题目录
-    ├── mweb-default.scss     // 默认主题
-    ├── mweb-xxx.scss         // 另一个主题
-    ├── prism-themes          // prism 代码高亮主题
-    ├── core                  // 基础样式文件
-    └── variables             // 各个主题的变量配置
-```
-
 ### 新增一个 MWeb 主题
 
 1. 在 `src/themes/variables` 目录下创建文件 `xxx.scss`，`xxx` 是主题名称
@@ -183,6 +184,7 @@ src
 
 3. 在 `xxx.scss` 中按需更改[默认主题变量](src/themes/variables/default.scss)的值
 4. 如果有特殊的样式需求，可以写在 `mweb-xxx.scss` 中
+5. 在 `src/themes/config.js` 中增加主题配置项
 
 ### 新增一个 Prism 主题
 
@@ -195,7 +197,7 @@ src
 * [Github - PrismJS/prism-themes](https://github.com/PrismJS/prism-themes)
 * [最佳 Prism.js 代码高亮主题集合](https://ourcodeworld.com/articles/read/477/collection-of-the-best-open-source-prism-js-code-highlight-themes)
 
-## 打包为 CSS 文件
+### 打包为 CSS 文件
 
 根目录下执行：
 
