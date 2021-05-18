@@ -1,6 +1,8 @@
 /*
  * Default theme
  * 这个文件只应该包含变量
+ * 取值参考 chrome user agent stylesheet：
+ * https://chromium.googlesource.com/chromium/blink/+/refs/heads/main/Source/core/css/html.css
  */
  
 /* color */
@@ -52,30 +54,24 @@ $md-body-mg-v: 0px;
 $md-body-pd-h: 3.2rem;
 $md-body-pd-v: 1.6rem;
 
-$h1-mg-v: 0.67em;
-$h1-mg-t: $h1-mg-v;
-$h1-mg-b: $h1-mg-v;
-$h2-mg-v: 0.83em;
-$h2-mg-t: $h2-mg-v;
-$h2-mg-b: $h2-mg-v;
-$h3-mg-v: 1em;
-$h3-mg-t: $h3-mg-v;
-$h3-mg-b: $h3-mg-v;
-$h4-mg-v: 1.33em;
-$h4-mg-t: $h4-mg-v;
-$h4-mg-b: $h4-mg-v;
-$h5-mg-v: 1.67em;
-$h5-mg-t: $h5-mg-v;
-$h5-mg-b: $h5-mg-v;
-$h6-mg-v: 2.33em;
-$h6-mg-t: $h6-mg-v;
-$h6-mg-b: $h6-mg-v;
-$block-mg-t: 1em;
-$block-mg-b: 1em;
-$th-pd-v: 1px;
-$th-pd-h: 1px;
-$td-pd-v: 1px;
-$td-pd-h: 1px;
+$block-mg-t: 0.75em;
+$block-mg-b: 0.75em;
+$h1-mg-t: 2 * $block-mg-t;
+$h1-mg-b: $block-mg-b;
+$h2-mg-t: 2 * $block-mg-t;
+$h2-mg-b: $block-mg-b;
+$h3-mg-t: 2 * $block-mg-t;
+$h3-mg-b: $block-mg-b;
+$h4-mg-t: 2 * $block-mg-t;
+$h4-mg-b: $block-mg-b;
+$h5-mg-t: 2 * $block-mg-t;
+$h5-mg-b: $block-mg-b;
+$h6-mg-t: 2 * $block-mg-t;
+$h6-mg-b: $block-mg-b;
+$th-pd-v: 2px;
+$th-pd-h: 4px;
+$td-pd-v: 2px;
+$td-pd-h: 4px;
 $li-mg-t: .25em;
 
 /* elememts */

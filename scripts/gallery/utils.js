@@ -5,7 +5,6 @@ const postcss = require("postcss");
 const cssnano = require("cssnano");
 const { rollup } = require("rollup");
 const virtual = require("@rollup/plugin-virtual");
-const themes = require("../../static/js/themes");
 const pkg = require('../../package.json');
 const _ = require("lodash")
 const prefixer = require('postcss-prefix-selector')
@@ -13,6 +12,8 @@ const prefixer = require('postcss-prefix-selector')
 const toRootPrefix = "../../";
 const fromRoot = (pathFromRoot) => toRootPrefix + pathFromRoot;
 const filePath = (file) => path.join(__dirname, `${file}`);
+
+const themes = require(fromRoot("src/themes/config"));
 
 const buildScss= async ({ distPath, minify }) => {
   fs.ensureDirSync(filePath(distPath + "/js"))
