@@ -3,46 +3,49 @@
 const fs = require("fs-extra");
 const sass = require("sass");
 const path = require("path");
-const { wrapSelector } = require("./gallery/utils");
+const { setContainerSelector, wrapSelector } = require("./gallery/utils");
 const minimist = require("minimist");
 
 const args = minimist(process.argv.slice(2), {
   string: ["file", "platform", "themeDir", "distDir"],
   default: {
-    platform: "mweb",
+    platform: "mweb", // juejin, typora
     themeDir: "src/themes",
     distDir: "dist/themes",
   },
 });
 
 const platformConfig = {
-  default: {
-    namer: (filename) => `${path.parse(filename).name}.css`,
-    wrap: false
-  },
   mweb: {
     namer: (filename) => `${path.parse(filename).name}.css`,
-    wrap: false
+    postcss: (css) => setContainerSelector({ css, selector: ".markdown-body" }),
   },
   juejin: {
-    namer: (filename) => 
-    `${path.parse(filename).name.replace(/^(mweb-)/, "")}.css`, // 替换 mweb- 前缀
-    wrap: true
+    namer: (filename) =>
+      `${path.parse(filename).name.replace(/^(mweb-)/, "")}.css`, // 替换 mweb- 前缀
+    postcss: (css) => setContainerSelector({ css, selector: ".markdown-body" }),
   },
   typora: {
-    namer: (filename) => 
-    `${path.parse(filename).name.replace(/^(mweb-)/, "")}.css`,
-    wrap: true
-  }
-}
+    namer: (filename) =>
+      `${path.parse(filename).name.replace(/^(mweb-)/, "")}.css`,
+    postcss: async (css) =>
+      wrapSelector({
+        css: await setContainerSelector({ css, selector: "#write" }),
+        prefix: "#write",
+      }),
+  },
+};
 
 let compile = async ({ filePath }) => {
   try {
     console.log(`编译中：${filePath}`);
     fs.ensureDirSync(args.distDir);
     let css = sass.renderSync({ file: filePath, sourceMap: false }).css;
-    if (platformConfig[args.platform] && platformConfig[args.platform].wrap) {
-      css = await wrapSelector(css);
+    if (
+      platformConfig[args.platform] &&
+      platformConfig[args.platform].postcss
+    ) {
+      css = await platformConfig[args.platform].postcss(css);
     }
     return css;
   } catch (err) {
@@ -52,7 +55,7 @@ let compile = async ({ filePath }) => {
 };
 
 const writeFile = ({ filePath, css }) => {
-  const { namer } = platformConfig[args.platform] || platformConfig.default;
+  const { namer } = platformConfig[args.platform];
   const filename = path.basename(filePath);
   const outFile = `${args.distDir}/${namer(filename)}`;
   fs.writeFile(outFile, css, (error) => {
@@ -61,7 +64,7 @@ const writeFile = ({ filePath, css }) => {
   });
 };
 
-fs.removeSync(args.distDir)
+fs.removeSync(args.distDir);
 
 const files = args.file
   ? [args.file]

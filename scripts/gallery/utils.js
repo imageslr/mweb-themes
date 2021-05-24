@@ -5,9 +5,9 @@ const postcss = require("postcss");
 const cssnano = require("cssnano");
 const { rollup } = require("rollup");
 const virtual = require("@rollup/plugin-virtual");
-const pkg = require('../../package.json');
-const _ = require("lodash")
-const prefixer = require('postcss-prefix-selector')
+const pkg = require("../../package.json");
+const _ = require("lodash");
+const prefixer = require("postcss-prefix-selector");
 
 const toRootPrefix = "../../";
 const fromRoot = (pathFromRoot) => toRootPrefix + pathFromRoot;
@@ -15,13 +15,13 @@ const filePath = (file) => path.join(__dirname, `${file}`);
 
 const themes = require(fromRoot("src/themes/config"));
 
-const buildScss= async ({ distPath, minify }) => {
-  fs.ensureDirSync(filePath(distPath + "/js"))
+const buildScss = async ({ distPath, minify }) => {
+  fs.ensureDirSync(filePath(distPath + "/js"));
 
   const result = {};
   let lazyCode = "module.exports={";
 
-  console.log("compiling...")
+  console.log("compiling...");
 
   for (let [key, value] of Object.entries(themes)) {
     // console.log(key, "start");
@@ -33,11 +33,14 @@ const buildScss= async ({ distPath, minify }) => {
     // console.log(result.css)
     let css = res.css.toString();
 
-    css = await wrapSelector(css)
+    css = await wrapSelector({
+      css: await setContainerSelector({ css, selector: ".markdown-body" }),
+      prefix: ".markdown-body",
+    })
 
-    let minCss = css
+    let minCss = css;
     if (minify === true) {
-       minCss  = (await cssnano.process(css)).css
+      minCss = (await cssnano.process(css)).css;
     }
 
     result[key] = { style: minCss, mode: value.mode };
@@ -51,7 +54,7 @@ const buildScss= async ({ distPath, minify }) => {
     // console.log(key, "end");
   }
 
-  console.log("complie success")
+  console.log("complie success");
 
   lazyCode += "}";
 
@@ -80,35 +83,58 @@ const buildScss= async ({ distPath, minify }) => {
   );
 };
 
-// 所有选择器全部包一层 .markdown-body
-const wrapSelector = async css => {
-    const out = await postcss()
-    .use(prefixer({
-      prefix: '.markdown-body',
-      transform: function (prefix, selector, prefixedSelector) {
-        if (selector.startsWith(prefix)) {
-          return selector
-        }
-        if (selector === 'body' || selector === 'html') {
-          return prefix;
-        }
-        return prefixedSelector;
-      }
-    }))
-    .process(css, { from: undefined, hideNothingWarning: true })
-    out.root.walk((node) => {
-      if (
-        node.type === "rule" &&
-        node.selectors.some((s) => !s.startsWith(".markdown-body")) &&
-        node.parent.name !== "keyframes" // allow keyframes
-      ) {
-        console.warning(`This selector should add .markdown-body prefix: ${node.selectors}`);
-        // throw new Error('Style must be wrapped with .markdown-body');
-      }
-    });
-    return out.css
+// 选择器中的 CONTAINER_SELECTOR 换成 selector 
+const setContainerSelector = async ({ css, selector }) => {
+  const out = await postcss()
+    .use(
+      prefixer({
+        prefix: selector,
+        transform: function (prefix, selector, prefixedSelector) {
+          return selector.replace("CONTAINER_SELECTOR", prefix)
+        },
+      })
+    )
+    .process(css, { from: undefined, hideNothingWarning: true });
+  return out.css
 }
 
+// 所有选择器全部包一层 prefix; html, body 换成 prefix; 
+const wrapSelector = async ({ css, prefix }) => {
+  const out = await postcss()
+    .use(
+      prefixer({
+        prefix,
+        transform: function (prefix, selector, prefixedSelector) {
+          if (selector.indexOf(prefix) != -1) {
+            return selector;
+          }
+          if (selector === "body" || selector === "html") {
+            return prefix;
+          }
+          return prefixedSelector;
+        },
+      })
+    )
+    .process(css, { from: undefined, hideNothingWarning: true });
+  out.root.walk((node) => {
+    if (
+      node.type === "rule" &&
+      node.selectors.some((s) => s.indexOf(prefix) == -1) &&
+      node.parent.name !== "keyframes" // allow keyframes
+    ) {
+      console.warn(
+        `This selector should add '${prefix}' selector: ${node.selectors}`
+      );
+      // throw new Error('Style must be wrapped with .markdown-body');
+    }
+  });
+  return out.css;
+};
+
 module.exports = {
-  fromRoot, filePath, buildScss, wrapSelector
-}
+  fromRoot,
+  filePath,
+  buildScss,
+  setContainerSelector,
+  wrapSelector
+};

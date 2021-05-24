@@ -7,7 +7,7 @@
  */
 
 // html、body 标签适用于 MWeb（html 中只包含 markdown 内容）
-// 在用于 jujin 等网站时，需要转为 .markdown-body
+// 在用于 jujin 等网站时，需要转为 CONTAINER_SELECTOR
 html {
   font-family: $font-family;
   font-size: $font-size;
@@ -18,7 +18,7 @@ body {
   background-color: $body-bg-color;
 }
 
-.markdown-body { // 外面加一层 .markdown-body，方便适配到其他平台如 juejin、typora
+CONTAINER_SELECTOR { // 外面加一层，方便适配到其他平台如 juejin、typora
   line-height: $line-height;
   -webkit-text-size-adjust: 100%;
   max-width: $md-body-max-width;
