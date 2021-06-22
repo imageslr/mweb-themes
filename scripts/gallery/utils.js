@@ -83,14 +83,14 @@ const buildScss = async ({ distPath, minify }) => {
   );
 };
 
-// 选择器中的 CONTAINER_SELECTOR 换成 selector 
+// 选择器中默认的 container 为 .markdown-body，需要替换为平台相关的 container selector 
 const setContainerSelector = async ({ css, selector }) => {
   const out = await postcss()
     .use(
       prefixer({
         prefix: selector,
         transform: function (prefix, selector, prefixedSelector) {
-          return selector.replace("CONTAINER_SELECTOR", prefix)
+          return selector.replace(".markdown-body", prefix)
         },
       })
     )
