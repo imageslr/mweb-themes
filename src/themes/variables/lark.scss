@@ -1,0 +1,52 @@
+@import "default.scss";
+
+/* color */
+$primary-color: #3370ff;
+$accent-color: rgb(36, 91, 219); // 粗体的颜色
+$border-color: #dee0e3;
+$code-bg-color: #f5f6f7;
+
+/* prism & pre */
+$prism-font-size: 14px;
+$prism-line-height: 1.6em;
+$prism-pd: 10px;
+$prism-color-bg: #f5f6f7;
+
+/* font */
+$font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Arial,Segoe UI,PingFang SC,Microsoft Yahei,Hiragino Sans GB,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+$code-font-family: monospace, Menlo-Regular, Menlo, Monaco, Consolas, 'Courier New';
+$font-color: #1f2329;
+$font-size: 16px;
+$line-height: 1.68;
+
+/* header */
+$h1-font-size: 26px;
+$h2-font-size: 22px;
+$h3-font-size: 20px;
+$h4-font-size: 18px;
+$h5-font-size: 16px;
+$h6-font-size: 16px;
+
+/* spacing */
+$block-mg-t: 8px;
+$block-mg-b: 8px;
+$li-mg-t: 4px;
+$h1-mg-t: $h1-font-size;
+$h2-mg-t: $h2-font-size;
+$h3-mg-t: $h3-font-size;
+$h4-mg-t: $h4-font-size;
+$h5-mg-t: $h5-font-size;
+$h6-mg-t: $h6-font-size;
+$h1-mg-b: 10px;
+$h2-mg-b: 8px;
+$h3-mg-b: 8px;
+$h4-mg-b: 8px;
+$h5-mg-b: 8px;
+$h6-mg-b: 8px;
+
+/* table */
+$th-font-weight: 500;
+$th-pd-h: 8px;
+$th-pd-v: 8px;
+$td-pd-h: 8px;
+$td-pd-v: 8px;

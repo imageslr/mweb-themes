@@ -12,7 +12,7 @@ $link-color: -webkit-link;
 $del-font-color: inherit;
 $table-font-color: $font-color; // TODO: 把 default 主题的这类变量都移动到单独的文件
 // border
-$table-border-color: gray;
+$border-color: gray;
 // bg
 $mark-bg-color: yellow;
 $body-bg-color: white;
@@ -42,7 +42,7 @@ $th-font-weight: bold;
 $td-font-weight: normal;
 
 $font-family: PingFang SC, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-$code-font-family: Menlo-Regular, Menlo, Monaco, Consolas, 'Courier New', monospace;
+$code-font-family: monospace, Menlo-Regular, Menlo, Monaco, Consolas, 'Courier New';
 
 $line-height: 1.6em;
 

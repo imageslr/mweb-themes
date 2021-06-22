@@ -1,0 +1,202 @@
+@import "prism-themes/default.scss";
+@import "variables/lark.scss";
+@import "core/base.scss";
+
+.markdown-body {
+
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.4;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0.37em;
+}
+
+blockquote {
+  display: block;
+  margin-left: 0;
+  padding-left: 14px;
+  border-left: 2px solid $primary-color;
+  color: rgba(31,35,41,.7);
+}
+
+code {
+  border-radius: 4px;
+  margin-left: 2px;
+  margin-right: 2px;
+  border: 1px solid $border-color;
+  background-color: $code-bg-color;
+  word-spacing: normal;
+  line-height: 1.6;
+  padding: 0 2px;
+}
+
+pre { // 这里要和 prism 的配置同步，所以使用 prism 的变量
+  border-radius: 0px;
+  display: block;
+  border: solid 1px $border-color;
+  background-color: $prism-color-bg;
+  padding: $prism-pd;
+  font-size: $prism-font-size;
+  overflow-x: auto;
+
+  code { // reset
+    border: none;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+a {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  hyphens: auto;
+  word-break: break-word;
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+hr {
+  margin: 13px 0 12px;
+}
+
+// list
+
+ul {
+  margin-left: 0;
+  padding: 0px;
+  list-style: none;
+
+  li:not([class*="task-list-item"]) {
+    word-wrap: break-all;
+    padding-left: 22px;
+  
+    &:before {
+      content: "\2022";
+      color: $primary-color;
+      display: inline-block;
+      margin-left: -20px;
+      margin-right: 20px;
+      width: 0px;
+      font-size: .8em;
+      transform: scale(1.25);
+      font-family: PingFangSC-Regular,PingFang SC;
+    }
+
+    li:not([class*="task-list-item"]) {
+      &::before {
+        content: "\25E6";
+        transform: scale(1);
+        font-weight: 700;
+      }
+
+      li:not([class*="task-list-item"]) {
+        &::before {
+          content: "\25AA";
+          transform: scale(1.25);
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}
+
+ol {
+  counter-reset: ol_counter;
+  margin-left: 0;
+  padding: 0px;
+  list-style: none;
+
+  li {
+    word-wrap: break-all;
+    padding-left: 22px;
+    position: relative;
+  
+    &:before {
+      content: counter(ol_counter) ".";
+      counter-increment: ol_counter;
+      color: $primary-color;
+      position: absolute;
+      margin-left: -22px;
+      margin-right: 4px;
+      padding-left: 2px;
+      padding-right: 2px;
+      text-align: left;
+      white-space: nowrap;
+      overflow: visible;
+      min-width: 18px;
+      border-radius: 2px;
+      transform: translateX(-2px);
+      font-family: Helvetica Neue,Consolas;
+    }
+  }
+}
+
+li+li, ul ul, ol ul, ul ol, ol ol, li ul, li ol {
+  margin-top: $li-mg-t;
+}
+
+// task list
+
+// TODO：MWeb 预览和 chrome 预览效果不一样，前者会显示 input。暂时用默认的。
+.task-list-item {
+  margin-left: 1.3em;
+  list-style-type: none;
+  text-indent: -1.5em; // 这个数值刚好令 checkbox 与上一行第一个字对齐
+  
+  &:before {
+    content: "";
+    display: static;
+    margin-right: 0px;
+  }
+
+  > input[type=checkbox] {
+    text-indent: -1.7em;
+  }
+}
+
+// 下面这个是飞书样式的 checkbox
+// .task-list-item {
+//   padding-left: 28px;
+//   margin-left: -6px;
+//   list-style-type: none;
+//   word-wrap: break-all;
+  
+//   input {
+//     margin: 0 !important;
+//     appearance: none;
+
+//     &:before {
+//       content: " ";
+//       display: inline-block;
+//       position: relative;
+//       line-height: normal;
+//       font-size: 16px;
+//       top: 2px;
+//       border-radius: 2px;
+//       border: 1px solid #2b2f36;
+//       background-position: 50%;
+//       white-space: normal;
+//       width: 14px;
+//       height: 14px;
+//       margin-left: -22px;
+//       margin-right: 6px;
+//     }
+
+//     &:checked:before {
+//       background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEwLjU4OSAzLjkwM2wuODA4LjgwOGEuMzUuMzUgMCAwIDEgMCAuNDk1TDYuMTggMTAuNDI1YS4zNS4zNSAwIDAgMS0uNDk1IDBMMi43MDMgNy40NDRhLjM1LjM1IDAgMCAxIDAtLjQ5NWwuODA4LS44MDhhLjM1LjM1IDAgMCAxIC40OTUgMGwxLjkyNSAxLjkyNCA0LjE2My00LjE2M2EuMzUuMzUgMCAwIDEgLjQ5NSAweiIgZmlsbD0iIzMzNzBGRiIvPjwvc3ZnPg==);
+//       background-size: contain;
+//     }
+//   }
+// }
+
+}

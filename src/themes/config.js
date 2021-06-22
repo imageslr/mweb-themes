@@ -17,6 +17,8 @@ const themes = {
   indigo: { file: "mweb-indigo.scss" },
   jzman: { file: "mweb-jzman.scss" },
   lighthouse: { file: "mweb-lighthouse.scss", mode: "dark" },
+  lark: { file: "mweb-lark.scss" },
+  "lark-bold-color": { file: "mweb-lark-bold-color.scss" },
   nord: { file: "mweb-nord.scss", mode: "dark" },
   "olive-dunk": { file: "mweb-olive-dunk.scss" },
   panic: { file: "mweb-panic.scss", mode: "dark" },
