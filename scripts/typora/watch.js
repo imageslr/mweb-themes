@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+/**
+ * npm run typora-watch src/themes/typora-xxx.scss
+ */
+
 const koa = require('koa');
 const koaRouter = require('koa-router');
 const views = require('koa-views');

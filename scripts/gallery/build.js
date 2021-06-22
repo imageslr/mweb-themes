@@ -1,3 +1,7 @@
+/**
+ * npm run gallery-build
+ */
+
 const fs = require("fs-extra");
 const ejs = require("ejs");
 const { fromRoot, filePath, buildScss } = require('./utils')

@@ -1,3 +1,7 @@
+/**
+ * npm run gallery-watch
+ */
+
 const koa = require("koa");
 const koaRouter = require("koa-router");
 const views = require("koa-views");

@@ -1,5 +1,13 @@
 // compile all themes, from scss to css
 
+/**
+ * 生成 mweb 主题 (只会处理 mweb-xxx.scss)：
+ *  npm run compile
+ * 
+ * 生成 typora 主题 (只会处理 typora-xxx.scss)：
+ *  npm run compile -- --platform typora --distDir dist/typora-themes
+ */
+
 const fs = require("fs-extra");
 const sass = require("sass");
 const path = require("path");

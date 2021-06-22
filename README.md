@@ -1,7 +1,6 @@
 ## MWeb-Themes
 
-30+ 款 Markdown 预览主题，包括 [Typo.css](#typo)、[Vue](#vue)、[Bear](#bear-同款主题)、[Lark](#lark) 等风格，适用于 MWeb、Typora 等笔记软件，以及 Juejin、Jekyll、Hexo 等博客平台。
-> TODO: 目前只支持 MWeb，其他平台需要修改 markdown-body 选择器
+30+ 款 Markdown 预览主题，包括 [Typo.css](#typo)、[Vue](#vue)、[Bear](#bear-同款主题)、[Lark](#lark) 等风格，适用于 MWeb、Typora 等笔记软件。
 
 [在线预览所有主题](https://imageslr.github.io/mweb-themes)
 
@@ -130,7 +129,7 @@ toothpaste
 4. 点击 MWeb 偏好设置 - 预览样式 - 刷新，可以看到所有主题列表
 5. 选择喜欢的主题
 
-> 在掘金中使用主题，请参考 [juejin-markdown-themes](https://github.com/xitu/juejin-markdown-themes)。
+> 在 Typora 中使用主题，请下载 [release](https://github.com/imageslr/mweb-themes/releases) 页面最新的主题压缩包 `typora-themes.zip`
 
 ## 开发主题
 
@@ -154,9 +153,9 @@ src
 └── themes                    // 主题目录
     ├── mweb-default.scss     // 默认主题
     ├── mweb-xxx.scss         // 另一个主题
-    ├── prism-themes          // prism 代码高亮主题
-    ├── core                  // 基础样式文件
-    └── variables             // 各个主题的变量配置
+    ├── prism-themes/         // prism 代码高亮主题
+    ├── core/                 // 基础样式文件
+    └── variables/            // 各个主题的变量配置
 ```
 
 ### 安装与运行
@@ -216,12 +215,12 @@ npm run compile # 打包所有文件
 - `--file`：编译特定的主题文件，默认为空，即打包所有文件
 - `--themeDir`：主题文件所在目录，默认为 `src/themes`
 - `--distDir`：生成的 CSS 文件所在目录，默认为 `dist/themes`
-- `--platform`：在哪里使用主题，默认为 `mweb`，支持 `juejin`、`typora`
+- `--platform`：在哪里使用主题，默认为 `mweb`，支持 `typora`、`juejin` (TODO)
 
 注意：传递参数时，必须添加 `--` 分隔符。例如：
 
 ```
-npm run compile -- --platform juejin # -- 是必须的
+npm run compile -- --platform typora # -- 是必须的
 ```
 
 ## Q & A

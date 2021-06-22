@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+/**
+ * npm run watch src/themes/mweb-xxx.scss
+ */
+
 const koa = require('koa');
 const koaRouter = require('koa-router');
 const views = require('koa-views');
