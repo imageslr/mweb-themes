@@ -1,13 +1,14 @@
-@import "prism.scss";
-
 /*
- * 包含 markdown 的常见元素，各个属性通过 scss 变量控制；
- * 增加了一些 CSS Reset 代码；
- * 默认值使用 chrome 的默认样式，见 variables/default.scss。
+ * 基准样式，相当于 reset.css，使主题在不同平台下有统一的表现。
+ * 各个属性的默认值为 chrome 的默认样式，见 variables/default.scss。
  */
 
-// html、body 标签适用于 MWeb（html 中只包含 markdown 内容）
-// 在用于 jujin 等网站时，需要转为 .markdown-body
+@import "prism.scss"; // 导入 prism 的样式代码，其配色方案需要通过变量文件引入
+
+/**
+ * html、body 标签仅适用于 MWeb
+ * 在用于 juejin 等平台时，需要转为 .markdown-body，防止污染全局样式
+ */
 html {
   font-family: $font-family;
   font-size: $font-size;
@@ -18,7 +19,11 @@ body {
   background-color: $body-bg-color;
 }
 
-.markdown-body { // 外面加一层 .markdown-body，方便适配到其他平台如 juejin、typora
+/**
+ * MWeb 包裹 markdown 的容器是 .markdown-body
+ * Typora 中是 #write
+ */
+.markdown-body { 
   line-height: $line-height;
   -webkit-text-size-adjust: 100%;
   max-width: $md-body-max-width;

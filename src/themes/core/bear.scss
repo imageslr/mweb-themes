@@ -1,4 +1,8 @@
-@import "prism.scss";
+/**
+ * Bear 的默认样式表。通过调整各个颜色变量的取值，就可以得到不同的 bear 主题。
+ */
+
+@import "prism.scss"; // 导入 prism 的样式代码，其配色方案需要通过变量文件引入
 
 html {
   font-family: $font-family;
@@ -15,6 +19,7 @@ body {
   padding: $md-body-pd-v $md-body-pd-h;
 }
 
+// 这里目前只支持 mweb
 .markdown-body {
 
 * {

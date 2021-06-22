@@ -1,3 +1,7 @@
+/**
+ * 某些变量的取值引用了其他变量，统一写在这里。
+ * 这个文件应该在变量文件的最后被引入。
+ */
 
 // color
 $table-font-color: $code-font-color;

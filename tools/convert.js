@@ -1,3 +1,7 @@
+/**
+ * 将 Bear 的主题文件 (xxx.theme) 转为 scss 变量文件
+ */
+
 const plist = require("plist");
 const fs = require("fs");
 

@@ -1,8 +1,8 @@
 /*
- * Default theme
- * 这个文件只应该包含变量
- * 取值参考 chrome user agent stylesheet：
+ * Default theme，适用于 core/base.scss。
+ * 取值参考 chrome 默认样式：
  * https://chromium.googlesource.com/chromium/blink/+/refs/heads/main/Source/core/css/html.css
+ * 所有 import "core/base.scss" 的文件都应该同时导入此变量文件。
  */
  
 /* color */
