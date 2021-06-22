@@ -5,13 +5,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Typora</title>
-    <link rel="stylesheet" href="typora/font-awesome.min.css">
-	<link rel="stylesheet" href="typora/bootstrap.css">
 	<link rel="stylesheet" href="typora/codemirror.css">
 	<link rel="stylesheet" href="typora/base.css">
 	<link rel="stylesheet" href="typora/base-control.css">
 
 	<link rel="stylesheet" href="typora.css">
+	<script src="/socket.io/socket.io.js"></script>
+    <script defer>
+      io('ws://localhost:3000').on('reload', () => {
+        window.location.reload();
+      });
+    </script>
 </head>
 
 <body>

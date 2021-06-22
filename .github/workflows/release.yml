@@ -16,14 +16,19 @@ jobs:
         run: |
           npm install
           npm run compile
+          npm run compile -- --platform typora --distDir dist/typora-themes
       - name: Pack
         run: |
           cd dist/themes
           zip -r mweb-themes.zip ./
+          cd ../typora-themes
+          zip -r typora-themes.zip ./
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/') # 先执行 git tag -a {tag} 再执行 git push origin {tag} 以触发更新
         with:
-          files: dist/themes/mweb-themes.zip
+          files: |
+            dist/themes/mweb-themes.zip
+            dist/typora-themes/typora-themes.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

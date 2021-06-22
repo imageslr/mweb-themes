@@ -17,21 +17,13 @@ const args = minimist(process.argv.slice(2), {
 
 const platformConfig = {
   mweb: {
+    filter: (filename) => /^mweb-/.test(filename),
     namer: (filename) => `${path.parse(filename).name}.css`,
-    postcss: (css) => setContainerSelector({ css, selector: ".markdown-body" }),
-  },
-  juejin: {
-    namer: (filename) =>
-      `${path.parse(filename).name.replace(/^mweb/, "juejin")}.css`, // 替换 mweb- 前缀为 juejin-
   },
   typora: {
-    namer: (filename) =>
-      `${path.parse(filename).name.replace(/^mweb/, "typora")}.css`, // 替换 mweb- 前缀为 typora-
-    postcss: async (css) =>
-      wrapSelector({
-        css: await setContainerSelector({ css, selector: "#write" }),
-        prefix: "#write",
-      }),
+    filter: (filename) => /^typora-/.test(filename),
+    namer: (filename) => `${path.parse(filename).name}.css`,
+    postcss: async (css) => wrapSelector({ css, prefix: "#write" }),
   },
 };
 
@@ -65,11 +57,14 @@ const writeFile = ({ filePath, css }) => {
 
 fs.removeSync(args.distDir);
 
+const cfg = platformConfig[args.platform];
+
 const files = args.file
   ? [args.file]
   : fs
       .readdirSync(args.themeDir)
       .filter((filename) => filename.match(/\.scss/))
+      .filter(cfg.filter)
       .map((file) => `${args.themeDir}/${file}`);
 
 files.forEach(async (filePath) => {
