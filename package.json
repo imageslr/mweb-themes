@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "watch": "npm run clean && node scripts/watch.js",
-    "clean": "node scripts/clean.js",
+    "typora-watch": "npm run clean && node scripts/typora/watch.js",
+    "clean": "rm -rf static/*.css static/*.map",
     "compile": "node scripts/compile.js",
     "gallery-watch": "rm -rf dist/gallery && node scripts/gallery/index.js watch",
     "gallery-build": "rm -rf dist/gallery && node scripts/gallery/index.js build"

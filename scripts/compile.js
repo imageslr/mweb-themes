@@ -22,12 +22,11 @@ const platformConfig = {
   },
   juejin: {
     namer: (filename) =>
-      `${path.parse(filename).name.replace(/^(mweb-)/, "")}.css`, // 替换 mweb- 前缀
-    postcss: (css) => setContainerSelector({ css, selector: ".markdown-body" }),
+      `${path.parse(filename).name.replace(/^mweb/, "juejin")}.css`, // 替换 mweb- 前缀为 juejin-
   },
   typora: {
     namer: (filename) =>
-      `${path.parse(filename).name.replace(/^(mweb-)/, "")}.css`,
+      `${path.parse(filename).name.replace(/^mweb/, "typora")}.css`, // 替换 mweb- 前缀为 typora-
     postcss: async (css) =>
       wrapSelector({
         css: await setContainerSelector({ css, selector: "#write" }),
