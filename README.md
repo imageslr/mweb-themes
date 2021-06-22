@@ -1,6 +1,7 @@
 ## MWeb-Themes
 
-30+ 款 Markdown 预览主题，包括 [Typo.css](#typo)、[Vue](#vue)、[Bear](#bear-同款主题) 等风格，适用于 MWeb、Typora 等笔记软件，以及 Juejin、Jekyll、Hexo 等博客平台。
+30+ 款 Markdown 预览主题，包括 [Typo.css](#typo)、[Vue](#vue)、[Bear](#bear-同款主题)、[Lark](#lark) 等风格，适用于 MWeb、Typora 等笔记软件，以及 Juejin、Jekyll、Hexo 等博客平台。
+> TODO: 目前只支持 MWeb，其他平台需要修改 markdown-body 选择器
 
 [在线预览所有主题](https://imageslr.github.io/mweb-themes)
 
@@ -12,6 +13,7 @@
     - [Typo](#typo)
     - [Vue](#vue)
     - [Indigo](#indigo)
+    - [Lark](#lark)
     - [Bear 同款主题](#bear-同款主题)
   - [其他开源主题](#其他开源主题)
 - [使用主题](#使用主题)
@@ -38,6 +40,7 @@ duotone-light
 gandalf
 indigo
 jzman
+lark
 olive-dunk
 red-graphite
 smartblue
@@ -80,6 +83,10 @@ toothpaste
 ![](media/05-13-12-47-13.png)
 <!-- ![](media/05-13-12-47-40.png)
 ![](media/05-13-12-47-50.png) -->
+
+#### Lark
+灵感来自 [飞书文档](https://docs.feishu.cn/docs)：
+![](media/06-22-15-56-21.png)
 
 <!-- ### SmartBlue
 
