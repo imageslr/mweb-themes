@@ -66,16 +66,16 @@ hr {
 
 ul {
   margin-left: 0;
-  padding: 0px;
+  padding-left: 22px;
   list-style: none;
 
   > li:not([class*="task-list-item"]) {
     word-wrap: break-all;
-    padding-left: 22px;
+    padding-left: 0px;
   
     &:before {
       position: absolute;
-      top: 4px;
+      top: 2px;
       content: "\2022";
       color: $primary-color;
       display: inline-block;
@@ -108,12 +108,12 @@ ul {
 ol {
   counter-reset: ol_counter;
   margin-left: 0;
-  padding: 0px;
+  padding-left: 22px;
   list-style: none;
 
   > li:not([class*="task-list-item"]) {
     word-wrap: break-all;
-    padding-left: 22px;
+    padding-left: 0px;
     position: relative;
   
     &:before {
@@ -143,8 +143,8 @@ li+li, ul ul, ol ul, ul ol, ol ol, li ul, li ol {
 // task list
 .task-list-item {
   position: relative;
-  padding-left: 28px;
-  margin-left: -6px;
+  padding-left: 0;
+  margin: 0;
   list-style-type: none;
   word-wrap: break-all;
   
@@ -153,23 +153,22 @@ li+li, ul ul, ol ul, ul ol, ol ol, li ul, li ol {
     appearance: none;
     -webkit-appearance: none;
     position: absolute;
-    top: 5px;
-    left: 6px;
+    padding: 0;
 
     &:before {
       content: " ";
       display: inline-block;
-      position: relative;
+      width: 14px;
+      height: 14px;
+      margin-left: -22px;
+      margin-right: 6px;
+      margin-top: 7px;
       line-height: normal;
       font-size: 16px;
-      top: 2px;
       border-radius: 2px;
       border: 1px solid #2b2f36;
       background-position: 50%;
       white-space: normal;
-      width: 14px;
-      height: 14px;
-      margin-right: 6px;
     }
 
     &:checked:before {
