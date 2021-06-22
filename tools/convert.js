@@ -98,7 +98,7 @@ $prism-color-function: $prism-color-keyword;
 `
   const mwebTemplate = `@import "prism-themes/default.scss";
 @import "${variableFilePath}";
-@import "core/bear";`
+@import "core/mweb-bear";`
 
   if (!fs.existsSync("variables")) fs.mkdirSync('variables')
 

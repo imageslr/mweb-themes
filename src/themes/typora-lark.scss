@@ -1,8 +1,7 @@
 @import "variables/typora-lark.scss";
-@import "core/typora.scss";
+@import "core/typora-base.scss";
 
-// 和 mweb-lark 的区别在于：
-// ul、ol、task-list-item、代码块 pre
+// 和 mweb 的区别在于：ul、ol、task-list-item、pre
 
 #write {
 

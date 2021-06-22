@@ -1,16 +1,29 @@
-// core/base.scss 中的 .markdown-body 换成 #write
+/*
+ * 基准样式，相当于 reset.css，使主题在不同平台下有统一的表现。
+ * 各个属性的默认值为 chrome 的默认样式，见 variables/default.scss。
+ */
 
-#write {
+@import "../prism-themes/prism.scss"; // 导入 prism 的样式代码，其配色方案需要通过变量文件引入
+
+/**
+ * html、body 标签仅适用于 MWeb
+ * 在用于 juejin 等平台时，需要转为 .markdown-body，防止污染全局样式
+ */
+html {
   font-family: $font-family;
   font-size: $font-size;
   color: $font-color;
 }
 
-#write {
+body {
   background-color: $body-bg-color;
 }
 
-#write {
+/**
+ * MWeb 包裹 markdown 的容器是 .markdown-body
+ * Typora 中是 #write
+ */
+.markdown-body { 
   line-height: $line-height;
   -webkit-text-size-adjust: 100%;
   max-width: $md-body-max-width;
@@ -33,7 +46,7 @@
 
 /* spacing */
 
-p, details, dl, ol, ul, xmp, plaintext, listing, blockquote, table, figure, hr {
+p, details, dl, ol, ul, pre, xmp, plaintext, listing, blockquote, table, figure, hr {
   margin-top: $block-mg-t;
   margin-bottom: $block-mg-b;
 }
