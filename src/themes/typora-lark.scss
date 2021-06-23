@@ -141,39 +141,70 @@ li+li, ul ul, ol ul, ul ol, ol ol, li ul, li ol {
 }
 
 // task list
-.task-list-item {
-  position: relative;
-  padding-left: 0;
-  margin: 0;
-  list-style-type: none;
-  word-wrap: break-all;
-  
-  input {
-    margin: 0 !important;
-    appearance: none;
-    -webkit-appearance: none;
-    position: absolute;
-    padding: 0;
 
-    &:before {
-      content: " ";
-      display: inline-block;
-      width: 14px;
-      height: 14px;
-      margin-left: -22px;
-      margin-right: 6px;
-      margin-top: 7px;
-      line-height: normal;
-      font-size: 16px;
-      border-radius: 2px;
-      border: 1px solid #2b2f36;
-      background-position: 50%;
-      white-space: normal;
+.task-list-item {
+  padding-left: 0;
+
+  > p {
+    transition: color 0.3s, opacity 0.3s;
+  }
+
+  &.task-list-done > p {
+    color: #646a73;
+    text-decoration: line-through;
+
+    > .md-emoji {
+      opacity: .5;
     }
 
-    &:checked:before {
-      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEwLjU4OSAzLjkwM2wuODA4LjgwOGEuMzUuMzUgMCAwIDEgMCAuNDk1TDYuMTggMTAuNDI1YS4zNS4zNSAwIDAgMS0uNDk1IDBMMi43MDMgNy40NDRhLjM1LjM1IDAgMCAxIDAtLjQ5NWwuODA4LS44MDhhLjM1LjM1IDAgMCAxIC40OTUgMGwxLjkyNSAxLjkyNCA0LjE2My00LjE2M2EuMzUuMzUgMCAwIDEgLjQ5NSAweiIgZmlsbD0iIzMzNzBGRiIvPjwvc3ZnPg==);
-      background-size: contain;
+    > .md-link > a {
+      opacity: .6;
+    }
+  }
+
+  > input {
+    -webkit-appearance: initial;
+    display: block;
+    position: absolute;
+    border: 1px solid #2b2f36;
+    border-radius: .25rem;
+    // margin-top: .1rem;
+    margin-left: -1.8rem;
+    height: 1.2rem;
+    width: 1.2rem;
+    transition: border-color 0.3s;
+  }
+
+  > input:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  > input:hover {
+    border-color: $primary-color;
+  }
+
+  > input[checked] {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      height: 60%;
+      width: 2px;
+      transform: rotate(40deg);
+      background: $primary-color;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 46%;
+      left: 25%;
+      height: 30%;
+      width: 2px;
+      transform: rotate(-40deg);
+      background: $primary-color;
     }
   }
 }
