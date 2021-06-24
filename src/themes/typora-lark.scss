@@ -148,7 +148,7 @@ li+li, ul ul, ol ul, ul ol, ol ol, li ul, li ol {
 // task list
 
 .task-list-item {
-  padding-left: 0;
+  padding-left: 0.3rem;
 
   > p {
     transition: color 0.3s, opacity 0.3s;
@@ -174,7 +174,7 @@ li+li, ul ul, ol ul, ul ol, ol ol, li ul, li ol {
     border: 1px solid #2b2f36;
     border-radius: .25rem;
     // margin-top: .1rem;
-    margin-left: -1.8rem;
+    margin-left: -1.5rem;
     height: 1.2rem;
     width: 1.2rem;
     transition: border-color 0.3s;
