@@ -60,6 +60,11 @@ a {
 
 hr {
   margin: 13px 0 12px;
+  border: 0px;
+  height: 1px;
+  background-origin: content-box;
+  background-image: linear-gradient(90deg, rgb(187, 191, 196), rgb(187, 191, 196));
+  background-repeat: no-repeat;
 }
 
 // list
