@@ -4,8 +4,8 @@
   "description": "MWeb 主题",
   "main": "index.js",
   "scripts": {
-    "watch": "npm run clean && node scripts/watch.js",
-    "typora-watch": "npm run clean && node scripts/typora/watch.js",
+    "watch": "rm -rf static/mweb.css static/mweb.css.map && node scripts/watch.js",
+    "typora-watch": "rm -rf static/typora.css static/typora.css.map && node scripts/typora/watch.js",
     "clean": "rm -rf static/*.css static/*.map",
     "compile": "node scripts/compile.js",
     "gallery-watch": "rm -rf dist/gallery && node scripts/gallery/index.js watch",
