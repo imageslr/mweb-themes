@@ -31,7 +31,6 @@ const platformConfig = {
   typora: {
     filter: (filename) => /^typora-/.test(filename),
     namer: (filename) => `${path.parse(filename).name}.css`,
-    postcss: async (css) => wrapSelector({ css, prefix: "#write" }),
   },
 };
 
