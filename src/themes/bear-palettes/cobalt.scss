@@ -1,4 +1,4 @@
-@import "bear-default.scss";
+@import "default.scss";
 
 $body-bg-color: rgba(20, 39, 56, 1.00);
 $font-color: rgba(219, 240, 239, 1.00);
@@ -17,4 +17,4 @@ $prism-color-number: rgba(237, 240, 128, 1.0);
 $prism-color-char: rgba(58, 217, 0, 1.0);
 $prism-color-attr-name: rgba(130, 198, 117, 1.0);
 
-@import "bear-override.scss";
+@import "override.scss";
