@@ -1,7 +1,7 @@
 @import "variables/typora-lark.scss";
 @import "core/typora-base.scss";
 
-// 和 mweb 的区别在于：ul、ol、task-list-item、pre
+// 和 mweb-lark 的区别在于：ul、ol、task-list-item、pre
 
 #write {
 
@@ -50,7 +50,6 @@ a {
   white-space: pre-wrap;
   hyphens: auto;
   word-break: break-word;
-  color: $primary-color;
   text-decoration: none;
 
   &:hover {
