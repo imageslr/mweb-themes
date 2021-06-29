@@ -54,7 +54,7 @@ async function run(args) {
   const io = socketio(server);
   io.on('connection', socket => { socketItem = socket; });
 
-  server.listen(3000, () => { console.log('在浏览器中打开: \x1B[96mhttp://localhost:3000\x1B[39m'); });
+  server.listen(3005, () => { console.log('在浏览器中打开: \x1B[96mhttp://localhost:3005\x1B[39m'); });
 }
 
 function watchFile(file) {
