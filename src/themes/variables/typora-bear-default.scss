@@ -63,14 +63,3 @@ $body-bg-color: white; // Background Text Color
 $mark-bg-color: #fcffc0; // Highlighter Background Color
 $code-bg-color: white; // Code Background Color
 $border-color: #bfbfbf; // Code Stroke Color, Separator Text Color
-
-$prism-color-keyword: #2478c5; // Syntax Keyword
-$prism-color-comment: #575757; // Syntax Comment
-$prism-color-number: #0b5d83; // Syntax Number
-$prism-color-char: #1b00ce; // Syntax Character
-$prism-color-attr-name: #950980; // Syntax Attribute
-$prism-color-selector: #b43d15; // Syntax String
-$prism-color-property: #1B00CE;
-$prism-color-operator: #920448;
-$prism-color-function: #0E73A2;
-$prism-color-variable: #0E73A2; // TODO: 这里的命名可能要换一下，比如 prism => code-block

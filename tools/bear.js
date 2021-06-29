@@ -60,6 +60,6 @@ function getMwebContent(theme) {
 
 function getTyporaContent(theme) {
   return `@import "variables/typora-bear-default.scss";
-  @import "bear-palettes/${theme}.scss";
-  @import "core/typora-bear.scss";;`
+@import "bear-palettes/${theme}.scss";
+@import "core/typora-bear.scss";;`
 }

@@ -234,8 +234,60 @@ li+li, ul ul, ol ul, ul ol, ol ol, li ul, li ol {
   }
 }
 
-/**
- * TODO: 补充代码高亮的样式
- */
+// 代码高亮 CodeMirror
+
+.cm-s-inner {
+
+  // .cm-meta ?
+  // .cm-hr ?
+  // .cm-link ?
+
+  .cm-comment {
+    color: $prism-color-comment;
+  }
+
+  .cm-property,
+  .cm-tag { // html tag，需要在 bracket 之前
+    color: $prism-color-property;
+  }
+
+  .cm-bracket, // <、>
+  .cm-punctuation {
+    color: $prism-color-punctuation;
+  }
+
+  .cm-number {
+    color: $prism-color-number;
+  }
+
+  .cm-qualifier, // css selector
+  .cm-string, .cm-string-2, // 2 什么意思？
+  .cm-builtin {
+    color: $prism-color-selector;
+  }
+
+  .cm-attribute {
+    color: $prism-color-attr-name;
+  }
+
+  .cm-operator {
+    color: $prism-color-operator;
+  }
+
+  .cm-atom, // null, true, false
+  .cm-keyword {
+    color: $prism-color-keyword;
+  }
+
+  .cm-def, // 变量声明语句中的变量名
+  .cm-variable,
+  .cm-variable-2, .cm-variable-3 { // 2, 3 什么含义？
+    color: $prism-color-variable;
+  }
+
+  .cm-type { // type 什么含义？
+    color: darken($prism-color-variable, 25%);
+  }
+}
 
 }
