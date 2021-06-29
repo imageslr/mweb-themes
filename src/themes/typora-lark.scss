@@ -1,8 +1,11 @@
-@import "variables/typora-lark.scss";
-@import "core/typora-base.scss";
+@import "variables/lark.scss"; // 直接引用现有的主题变量文件
+// 针对性地修改几个变量
+$md-body-max-width: 860px;
+$code-font-family: var(--monospace);
+
 
 // 和 mweb-lark 的区别在于：ul、ol、task-list-item、pre
-
+@import "core/typora-base.scss";
 #write {
 
 * {
