@@ -1,0 +1,240 @@
+@import "typora-base.scss";
+
+/**
+ * 整体采用飞书云文档的布局规范，可以配合不同的 bear 配色方案
+ */
+
+#write {
+
+h1, h2, h3, h4, h5, h6 {
+  color: $head-color;
+}
+
+del, s {
+  color: $del-font-color;
+}
+
+u {
+  text-decoration: none;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, $primary-color 50%);
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 1em;
+}
+
+// --- 下面是飞书云文档的布局方案，和 mweb-lark 的区别在于 ul、ol、task-list-item、pre
+
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.4;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0.37em;
+}
+
+blockquote {
+  display: block;
+  margin-left: 0;
+  padding-left: 14px;
+  border-left: 2px solid $primary-color;
+}
+
+code {
+  border-radius: 4px;
+  margin-left: 2px;
+  margin-right: 2px;
+  border: 1px solid $border-color;
+  background-color: $code-bg-color;
+  word-spacing: normal;
+  line-height: 1.6;
+  padding: 0 2px;
+  color: $code-font-color;
+}
+
+pre.md-fences,
+pre.md-meta-block {
+  border: 1px solid $border-color;
+  background-color: $code-bg-color;
+  border-radius: 3px;
+  padding: $prism-pd;
+}
+
+a {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  hyphens: auto;
+  word-break: break-word;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+hr {
+  margin: 13px 0 12px;
+  border: 0px;
+  height: 1px;
+  background-origin: content-box;
+  background-image: linear-gradient(90deg, $border-color, $border-color);
+  background-repeat: no-repeat;
+}
+
+// list
+
+ul {
+  margin-left: 0;
+  padding-left: 22px;
+  list-style: none;
+
+  > li:not([class*="task-list-item"]) {
+    word-wrap: break-all;
+    padding-left: 0px;
+  
+    &:before {
+      position: absolute;
+      top: 2px;
+      content: "\2022";
+      color: $primary-color;
+      display: inline-block;
+      margin-left: -20px;
+      margin-right: 20px;
+      width: 0px;
+      font-size: .8em;
+      transform: scale(1.25);
+      font-family: PingFangSC-Regular,PingFang SC;
+    }
+
+    li:not([class*="task-list-item"]) {
+      &::before {
+        content: "\25E6";
+        transform: scale(1);
+        font-weight: 700;
+      }
+
+      li:not([class*="task-list-item"]) {
+        &::before {
+          content: "\25AA";
+          transform: scale(1.25);
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}
+
+ol {
+  counter-reset: ol_counter;
+  margin-left: 0;
+  padding-left: 22px;
+  list-style: none;
+
+  > li:not([class*="task-list-item"]) {
+    word-wrap: break-all;
+    padding-left: 0px;
+    position: relative;
+  
+    &:before {
+      content: counter(ol_counter) ".";
+      counter-increment: ol_counter;
+      color: $primary-color;
+      position: absolute;
+      margin-left: -22px;
+      margin-right: 4px;
+      padding-left: 2px;
+      padding-right: 2px;
+      text-align: left;
+      white-space: nowrap;
+      overflow: visible;
+      min-width: 18px;
+      border-radius: 2px;
+      transform: translateX(-2px);
+      font-family: Helvetica Neue,Consolas;
+    }
+  }
+}
+
+li+li, ul ul, ol ul, ul ol, ol ol, li ul, li ol {
+  margin-top: $li-mg-t;
+}
+
+// task list
+
+.task-list-item {
+  padding-left: 0.3rem;
+
+  > p {
+    transition: color 0.3s, opacity 0.3s;
+  }
+
+  &.task-list-done > p {
+    color: $del-font-color;
+    text-decoration: line-through;
+
+    > .md-emoji {
+      opacity: .5;
+    }
+
+    > .md-link > a {
+      opacity: .6;
+    }
+  }
+
+  > input {
+    -webkit-appearance: initial;
+    display: block;
+    position: absolute;
+    border: 1px solid $border-color;
+    border-radius: .25rem;
+    // margin-top: .1rem;
+    margin-left: -1.5rem;
+    height: 1.2rem;
+    width: 1.2rem;
+    transition: border-color 0.3s;
+    background-color: $body-bg-color;
+  }
+
+  > input:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  > input:hover {
+    border-color: $primary-color;
+  }
+
+  > input[checked] {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      height: 60%;
+      width: 2px;
+      transform: rotate(40deg);
+      background: $primary-color;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 46%;
+      left: 25%;
+      height: 30%;
+      width: 2px;
+      transform: rotate(-40deg);
+      background: $primary-color;
+    }
+  }
+}
+
+/**
+ * TODO: 补充代码高亮的样式
+ */
+
+}

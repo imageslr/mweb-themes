@@ -1,3 +1,8 @@
+/*
+ * 基准样式，相当于 reset.css，使主题在不同平台下有统一的表现。
+ * 各个属性的默认值为 chrome 的默认样式，见 variables/default.scss。
+ */
+
 #write {
   line-height: $line-height;
   -webkit-text-size-adjust: 100%;

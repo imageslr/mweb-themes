@@ -1,0 +1,76 @@
+/*
+ * 适用于 core/typora-bear.scss。
+ * 所有 typora-bear 主题，只需 import 这个文件，然后修改配色方案即可。
+ */
+
+@import "default.scss";
+
+$md-body-max-width: 860px;
+
+$prism-font-size: 14px; // TODO: 这里的命名可能要换一下，比如 prism => code-block
+$prism-line-height: 1.6em;
+$prism-pd: 10px;
+
+/* font */
+$font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Arial,Segoe UI,PingFang SC,Microsoft Yahei,Hiragino Sans GB,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+$code-font-family: var(--monospace);
+$font-size: 16px;
+$line-height: 1.68;
+$table-font-size: 1em;
+$th-font-size: $table-font-size;
+$td-font-size: $table-font-size;
+
+/* header */
+$h1-font-size: 26px;
+$h2-font-size: 22px;
+$h3-font-size: 20px;
+$h4-font-size: 18px;
+$h5-font-size: 16px;
+$h6-font-size: 16px;
+
+/* spacing */
+$block-mg-t: 8px;
+$block-mg-b: 8px;
+$li-mg-t: 4px;
+$h1-mg-t: $h1-font-size;
+$h2-mg-t: $h2-font-size;
+$h3-mg-t: $h3-font-size;
+$h4-mg-t: $h4-font-size;
+$h5-mg-t: $h5-font-size;
+$h6-mg-t: $h6-font-size;
+$h1-mg-b: 10px;
+$h2-mg-b: 8px;
+$h3-mg-b: 8px;
+$h4-mg-b: 8px;
+$h5-mg-b: 8px;
+$h6-mg-b: 8px;
+
+/* table */
+$th-font-weight: 500;
+$th-pd-h: 8px;
+$th-pd-v: 8px;
+$td-pd-h: 8px;
+$td-pd-v: 8px;
+
+/* default color */
+$primary-color: #353535; // Accent Text Color
+$font-color: #222222; // Base Text Color
+$del-font-color: #525252; // Light Text Color
+$head-color: #262626; // Title Text Color
+$link-color: #2478c5; // Link Text Color
+$code-font-color: #424242; // Code Font Color
+$body-bg-color: white; // Background Text Color
+$mark-bg-color: #fcffc0; // Highlighter Background Color
+$code-bg-color: white; // Code Background Color
+$border-color: #bfbfbf; // Code Stroke Color, Separator Text Color
+
+$prism-color-keyword: #2478c5; // Syntax Keyword
+$prism-color-comment: #575757; // Syntax Comment
+$prism-color-number: #0b5d83; // Syntax Number
+$prism-color-char: #1b00ce; // Syntax Character
+$prism-color-attr-name: #950980; // Syntax Attribute
+$prism-color-selector: #b43d15; // Syntax String
+$prism-color-property: #1B00CE;
+$prism-color-operator: #920448;
+$prism-color-function: #0E73A2;
+$prism-color-variable: #0E73A2; // TODO: 这里的命名可能要换一下，比如 prism => code-block

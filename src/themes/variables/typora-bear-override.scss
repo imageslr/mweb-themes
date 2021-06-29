@@ -1,0 +1,13 @@
+/**
+ * 某些变量的取值引用了其他变量，统一写在这里。
+ * 这个文件应该在变量文件的最后被引入。
+ */
+
+// color
+$table-font-color: $code-font-color;
+$table-bg-color: $code-bg-color;
+$prism-color: $font-color;
+$prism-color-bg: $code-bg-color;
+$prism-color-function: $prism-color-keyword;
+$prism-color-char: $prism-color-selector;
+$prism-color-attr-name: $prism-color-selector;
