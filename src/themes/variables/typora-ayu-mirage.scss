@@ -1,0 +1,20 @@
+@import "typora-bear-default.scss";
+
+$body-bg-color: rgba(31, 35, 47, 1.00);
+$font-color: rgba(217, 215, 209, 1.00);
+$del-font-color: rgba(120, 126, 140, 1.00);
+$head-color: rgba(159, 170, 185, 1.00);
+$link-color: rgba(254, 203, 102, 1.0);
+$primary-color: rgba(254, 203, 102, 1.0);
+$mark-bg-color: rgba(17, 110, 84, 1.00);
+$code-bg-color: rgba(24, 28, 37, 1.00);
+$code-font-color: rgba(207, 208, 203, 1.00);
+$border-color: rgba(60, 66, 84, 1.00);
+$prism-color-keyword: rgba(254, 167, 89, 1.0);
+$prism-color-comment: rgba(126, 145, 162, 1.00);
+$prism-color-selector: rgba(118, 208, 255, 1.0);
+$prism-color-number: rgba(176, 226, 125, 1.0);
+$prism-color-char: rgba(115, 144, 201, 1.0);
+$prism-color-attr-name: rgba(241, 135, 121, 1.0);
+
+@import "typora-bear-override.scss";
