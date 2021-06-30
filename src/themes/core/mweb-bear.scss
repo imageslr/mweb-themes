@@ -299,6 +299,12 @@ caption, th, td {
   vertical-align: middle
 }
 
+// svg
+
+div[id^="mweb-chart-ele"] svg {
+  background-color: white; // 目前暂时没找到替换 svg 各个元素的颜色的方法，统一先用白色
+}
+
 // other
 
 .footnotes > ol li {
