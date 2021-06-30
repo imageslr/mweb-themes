@@ -215,7 +215,7 @@ npm run compile # 打包所有文件
 - `--file`：编译特定的主题文件，默认为空，即打包所有文件
 - `--themeDir`：主题文件所在目录，默认为 `src/themes`
 - `--distDir`：生成的 CSS 文件所在目录，默认为 `dist/themes`
-- `--platform`：在哪里使用主题，默认为 `mweb`，支持 `typora`、`juejin` (TODO)
+- `--platform`：在哪里使用主题，默认为 `mweb`，支持 `typora`、`juejin` (TODO: 需要适配 highlight-js)
 
 注意：传递参数时，必须添加 `--` 分隔符。例如：
 

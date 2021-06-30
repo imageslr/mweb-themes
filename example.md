@@ -462,4 +462,4 @@ Markdown 语法：
 
 效果如下：
 
-[TOC] // TODO：这里需要适配 remark-toc, mdast-util-toc
+[TOC] // 这里需要适配 remark-toc, mdast-util-toc
