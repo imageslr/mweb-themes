@@ -16,6 +16,8 @@
     - [Bear 同款主题](#bear-同款主题)
   - [其他开源主题](#其他开源主题)
 - [使用主题](#使用主题)
+  - [在 MWeb 中使用](#在-mweb-中使用)
+  - [在 Typora 中使用](#在-typora-中使用)
 - [开发主题](#开发主题)
   - [目录结构](#目录结构)
   - [安装与运行](#安装与运行)
@@ -123,13 +125,23 @@ toothpaste
 * [JonoloLuo/MWeb-Theme-jonolo](https://github.com/JonoloLuo/MWeb-Theme-jonolo)：马克飞象风格
 
 ## 使用主题
+
+### 在 MWeb 中使用
+
 1. 下载 [release](https://github.com/imageslr/mweb-themes/releases) 页面最新的主题压缩包 `mweb-themes.zip`
 2. 打开 MWeb 偏好设置 - 预览样式 - 编辑 - 打开自定义样式所在的文件夹...（文件夹名为 `PreviewCSS`）
 3. 将解压后的主题文件（.css 文件）拖到文件夹里
 4. 点击 MWeb 偏好设置 - 预览样式 - 刷新，可以看到所有主题列表
 5. 选择喜欢的主题
 
-> 在 Typora 中使用主题，请下载 [release](https://github.com/imageslr/mweb-themes/releases) 页面最新的主题压缩包 `typora-themes.zip`
+### 在 Typora 中使用
+
+1. 下载 [release](https://github.com/imageslr/mweb-themes/releases) 页面最新的主题压缩包 `typora-themes.zip`
+2. 打开 Typora 偏好设置 - 外观 - 打开主题文件夹
+3. 将解压后的主题文件（.css 文件）拖到文件夹里
+4. 重启 Typora
+5. 点击菜单栏 - 主题，可以看到所有主题列表
+6. 选择喜欢的主题
 
 ## 开发主题
 
