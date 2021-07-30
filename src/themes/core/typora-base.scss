@@ -19,6 +19,8 @@
   --meta-content-color: #{$primary-color};
   --search-select-text-color: #{$primary-color};
   --heading-char-color: #{$primary-color};
+  /* Mermaid diagrams*/
+  --mermaid-theme: #{$mermaid-theme};
 }
 
 #write {

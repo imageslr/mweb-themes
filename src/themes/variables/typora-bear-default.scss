@@ -5,6 +5,8 @@
 
 @import "default.scss";
 
+$mermaid-theme: default;
+
 $md-body-max-width: 860px;
 
 $prism-font-size: 14px; // TODO: 这里的命名可能要换一下，比如 prism => code-block
