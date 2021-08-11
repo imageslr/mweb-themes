@@ -219,4 +219,32 @@ td {
   font-weight: $td-font-weight;
 }
 
+// fix: 直接在 markdown 写 html 源码，编辑框的样式
+
+.md-math-block, .md-rawblock {
+  margin-top: 1em; // 正好是右上角 tooltip
+  margin-bottom: 1em;
+}
+
+.md-rawblock {
+  > .md-rawblock-tooltip {
+    background-color: $code-bg-color;
+    transition: 0.5s;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+  }
+  &:hover > .md-rawblock-tooltip {
+      transition: 0.5s;
+      visibility: visible;
+      opacity: 1;
+      animation: none;
+  }
+}
+
+.md-rawblock-control:not(.md-rawblock-tooltip) {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 }

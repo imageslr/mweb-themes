@@ -58,10 +58,8 @@ code {
 
 pre.md-fences,
 pre.md-meta-block {
-  border: 1px solid $border-color;
-  background-color: $code-bg-color;
   border-radius: 3px;
-  padding: $prism-pd;
+  padding: 0;
 }
 
 a {
@@ -237,6 +235,13 @@ li+li, ul ul, ol ul, ul ol, ol ol, li ul, li ol {
 // 代码高亮 CodeMirror
 
 .cm-s-inner {
+
+  &.CodeMirror,
+  .CodeMirror-gutters {
+    background-color: $code-bg-color;
+    border: 1px solid $border-color;
+    padding: $prism-pd;
+  } 
 
   // .cm-meta ?
   // .cm-hr ?
