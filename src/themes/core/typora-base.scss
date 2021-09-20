@@ -9,6 +9,7 @@
   --bg-color: #{$body-bg-color};
   --side-bar-bg-color: #{$body-bg-color};
   --active-file-bg-color: #{$body-bg-color};
+  --rawblock-edit-panel-bd: #{$code-bg-color};
   --window-border: 0 solid #{$body-bg-color};
   --control-text-color: #{$font-color};
   --primary-color: #{$primary-color};
@@ -220,6 +221,15 @@ td {
 }
 
 /* code block */
+
+pre.md-fences,
+pre.md-meta-block,
+.md-rawblock-control:not(.md-rawblock-tooltip) .md-rawblock-input {
+  border-radius: 3px;
+  border: 1px solid $border-color;
+  padding: $prism-pd;
+  background-color: $code-bg-color;
+}
 
 .CodeMirror div.CodeMirror-cursor {
   border-color: $font-color;

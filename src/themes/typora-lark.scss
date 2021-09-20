@@ -39,14 +39,6 @@ code {
   padding: 0 2px;
 }
 
-pre.md-fences,
-pre.md-meta-block {
-  border: 1px solid $border-color;
-  background-color: $code-bg-color;
-  border-radius: 3px;
-  padding: $prism-pd;
-}
-
 a {
   overflow-wrap: break-word;
   word-wrap: break-word;

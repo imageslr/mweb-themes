@@ -56,12 +56,6 @@ code {
   color: $code-font-color;
 }
 
-pre.md-fences,
-pre.md-meta-block {
-  border-radius: 3px;
-  padding: 0;
-}
-
 a {
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -235,13 +229,6 @@ li+li, ul ul, ol ul, ul ol, ol ol, li ul, li ol {
 // 代码高亮 CodeMirror
 
 .cm-s-inner {
-
-  &.CodeMirror,
-  .CodeMirror-gutters {
-    background-color: $code-bg-color;
-    border: 1px solid $border-color;
-    padding: $prism-pd;
-  } 
 
   // .cm-meta ?
   // .cm-hr ?
