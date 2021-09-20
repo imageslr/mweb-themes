@@ -219,6 +219,12 @@ td {
   font-weight: $td-font-weight;
 }
 
+/* code block */
+
+.CodeMirror div.CodeMirror-cursor {
+  border-color: $font-color;
+}
+
 // fix: 直接在 markdown 写 html 源码，编辑框的样式
 
 .md-math-block, .md-rawblock {
