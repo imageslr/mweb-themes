@@ -13,7 +13,7 @@ const toRootPrefix = "../../";
 const fromRoot = (pathFromRoot) => toRootPrefix + pathFromRoot;
 const filePath = (file) => path.join(__dirname, `${file}`);
 
-const themes = require(fromRoot("src/themes/config"));
+const themes = require(fromRoot("src/themes/mweb-config.js"));
 
 const buildScss = async ({ distPath, minify }) => {
   fs.ensureDirSync(filePath(distPath + "/js"));

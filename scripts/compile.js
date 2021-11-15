@@ -17,7 +17,7 @@ const sass = require("sass");
 const path = require("path");
 const minimist = require("minimist");
 const sassExtract = require("sass-extract");
-const themeConfig = require("../src/themes/config");
+const themeConfig = require("../src/themes/mweb-config");
 const { adjust } = require("./utils");
 const args = minimist(process.argv.slice(2), {
   string: ["file", "platform", "themeDir", "distDir"],
@@ -31,16 +31,18 @@ const args = minimist(process.argv.slice(2), {
 const platformConfig = {
   mweb: {
     filter: (filename) => /^mweb-/.test(filename), // 过滤需要编译的 scss 文件
-    namer: (filename) => `${path.parse(filename).name}.css`, // scss 编译后写入的文件名
-  },
-  typora: {
-    filter: (filename) => /^typora-/.test(filename),
-    namer: (filename) => `${path.parse(filename).name}.css`,
+    namer: (filename) => `${filename}.css`, // scss 编译后写入的文件名
+    writer: writerForMWeb
   },
   mweb4: {
     filter: (filename) => /^mweb-/.test(filename),
-    namer: (filename) => `${path.parse(filename).name}.mwebtheme`,
+    namer: (filename) => `${filename}.mwebtheme`,
     compiler: compilerForMWeb4,
+    writer: writerForMWeb
+  },
+  typora: {
+    filter: (filename) => /^typora-/.test(filename),
+    namer: (filename) => `${filename}.css`,
   },
 };
 
@@ -395,10 +397,28 @@ function compilerForMWeb4({ filePath }) {
 ${css}`;
 }
 
-function writeFile({ filePath, css }) {
+function write({ filePath, css }) {
+  fs.ensureDirSync(args.distDir);
   const { namer } = platformConfig[args.platform];
-  const filename = path.basename(filePath);
-  const outFile = `${args.distDir}/${namer(filename)}`;
+  const filename = path.basename(filePath); // with extension
+  const outFile = `${args.distDir}/${namer(path.parse(filename).name)}`;
+  fs.writeFile(outFile, css, (error) => {
+    if (error) {
+      console.log(`写入文件失败：${outFile}`, error);
+      process.exit(1);
+    } else console.log(`输出：${outFile}`);
+  });
+}
+
+function writerForMWeb({ filePath, css }) {
+  fs.ensureDirSync(args.distDir);
+  fs.ensureDirSync(args.distDir + '/dark');
+  fs.ensureDirSync(args.distDir + '/light');
+  const { namer } = platformConfig[args.platform];
+  const themeName = filePath.match(/mweb-(.*)\.scss$/)[1]; // eg: ayu, lark, etc.
+  const filename = filePath.match(/(mweb-.*)\.scss$/)[1];
+  const isDark = themeConfig[themeName].mode == "dark";
+  const outFile = `${args.distDir}/${isDark ? 'dark' : 'light'}/${namer(filename)}`;
   fs.writeFile(outFile, css, (error) => {
     if (error) {
       console.log(`写入文件失败：${outFile}`, error);
@@ -409,7 +429,6 @@ function writeFile({ filePath, css }) {
 
 function main() {
   fs.removeSync(args.distDir);
-  fs.ensureDirSync(args.distDir);
 
   const cfg = platformConfig[args.platform];
   const files = args.file
@@ -426,7 +445,9 @@ function main() {
       let css = cfg.compiler
         ? await cfg.compiler({ filePath })
         : await compile({ filePath });
-      writeFile({ filePath, css });
+        cfg.writer
+        ? await cfg.writer({ filePath, css })
+        : await write({ filePath, css });
     } catch (err) {
       console.log("sass 编译失败：", err);
       process.exit(1);

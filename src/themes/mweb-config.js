@@ -1,7 +1,8 @@
 /**
  * 每次新增一个 mweb 主题文件，都需要在这里新增一项，字段包括：
- * - file：文件名
- * - mode（可选）："dark"，是否是深色主题
+ * - file: 文件名
+ * - mode（可选）: "dark"，是否是深色主题
+ * - isMWeb4EditorThemeCompatible: 是否支持生成 MWeb 4.x 的编辑器主题，必须配置 sass 颜色变量才可以
  */
 
 const themes = {
