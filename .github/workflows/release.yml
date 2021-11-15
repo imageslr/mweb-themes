@@ -16,19 +16,23 @@ jobs:
       - name: Install and Build 
         run: |
           npm install
-          npm run compile
+          npm run compile -- --platform mweb --distDir dist/mweb3-themes
+          npm run compile -- --platform mweb4 --distDir dist/mweb4-themes
           npm run compile -- --platform typora --distDir dist/typora-themes
       - name: Pack
         run: |
-          cd dist/themes
-          zip -r mweb-themes.zip ./
+          cd dist/mweb3-themes
+          zip -r mweb3-themes.zip ./
+          cd ../mweb4-themes
+          zip -r mweb4-themes.zip ./
           cd ../typora-themes
           zip -r typora-themes.zip ./
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            dist/themes/mweb-themes.zip
+            dist/mweb3-themes/mweb3-themes.zip
+            dist/mweb4-themes/mweb4-themes.zip
             dist/typora-themes/typora-themes.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

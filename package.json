@@ -47,6 +47,8 @@
     "remark-toc": "^7.2.0",
     "rollup": "^2.48.0",
     "sass": "^1.28.0",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.3.0",
+    "node-sass": "^6.0.1",
+    "sass-extract": "^2.1.0"
   }
 }
