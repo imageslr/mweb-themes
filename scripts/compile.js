@@ -335,7 +335,7 @@ function compilerForMWeb4({ filePath }) {
     // t.editor.selectionColor   // 编辑器选择的文字的背景颜色
     t.editor.currentLineBgColor = adjust(
       getColor("$body-bg-color"),
-      isDark ? 10 : -10
+      isDark ? 20 : -10
     ).slice(1); // 编辑器当前行的背景颜色
     let headColor = getColor("$head-color", getColor("$font-color")); // 标题 1～6
     t.h1.color = headColor;
