@@ -64,15 +64,18 @@ npm run typora-watch <theme_file_path>
 代码使用 SCSS 编写，需要编译为 `.css` 文件才能在 MWeb 或 Typora 中使用：
 
 ```
-npm run compile # 生成 MWeb 的 css 文件
+npm run compile # 生成 MWeb3 的 css 文件
+npm run compile -- --platform mweb4 --distDir dist/mweb4 # 生成 MWeb 4.2+ 的 mwebtheme 文件
+npm run compile-mweb4 # 等同于上一条命令
 npm run compile -- --platform typora --distDir dist/typora # 生成 Typora 的 css 文件
+npm run compile-typora # 等同于上一条命令
 ```
 
 参数：
 - `--file`：编译特定的主题文件，默认为空，即生成所有主题文件
 - `--themeDir`：主题文件所在目录，默认为 `src/themes`
 - `--distDir`：生成的 CSS 文件所在目录，默认为 `dist/themes`
-- `--platform`：生成哪个平台的主题，默认为 `mweb` (处理 `mweb-xxx.scss`)，支持 `typora` (处理 `typora-xxx.scss`)
+- `--platform`：生成哪个平台的主题，默认为 `mweb3` (处理 `mweb-xxx.scss`)，可选 `mweb4`、`typora` (处理 `typora-xxx.scss`)
 
 注意：传递参数时，必须添加 `--` 分隔符。
 

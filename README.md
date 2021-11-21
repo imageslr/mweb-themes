@@ -123,14 +123,14 @@ toothpaste
 ### 在 MWeb 中使用
 
 MWeb 3.x:
-1. 下载 [release](https://github.com/imageslr/mweb-themes/releases) 页面最新的主题压缩包 `mweb-themes.zip`
+1. 下载 [release](https://github.com/imageslr/mweb-themes/releases) 页面最新的主题压缩包 `mweb3-themes.zip`
 2. 打开 MWeb 偏好设置 - 预览样式 - 编辑 - 打开自定义样式所在的文件夹...（文件夹名为 `PreviewCSS`）
 3. 将解压后的主题文件（.css 文件）拖到文件夹里
 4. 点击 MWeb 偏好设置 - 预览样式 - 刷新，可以看到所有主题列表
 5. 选择喜欢的主题
 
 MWeb 4.0.x:
-1. 下载 [release](https://github.com/imageslr/mweb-themes/releases) 页面最新的主题压缩包 `mweb-themes.zip`
+1. 下载 [release](https://github.com/imageslr/mweb-themes/releases) 页面最新的主题压缩包 `mweb3-themes.zip`
 2. 解压，得到一系列名为 `mweb-xxx.css` 的文件
 3. 打开 MWeb 偏好设置 - 自定义主题 - 新增亮主题 (如果是深色主题，应该选择“新增暗主题”)
 4. 主题名称命名为 `mweb-xxx`
@@ -138,10 +138,10 @@ MWeb 4.0.x:
 6. 点击“保存”，随后就可以在偏好设置中切换亮/暗主题了
 
 MWeb 4.2.x:
-1. 下载与解压 `mweb-themes.zip`
+1. 下载与解压 `mweb4-themes.zip`
 2. 打开 MWeb 偏好设置 - 主题&样式 - 自定义主题 - 导入亮主题 (如果是深色主题，应该选择“导入暗主题”) 
-3. 选中第一步解压后得到的全部的 `mweb-xxx.css` 文件，导入即可
-> 注意：MWeb 4.2 的“主题&样式”设置中，缩略图是**编辑器主题**的样式，本仓库仅提供**预览样式**。选中某个主题后，切换到预览模式，查看效果。
+3. 选中第一步解压后得到的全部的 `mweb-xxx.mwebtheme` 文件，导入即可
+4. 每个主题文件，均包含**编辑器主题**和**预览主题**
 
 ### 在 Typora 中使用
 
