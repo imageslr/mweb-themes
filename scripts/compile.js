@@ -17,32 +17,35 @@ const sass = require("sass");
 const path = require("path");
 const minimist = require("minimist");
 const sassExtract = require("sass-extract");
-const themeConfig = require("../src/themes/mweb-config");
-const { adjust } = require("./utils");
+const { adjust, getFileName, getFileNameWithoutExtension } = require("./utils");
 const args = minimist(process.argv.slice(2), {
   string: ["file", "platform", "themeDir", "distDir"],
   default: {
-    platform: "mweb", // juejin, typora
+    platform: "mweb3", // mweb4, typora
     themeDir: "src/themes",
     distDir: "dist/themes",
   },
 });
 
 const platformConfig = {
-  mweb: {
+  mweb3: {
     filter: (filename) => /^mweb-/.test(filename), // 过滤需要编译的 scss 文件
     namer: (filename) => `${filename}.css`, // scss 编译后写入的文件名
-    writer: writerForMWeb
+    themeConfig: require("../src/themes/mweb-config"),
+    getThemeName: (filePath) => filePath.match(/mweb-(.*)\.scss$/)[1], // ayu, lark, etc.
   },
   mweb4: {
     filter: (filename) => /^mweb-/.test(filename),
     namer: (filename) => `${filename}.mwebtheme`,
+    themeConfig: require("../src/themes/mweb-config"),
+    getThemeName: (filePath) => filePath.match(/mweb-(.*)\.scss$/)[1], // ayu, lark, etc.
     compiler: compilerForMWeb4,
-    writer: writerForMWeb
   },
   typora: {
     filter: (filename) => /^typora-/.test(filename),
     namer: (filename) => `${filename}.css`,
+    themeConfig: require("../src/themes/typora-config"),
+    getThemeName: (filePath) => filePath.match(/typora-(.*)\.scss$/)[1], // ayu, lark, etc.
   },
 };
 
@@ -293,14 +296,15 @@ function compilerForMWeb4({ filePath }) {
       color: "555555",
     },
   };
+  const { themeConfig } = platformConfig[args.platform];
+  const themeName = platformConfig[args.platform].getThemeName(filePath);
   const css = sass.renderSync({ file: filePath }).css;
-  const themeName = filePath.match(/mweb-(.*)\.scss$/)[1]; // eg: ayu, lark, etc.
   const isMWeb4EditorThemeCompatible =
     themeConfig[themeName].isMWeb4EditorThemeCompatible;
 
   if (isMWeb4EditorThemeCompatible) {
     // sass-extract 有 bug，import 优先级不正确，算出来的 final value 不正确，都是 bear-default.scss 里定义的。
-    // 所以这里不解析入口文件，只计算 bear-palettes 里的变量值。
+    // 所以这里不直接解析入口文件 mweb-xxx.scss，而是只解析 bear-palettes/xxx.scss。
     const rendered = (() => {
       let variablePath = `bear-palettes/${themeName}`;
       // 简单的适配几个特殊主题
@@ -311,8 +315,6 @@ function compilerForMWeb4({ filePath }) {
         case "lark-bold-color":
         case "lark":
           variablePath = `mweb-lark`; // 这个可以直接解析入口文件，因为没有 import bear-default.scss
-          break;
-        default:
           break;
       }
       return sassExtract.renderSync({
@@ -399,26 +401,14 @@ ${css}`;
 
 function write({ filePath, css }) {
   fs.ensureDirSync(args.distDir);
-  const { namer } = platformConfig[args.platform];
-  const filename = path.basename(filePath); // with extension
-  const outFile = `${args.distDir}/${namer(path.parse(filename).name)}`;
-  fs.writeFile(outFile, css, (error) => {
-    if (error) {
-      console.log(`写入文件失败：${outFile}`, error);
-      process.exit(1);
-    } else console.log(`输出：${outFile}`);
-  });
-}
-
-function writerForMWeb({ filePath, css }) {
-  fs.ensureDirSync(args.distDir);
-  fs.ensureDirSync(args.distDir + '/dark');
-  fs.ensureDirSync(args.distDir + '/light');
-  const { namer } = platformConfig[args.platform];
-  const themeName = filePath.match(/mweb-(.*)\.scss$/)[1]; // eg: ayu, lark, etc.
-  const filename = filePath.match(/(mweb-.*)\.scss$/)[1];
+  fs.ensureDirSync(args.distDir + "/dark");
+  fs.ensureDirSync(args.distDir + "/light");
+  const { namer, themeConfig } = platformConfig[args.platform];
+  const themeName = platformConfig[args.platform].getThemeName(filePath);
   const isDark = themeConfig[themeName].mode == "dark";
-  const outFile = `${args.distDir}/${isDark ? 'dark' : 'light'}/${namer(filename)}`;
+  const outFile = `${args.distDir}/${isDark ? "dark" : "light"}/${namer(
+    getFileNameWithoutExtension(filePath)
+  )}`;
   fs.writeFile(outFile, css, (error) => {
     if (error) {
       console.log(`写入文件失败：${outFile}`, error);
@@ -441,11 +431,24 @@ function main() {
 
   files.forEach(async (filePath) => {
     try {
+      if (cfg.themeConfig) {
+        const themeName = platformConfig[args.platform].getThemeName(filePath);
+        console.log(`检查主题配置是否存在：${themeName}`);
+        if (!cfg.themeConfig[themeName]) {
+          console.log(
+            `主题配置不存在，需要在主题配置文件中添加配置项：${themeName}`
+          );
+          process.exit(1);
+        }
+      }
+
       console.log(`编译中：${filePath}`);
       let css = cfg.compiler
         ? await cfg.compiler({ filePath })
         : await compile({ filePath });
-        cfg.writer
+
+      console.log(`写入文件中：${filePath}`);
+      cfg.writer
         ? await cfg.writer({ filePath, css })
         : await write({ filePath, css });
     } catch (err) {

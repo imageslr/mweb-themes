@@ -17,6 +17,14 @@ function adjust(color, amount) {
   );
 }
 
+function getFileName (filePath) {
+  return filePath.match(/([a-zA-Z\-]*\..*)$/)[1]; // eg: mweb-ayu
+}
+
+function getFileNameWithoutExtension (filePath) {
+  return filePath.match(/([a-zA-Z\-]*)\..*$/)[1]; // eg: mweb-ayu
+}
+
 module.exports = {
-  adjust,
+  adjust, getFileName, getFileNameWithoutExtension
 };

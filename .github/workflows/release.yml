@@ -16,7 +16,7 @@ jobs:
       - name: Install and Build 
         run: |
           npm install
-          npm run compile -- --platform mweb --distDir dist/mweb3-themes
+          npm run compile -- --platform mweb3 --distDir dist/mweb3-themes
           npm run compile -- --platform mweb4 --distDir dist/mweb4-themes
           npm run compile -- --platform typora --distDir dist/typora-themes
       - name: Pack
