@@ -137,11 +137,14 @@ MWeb 4.0.x:
 5. 出现一个主题编辑器，将右侧“按编辑器主题自动生成预览 CSS”取消勾选，然后将 `mweb-xxx.css` 文件的内容拷贝到右侧文本输入框中
 6. 点击“保存”，随后就可以在偏好设置中切换亮/暗主题了
 
-MWeb 4.2.x:
+MWeb 4.2.x (Mweb Pro):
 1. 下载与解压 `mweb4-themes.zip`
 2. 打开 MWeb 偏好设置 - 主题&样式 - 自定义主题 - 导入亮主题 (如果是深色主题，应该选择“导入暗主题”) 
 3. 选中第一步解压后得到的全部的 `mweb-xxx.mwebtheme` 文件，导入即可
 4. 每个主题文件，均包含**编辑器主题**和**预览主题**
+
+> Q: MWeb Pro 如何快速删除多个导入的主题文件？  
+> A: 删除 `~/Library/Containers/com.coderforart.MWeb3/Data/Library/Application\ Support/themes` 中的文件夹即可。删除后需要重启 MWeb。
 
 ### 在 Typora 中使用
 
