@@ -148,7 +148,7 @@ ol {
 
 // list marker
 
-ul li {
+ul > li {
   position: relative;
 
   &:before {
@@ -159,7 +159,7 @@ ul li {
   }
 }
 
-ol li {
+ol > li {
   position: relative;
 
   &:before {

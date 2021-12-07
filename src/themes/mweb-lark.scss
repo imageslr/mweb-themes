@@ -81,7 +81,7 @@ ul {
   padding: 0px;
   list-style: none;
 
-  li:not([class*="task-list-item"]) {
+  > li:not([class*="task-list-item"]) {
     word-wrap: break-all;
     padding-left: 22px;
   
@@ -97,14 +97,14 @@ ul {
       font-family: PingFangSC-Regular,PingFang SC;
     }
 
-    li:not([class*="task-list-item"]) {
+    ul > li:not([class*="task-list-item"]) {
       &::before {
         content: "\25E6";
         transform: scale(1);
         font-weight: 700;
       }
 
-      li:not([class*="task-list-item"]) {
+      ul > li:not([class*="task-list-item"]) {
         &::before {
           content: "\25AA";
           transform: scale(1.25);
@@ -121,7 +121,7 @@ ol {
   padding: 0px;
   list-style: none;
 
-  li:not([class*=task-list-item]) {
+  > li:not([class*=task-list-item]) {
     word-wrap: break-all;
     padding-left: 22px;
     position: relative;
