@@ -121,7 +121,7 @@ ol {
   padding: 0px;
   list-style: none;
 
-  li {
+  li:not([class*=task-list-item]) {
     word-wrap: break-all;
     padding-left: 22px;
     position: relative;
@@ -155,7 +155,7 @@ li+li, ul ul, ol ul, ul ol, ol ol, li ul, li ol {
 .task-list-item {
   padding-left: 28px;
   margin-left: -6px;
-  list-style-type: none;
+  list-style: none;
   word-wrap: break-all;
   
   input {
