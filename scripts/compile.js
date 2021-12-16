@@ -17,7 +17,12 @@ const sass = require("sass");
 const path = require("path");
 const minimist = require("minimist");
 const sassExtract = require("sass-extract");
-const { adjust, getFileName, getFileNameWithoutExtension } = require("./utils");
+const {
+  adjust,
+  getFileName,
+  getFileNameWithoutExtension,
+  getDefaultTheme,
+} = require("./utils");
 const args = minimist(process.argv.slice(2), {
   string: ["file", "platform", "themeDir", "distDir"],
   default: {
@@ -58,244 +63,7 @@ async function compile({ filePath }) {
 }
 
 function compilerForMWeb4({ filePath }) {
-  let t = {
-    blockCode: {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "09844f",
-    },
-    footnoteDef: {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "555555",
-    },
-    linkLink: {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "",
-    },
-    ol: {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "0595bf",
-    },
-    editor: {
-      "app-row-content-color": "4c4c4c",
-      "app-row-icon-color": "1996bc",
-      "app-row-separator-color": "e0e0e2",
-      currentLineBgColor: "f8f8f8",
-      bgColor: "ffffff",
-      caretColor: "00b9ff",
-      color: "333333",
-      "app-row-selected-bgColor": "1996bc",
-      "app-row-info-color": "333333",
-      selectionColor: "",
-      selectionBgColor: "",
-      "app-icon-color": "1996bc",
-      "app-group-color": "7f7f7f",
-      "app-group-bgColor": "efeff4",
-      "app-row-bgColor": "ffffff",
-      "app-row-title-color": "333333",
-    },
-    h1: {
-      isBold: true,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "0595bf",
-    },
-    inlineCode: {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "09844f",
-    },
-    image: {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "0366dd",
-    },
-    h2: {
-      isBold: true,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "0595bf",
-    },
-    table: {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "333333",
-    },
-    h3: {
-      isBold: true,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "0595bf",
-    },
-    link: {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "0366dd",
-    },
-    strikethrough: {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: true,
-      isUnderline: false,
-      color: "999999",
-    },
-    h4: {
-      isBold: true,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "0595bf",
-    },
-    footnoteRef: {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "555555",
-    },
-    isAutoGenCSS: false,
-    "codeblock-string": {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "d32d26",
-    },
-    "codeblock-preprocessor": {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "784830",
-    },
-    h5: {
-      isBold: true,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "0595bf",
-    },
-    underline: {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: true,
-      color: "1a1a1a",
-    },
-    inlineHTML: {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "555555",
-    },
-    strong: {
-      isBold: true,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "333333",
-    },
-    blockHTML: {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "555555",
-    },
-    "codeblock-attribute": {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "967d41",
-    },
-    h6: {
-      isBold: true,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "0595bf",
-    },
-    quote: {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "bbbbbb",
-    },
-    "codeblock-keyword": {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "bc319c",
-    },
-    ul: {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "0595bf",
-    },
-    "codeblock-comment": {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "008327",
-    },
-    emph: {
-      isBold: false,
-      isItalic: true,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "333333",
-    },
-    "codeblock-character": {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "2834ce",
-    },
-    "codeblock-number": {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "2834ce",
-    },
-    hr: {
-      isBold: false,
-      isItalic: false,
-      isStrikethrough: false,
-      isUnderline: false,
-      color: "555555",
-    },
-  };
+  let t = getDefaultTheme();
   const { themeConfig } = platformConfig[args.platform];
   const themeName = platformConfig[args.platform].getThemeName(filePath);
   const css = sass.renderSync({ file: filePath }).css;
@@ -382,6 +150,9 @@ function compilerForMWeb4({ filePath }) {
     t["codeblock-character"].color = getColor("$prism-color-char");
     t["codeblock-string"].color = getColor("$prism-color-selector");
     t["codeblock-preprocessor"].color = getColor("$prism-color-selector");
+
+    // 某些主题的自定义设置
+    customizeEditorTheme(t, getColor, themeName); 
   }
 
   let editorThemeStr = JSON.stringify(t, null, 2);
@@ -397,6 +168,18 @@ function compilerForMWeb4({ filePath }) {
 
 
 ${css}`;
+}
+
+function customizeEditorTheme(t, getColor, themeName) {
+  switch (themeName) {
+    case "lark-bold-color":
+    case "lark":
+      for (let i = 1; i <= 6; i++) {
+        t[`h${i}`].isBold = false;
+        t[`h${i}`].color = getColor("$accent-color");
+      }
+      break;
+  }
 }
 
 function write({ filePath, css }) {
