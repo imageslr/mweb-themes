@@ -57,7 +57,7 @@ npm run typora-watch <theme_file_path>
 
 1. 在 `src/themes` 目录下创建新的主题文件 `mweb-xxx.scss` 或 `typora-xxx.scss`
 2. 编写样式内容
-3. 如果是 MWeb 主题，还需要在 `src/themes/config.js` 中增加主题配置项
+3. 在 `src/themes/mweb-config.js` 或 `src/themes/typora-config.js` 中增加主题配置项
 
 ### 生成 CSS 文件
 
@@ -78,6 +78,166 @@ npm run compile-typora # 等同于上一条命令
 - `--platform`：生成哪个平台的主题，默认为 `mweb3` (处理 `mweb-xxx.scss`)，可选 `mweb4`、`typora` (处理 `typora-xxx.scss`)
 
 注意：传递参数时，必须添加 `--` 分隔符。
+
+## MWeb 主题开发
+1. 代码块：`pre code[class*="language-"]`
+2. 代码块语法颜色：见 `prism.scss`
+
+## Typora 主题开发
+注意事项：
+1. 所有样式内容放在 `#write` 块内
+2. 代码块：
+
+    ```scss
+    pre.md-fences,
+    pre.md-meta-block,
+    .md-rawblock-control:not(.md-rawblock-tooltip) .md-rawblock-input {
+        color: #f8f8f2;
+        background: #272822;
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        font-size: 1em;
+    }
+    ```
+
+3. 代码块指针颜色：`.CodeMirror div.CodeMirror-cursor { border-color: $font-color; }`
+4. 代码块语法颜色：见 `typora-bear.scss` → `.cm-s-inner {}`
+
+    ```scss
+    // 代码高亮 CodeMirror
+    .cm-s-inner {
+        // .cm-meta ?
+        // .cm-hr ?
+        // .cm-link ?
+
+        .cm-comment {
+            color: $prism-color-comment;
+        }
+
+        .cm-property,
+        .cm-tag { // html tag，需要在 bracket 之前
+            color: $prism-color-property;
+        }
+
+        .cm-bracket, // <、>
+        .cm-punctuation {
+            color: $prism-color-punctuation;
+        }
+
+        .cm-number {
+            color: $prism-color-number;
+        }
+
+        .cm-qualifier, // css selector
+        .cm-string, .cm-string-2, // 2 什么意思？
+        .cm-builtin {
+            color: $prism-color-selector;
+        }
+
+        .cm-attribute {
+            color: $prism-color-attr-name;
+        }
+
+        .cm-operator {
+            color: $prism-color-operator;
+        }
+
+        .cm-atom, // null, true, false
+        .cm-keyword {
+            color: $prism-color-keyword;
+        }
+
+        .cm-def, // 变量声明语句中的变量名
+        .cm-variable,
+        .cm-variable-2, .cm-variable-3 { // 2, 3 什么含义？
+            color: $prism-color-variable;
+        }
+
+        .cm-type { // type 什么含义？
+            color: darken($prism-color-variable, 25%);
+        }
+    }
+    ```
+
+5. 任务列表：
+    
+    ```scss
+    $primary-color: #353535;  // 复选框选中时的背景颜色，建议和加粗字体的颜色一致
+    $del-font-color: #525252; // 复选框选中时的字体颜色
+    $body-bg-color: white;    // 复选框未选中时的背景颜色
+    $border-color: #bfbfbf;   // 复选框未选中时的边框颜色，建议和表格边框的颜色一致
+
+    // task list
+    .task-list-item {
+        padding-left: 0.3rem
+        list-style-type: none;;
+
+        > p {
+            transition: color 0.3s, opacity 0.3s;
+        }
+
+        &.task-list-done > p {
+            color: $del-font-color;
+            text-decoration: line-through;
+
+            > .md-emoji {
+            opacity: .5;
+            }
+
+            > .md-link > a {
+            opacity: .6;
+            }
+        }
+
+        > input {
+            -webkit-appearance: initial;
+            display: block;
+            position: absolute;
+            border: 1px solid $border-color;
+            border-radius: .25rem;
+            // margin-top: .1rem;
+            margin-left: -1.5rem;
+            height: 1.2rem;
+            width: 1.2rem;
+            transition: border-color 0.3s;
+            background-color: $body-bg-color;
+        }
+
+        > input:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        > input:hover {
+            border-color: $primary-color;
+        }
+
+        > input[checked] {
+            &::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            height: 60%;
+            width: 2px;
+            transform: rotate(40deg);
+            background: $primary-color;
+            }
+
+            &::after {
+            content: '';
+            position: absolute;
+            top: 46%;
+            left: 25%;
+            height: 30%;
+            width: 2px;
+            transform: rotate(-40deg);
+            background: $primary-color;
+            }
+        }
+    }
+    ```
+
+6. 
 
 ## Q & A
 

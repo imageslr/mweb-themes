@@ -45,6 +45,9 @@ const themes = {
     file: "typora-gotham.scss",
     mode: "dark",
   },
+  indigo: {
+    file: "type-indigo.scss",
+  },
   lighthouse: {
     file: "mweb-lighthouse.scss",
     mode: "dark",

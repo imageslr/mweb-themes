@@ -1,0 +1,384 @@
+#write {
+  // 全局配置
+  color: #595959;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  line-height: 1.8em;
+  background-image: linear-gradient(
+      90deg,
+      rgba(60, 10, 30, 0.05) 3%,
+      transparent 0
+    ),
+    linear-gradient(1turn, rgba(60, 10, 30, 0.05) 3%, transparent 0);
+  background-size: 20px 20px;
+  background-position: 50%;
+  word-break: break-all;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* 颜色配置 */
+
+  blockquote {
+    margin-left: 0;
+    background-color: #ebf4ff;
+    border-color: #7f9cf5;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    color: #667eea;
+  }
+
+  strong {
+    color: #5a67d8;
+  }
+
+  code,
+  a {
+    color: #5a67d8;
+  }
+
+  a {
+    border-color: #667eea;
+  }
+
+  code {
+    background-color: #ebf4ff;
+  }
+
+  blockquote,
+  details,
+  dl,
+  ol,
+  p,
+  pre,
+  table,
+  ul {
+    margin-bottom: 1rem;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol,
+  ul {
+    padding-left: 2em;
+  }
+
+  h1,
+  h2 {
+    border-color: #5a67d8;
+    border-style: solid;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    font-weight: 500;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.75rem;
+  }
+
+  /* 颜色配置 end */
+
+  /* 布局，一般不需要改动 */
+
+  h1,
+  h2 {
+    border-bottom: 1px solid #eaecef !important;
+    border-left-width: 6px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 16px;
+    line-height: 1.25;
+  }
+
+  blockquote {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-left: 0.25em solid;
+  }
+
+  blockquote > :last-child {
+    margin-bottom: 0;
+  }
+
+  blockquote > :first-child {
+    margin-top: 0;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  strong::before {
+    content: "「";
+  }
+
+  strong::after {
+    content: "」";
+  }
+
+  code,
+  a {
+    font-weight: 500;
+  }
+
+  code,
+  a {
+    font-size: unset;
+  }
+
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid;
+  }
+
+  .footnote-ref {
+    border-width: 0px;
+  }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      "Liberation Mono", "Courier New", monospace;
+  }
+
+  pre > code {
+    font-weight: 400;
+    color: unset;
+    line-height: 1.6;
+  }
+
+  picture img {
+    border-radius: 6px;
+    display: block;
+    margin: 10px auto;
+    -o-object-fit: contain;
+    object-fit: contain;
+    box-shadow: 2px 4px 7px #999;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+    margin: 10px auto;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 2px 4px 7px #999;
+  }
+
+  picture {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+
+  .svg-markmap-box {
+    min-height: 20rem;
+    width: 100%;
+  }
+
+  .footnotes {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  /* 布局 end */
+
+  /* 任务列表 */
+
+  $primary-color: #5a67d8; // 复选框选中时的背景颜色，建议和加粗字体的颜色一致
+  $del-font-color: #525252; // 复选框选中时的字体颜色
+  $body-bg-color: unset; // 复选框未选中时的背景颜色
+  $border-color: #5a67d8; // 复选框未选中时的边框颜色，建议和表格边框的颜色一致
+
+  .task-list-item {
+    padding-left: 0.3rem;
+    list-style-type: none;
+
+    > p {
+      transition: color 0.3s, opacity 0.3s;
+    }
+
+    &.task-list-done > p {
+      color: $del-font-color;
+      text-decoration: line-through;
+
+      > .md-emoji {
+        opacity: 0.5;
+      }
+
+      > .md-link > a {
+        opacity: 0.6;
+      }
+    }
+
+    > input {
+      -webkit-appearance: initial;
+      display: block;
+      position: absolute;
+      border: 1px solid $border-color;
+      border-radius: 0.25rem;
+      // margin-top: .1rem;
+      margin-left: -1.5rem;
+      height: 1.2rem;
+      width: 1.2rem;
+      transition: border-color 0.3s;
+      background-color: $body-bg-color;
+    }
+
+    > input:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    > input:hover {
+      border-color: $primary-color;
+    }
+
+    > input[checked] {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        height: 60%;
+        width: 2px;
+        transform: rotate(40deg);
+        background: $primary-color;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 46%;
+        left: 25%;
+        height: 30%;
+        width: 2px;
+        transform: rotate(-40deg);
+        background: $primary-color;
+      }
+    }
+  }
+
+  /* 任务列表 end */
+
+  /* 代码块框架 */
+
+  pre.md-fences,
+  pre.md-meta-block,
+  .md-rawblock-control:not(.md-rawblock-tooltip) .md-rawblock-input {
+    padding: 12px;
+    padding-top: 6px;
+    margin: 0.5em 0;
+    overflow: auto;
+    border-radius: 6px;
+
+    color: #f8f8f2;
+    background: #272822;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-size: 1em;
+
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+
+    &::before {
+      content: "";
+      display: block;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDU0IDE0Ij4KICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiPgogICAgPGNpcmNsZSBjeD0iNiIgY3k9IjYiIHI9IjYiIGZpbGw9IiNGRjVGNTYiIHN0cm9rZT0iI0UwNDQzRSIgc3Ryb2tlLXdpZHRoPSIuNSIvPgogICAgPGNpcmNsZSBjeD0iMjYiIGN5PSI2IiByPSI2IiBmaWxsPSIjRkZCRDJFIiBzdHJva2U9IiNERUExMjMiIHN0cm9rZS13aWR0aD0iLjUiLz4KICAgIDxjaXJjbGUgY3g9IjQ2IiBjeT0iNiIgcj0iNiIgZmlsbD0iIzI3QzkzRiIgc3Ryb2tlPSIjMUFBQjI5IiBzdHJva2Utd2lkdGg9Ii41Ii8+CiAgPC9nPgo8L3N2Zz4K");
+      height: 30px;
+      width: 100%;
+      margin-bottom: -7px;
+      background-size: 40px;
+      background-repeat: no-repeat;
+    }
+  }
+
+  /* 代码语法高亮 CodeMirror */
+
+  .cm-s-inner {
+    // .cm-meta ?
+    // .cm-hr ?
+    // .cm-link ?
+
+    .cm-comment {
+      color: #8292a2;
+    }
+
+    .cm-property,
+    .cm-tag {
+      // html tag，需要在 bracket 之前
+      color: #f92672;
+    }
+
+    .cm-bracket, // <、>
+  .cm-punctuation {
+      color: #f8f8f2;
+    }
+
+    .cm-number {
+      color: #ae81ff;
+    }
+
+    .cm-qualifier, // css selector
+  .cm-string, .cm-string-2, // 2 什么意思？
+  .cm-builtin {
+      color: #a6e22e;
+    }
+
+    .cm-attribute {
+      color: #a6e22e;
+    }
+
+    .cm-operator {
+      color: #f8f8f2;
+    }
+
+    .cm-atom, // null, true, false
+  .cm-keyword {
+      color: #66d9ef;
+    }
+
+    .cm-def, // 变量声明语句中的变量名
+  .cm-variable,
+  .cm-variable-2, .cm-variable-3 {
+      // 2, 3 什么含义？
+      color: #f8f8f2;
+    }
+
+    .cm-type {
+      // type 什么含义？
+      color: darken(#f8f8f2, 25%);
+    }
+  }
+
+  /* 代码语法高亮 end */
+}
