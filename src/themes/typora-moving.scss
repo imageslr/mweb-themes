@@ -1,0 +1,338 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600&display=swap");
+
+// Define defaults for each variable.
+
+$base-font-family: "Bitter",
+"Hiragino Sans GB",
+"Microsoft Yahei",
+"微软雅黑",
+"Bitter",
+sans-serif;
+$base-font-size: 18px !default;
+$base-font-weight: 400 !default;
+$small-font-size: $base-font-size * 0.85 !default;
+$base-line-height: 1.8 !default;
+$small-line-height: 1.6 !default;
+
+$spacing-unit: 30px !default;
+
+$text-color: #111 !default;
+$background-color: #fdfdfd !default;
+$brand-color: #2a7ae2 !default;
+
+$grey-color: #828282 !default;
+$grey-color-light: lighten($grey-color, 40%) !default;
+$grey-color-dark: darken($grey-color, 25%) !default;
+$orange-color: #f66a0a !default;
+$table-text-align: left !default;
+
+// Width of the content area
+$content-width: 860px !default;
+
+$on-palm: 600px !default;
+$on-laptop: 800px !default;
+
+$on-medium: $on-palm !default;
+$on-large: $on-laptop !default;
+
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}
+
+#write {
+  * {
+    box-sizing: border-box;
+  }
+
+  font: $base-font-weight #{$small-font-size}/#{$small-line-height} $base-font-family;
+  color: $text-color;
+  background-color: $background-color;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern"1;
+  -moz-font-feature-settings: "kern"1;
+  -o-font-feature-settings: "kern"1;
+  font-feature-settings: "kern"1;
+  font-kerning: normal;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  padding: 0 2%;
+  -webkit-font-smoothing: auto; // 覆盖 base.css 中的样式
+
+  @media screen and (min-width: $on-medium) {
+    padding: 0 5%;
+    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  }
+
+  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+  max-width: calc(#{$content-width} - (#{$spacing-unit}));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit / 2;
+  padding-left: $spacing-unit / 2;
+  @extend %clearfix;
+
+  @media screen and (min-width: $on-large) {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+  }
+
+  /* reset */
+  h1, h2, h3, h4, h5, h6, p, blockquote, hr, dl, dd, ol, ul, figure {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, blockquote, ul, ol, dl, figure, details {
+    margin-bottom: 15px;
+  }
+
+  /**
+  * Divider
+  */
+  hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    height: 1px;
+    background: -webkit-linear-gradient(left,
+        transparent,
+        rgba(0, 0, 0, 0.5),
+        transparent);
+    background: linear-gradient(left,
+        transparent,
+        rgba(0, 0, 0, 0.5),
+        transparent);
+  }
+
+  /**
+  * Images
+  */
+  img {
+    padding: 2px 2px;
+    border-radius: 3px;
+    background-color: lighten($grey-color-light, 3%);
+    max-width: 100%;
+    vertical-align: middle;
+    display: block;
+    margin: 5px auto;
+  }
+
+  /**
+  * Figures
+  */
+  figure>img {
+    display: block;
+  }
+
+  figcaption {
+    font-size: $small-font-size;
+  }
+
+  /**
+  * Lists
+  */
+  ul,
+  ol {
+    margin-left: $spacing-unit;
+  }
+
+  li {
+
+    >ul,
+    >ol {
+      margin-bottom: 0;
+    }
+  }
+
+  /**
+  * Headings
+  */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 2rem;
+    font-weight: $base-font-weight;
+  }
+
+  h2 {
+    @include relative-font-size(1.75);
+
+    @media screen and (min-width: $on-large) {
+      @include relative-font-size(2);
+    }
+  }
+
+  h3,
+  h3 code {
+    @include relative-font-size(1.375);
+
+    @media screen and (min-width: $on-large) {
+      @include relative-font-size(1.625);
+    }
+  }
+
+  h4 {
+    @include relative-font-size(1.125);
+
+    @media screen and (min-width: $on-large) {
+      @include relative-font-size(1.25);
+    }
+  }
+
+  /**
+  * Links
+  */
+  a {
+    color: $brand-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  /**
+  * Blockquotes
+  */
+  blockquote {
+    color: $grey-color;
+    border-left: 4px solid $grey-color-light;
+    padding-left: $spacing-unit / 2;
+    @include relative-font-size(1);
+    letter-spacing: -1px;
+
+    @media (max-width: 600px) {
+      @include relative-font-size(0.8);
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  /**
+  * Code formatting
+  */
+
+  code {
+  @include relative-font-size(0.9);
+  border: 1px solid darken($grey-color-light, 3%);
+  border-radius: 3px;
+  background-color: lighten($grey-color-light, 3%);
+
+  @media (max-width: 600px) {
+    @include relative-font-size(0.8);
+  }
+}
+
+  pre.md-fences,
+  pre.md-meta-block,
+  .md-rawblock-control:not(.md-rawblock-tooltip) .md-rawblock-input {
+    @include relative-font-size(0.9);
+    border: 2px solid darken($grey-color-light, 3%);
+    border-radius: 3px;
+    background-color: #fdfdfd;
+    padding: 0.5em;
+    color: #333;
+
+    @media (max-width: 600px) {
+      @include relative-font-size(0.8);
+    }
+  }
+
+  code {
+    padding: 1px 1px;
+  }
+
+  pre {
+    padding: 2px 2px;
+    overflow-x: auto;
+
+    >code {
+      border: 0;
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  /**
+  * Clearfix
+  */
+  %clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /**
+  * Icons
+  */
+
+  .orange {
+    color: $orange-color;
+  }
+
+  .grey {
+    color: $grey-color;
+  }
+
+  .svg-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    fill: currentColor;
+    padding: 5px 3px 2px 5px;
+    vertical-align: text-bottom;
+  }
+
+  /**
+  * Tables
+  */
+  table {
+    margin-bottom: $spacing-unit;
+    width: 100%;
+    text-align: $table-text-align;
+    color: lighten($text-color, 18%);
+    border-collapse: collapse;
+    border: 1px solid $grey-color-light;
+
+    tr {
+      &:nth-child(even) {
+        background-color: lighten($grey-color-light, 6%);
+      }
+    }
+
+    th,
+    td {
+      padding: ($spacing-unit / 3) ($spacing-unit / 2);
+    }
+
+    th {
+      background-color: lighten($grey-color-light, 3%);
+      border: 1px solid darken($grey-color-light, 4%);
+      border-bottom-color: darken($grey-color-light, 12%);
+    }
+
+    td {
+      border: 1px solid $grey-color-light;
+    }
+  }
+
+  details[open] summary {
+    margin-bottom: 12px;
+  }
+
+}

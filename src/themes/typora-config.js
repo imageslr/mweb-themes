@@ -56,6 +56,9 @@ const themes = {
   "lark-bold-color": {
     file: "typora-lark-bold-color.scss",
   },
+  "moving": {
+    file: "typora-moving.scss",
+  },
   nord: {
     file: "typora-nord.scss",
     mode: "dark",
