@@ -235,6 +235,7 @@ npm run compile-typora # 等同于上一条命令
         }
     }
     ```
+6. 字体粗细：typora 的 `base.css` 里设置了 `-webkit-font-smoothing: antialiased`，会导致字体看起来更细。我们需要指定 `-webkit-font-smoothing: auto` 以覆盖这个样式。
 
 ## Q & A
 
